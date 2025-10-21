@@ -60,7 +60,7 @@ education:
     date_start: 2020-08-24
     date_end: 2024-12-22
     summary: |
-      'Thesis:' From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection.
+      **Thesis:** From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection.
     button:
       text: 'Read Thesis'
       url: https://etda.libraries.psu.edu/catalog/26790mqs6680
@@ -69,7 +69,8 @@ education:
     date_start: 2018-09-03
     date_end: 2020-08-21
     summary: |
-
+      **Thesis:** Bridge Inspection Using an Unmanned Aerial Vehicle by Image Capturing and Geo-tagging System and Deep Convolutional Neural Network.
+    button:
   - area: BS Electrical Engineering
     institution: Bahria University
     date_start: 2013-09-01
