@@ -51,7 +51,7 @@ interests:
   - Eye Tracking
   - Computer Vision
   - Machine Learning
-  - Wireless Sensors
+  - Wireless Smart Sensors
   - Structural Health Monitoring
 
 education:
@@ -60,7 +60,7 @@ education:
     date_start: 2020-08-24
     date_end: 2024-12-22
     summary: |
-      **Thesis:** From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection.
+      **Thesis:** From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection
     button:
       text: 'Read Thesis'
       url: https://etda.libraries.psu.edu/catalog/26790mqs6680
@@ -69,27 +69,36 @@ education:
     date_start: 2018-09-03
     date_end: 2020-08-21
     summary: |
-      **Thesis:** Bridge Inspection Using an Unmanned Aerial Vehicle by Image Capturing and Geo-tagging System and Deep Convolutional Neural Network.
+      **Thesis:** Bridge Inspection Using an Unmanned Aerial Vehicle by Image Capturing and Geo-tagging System and Deep Convolutional Neural Network
     button:
   - area: BS Electrical Engineering
     institution: Bahria University
     date_start: 2013-09-01
     date_end: 2017-05-31
     summary: |
-
+      **Thesis:** FPGA-based Digital Signal Processing of Under-sea Range Finder
 work:
-  - position: Senior AI Research Scientist
-    company_name: Meta AI
-    company_url: 'https://ai.meta.com/'
+  - position: Graduate Researcher 
+    company_name: Built Environment Analytics and Modeling Lab
+    company_url: ''
     company_logo: ''
-    date_start: 2020-01-01
-    date_end: ''
+    date_start: 2020-08-24
+    date_end: 2024-12-22
     summary: |2-
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models. 50+ citations in 3 years.
-    
+      Leading research on multimodal AI systems.
+
+  - position: Graduate Researcher 
+    company_name: Smart Infrastructure and Technology Lab
+    company_url: ''
+    company_logo: ''
+    date_start: 2018-09-01
+    date_end: 2020-06-22
+    summary: |2-
+      Leading research on multimodal AI systems.
+        
   - position: Development Engineer
     company_name: Smart Grid & Power Lab
-    company_url: 'https://openai.com/'
+    company_url: ''
     company_logo: ''
     date_start: 2018-01-01
     date_end: 2018-05-31
@@ -163,7 +172,6 @@ awards:
     summary: |
       Recognized for contributions to scaling laws in deep learning.
 ---
-Rakeh Saleem is a seasoned Research Scientist and engineering professional working at the highly interdisciplinary nexus of the AEC industry and advanced data science. With over six years of experience, he 
-possesses a unique and powerful blend of domain expertise in civil infrastructure and automation combined with advanced skills in data science, AI, and ML/DL.
+Rakeh Saleem is a seasoned Research Scientist and Engineer working at a highly interdisciplinary nexus of the AEC industry and advanced data science. With over six years of experience, he possesses a unique and powerful blend of domain expertise in civil infrastructure and automation combined with advanced skills in data science, AI, and ML/DL.
 
 What sets him apart is his ability to fuse deep domain expertise in civil infrastructure and automation with cutting-edge data science. Rakeh develops and deploys AI-driven solutions and predictive models for automated inspections, successfully transforming complex infrastructure challenges into actionable, data-driven results. His work is a demonstration of his commitment to bridging the gap between traditional engineering practices and advanced machine learning techniques, spanning critical areas like UAV-based inspections and real-time multimodal imaging.
