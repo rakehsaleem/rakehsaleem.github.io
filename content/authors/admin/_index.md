@@ -60,7 +60,7 @@ education:
     date_start: 2020-08-24
     date_end: 2024-12-22
     summary: |
-      Thesis: From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection.
+      \textbf{Thesis:} From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection.
     button:
       text: 'Read Thesis'
       url: https://etda.libraries.psu.edu/catalog/26790mqs6680
