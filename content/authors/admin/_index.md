@@ -1,13 +1,13 @@
 ---
 # Display name
-title: Alex Johnson
+title: Rakeh Saleem
 
 # Name pronunciation (optional)
 name_pronunciation: ''
 
 # Full name (for SEO)
-first_name: Alex
-last_name: Johnson
+first_name: Rakeh
+last_name: Saleem
 
 # Pronouns (optional)
 pronouns: he/him
@@ -23,62 +23,63 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Senior AI Research Scientist
+role: Research Scientist
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Meta AI
-    url: https://ai.meta.com/
+  #- name: Meta AI
+  #  url: https://ai.meta.com/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:alex.johnson@meta.com'
+    url: 'mailto:rakeh.muhammad@gmail.com'
     label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/AlexAIResearch
+  #- icon: brands/x
+  #  url: https://twitter.com/AlexAIResearch
   - icon: brands/github
-    url: https://github.com/alexjohnsonai
+    url: https://github.com/rakehsaleem
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/alexjohnsonai/
+    url: https://www.linkedin.com/in/rakeh-saleem/
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=alexjohnson
+    url: https://scholar.google.com/citations?user=sNDGyTYAAAAJ&hl=en
   - icon: academicons/orcid
-    url: https://orcid.org/0000-0002-1825-0097
+    url: https://orcid.org/0000-0002-6362-9872
 
 interests:
-  - Large Language Models
+  - Eye Tracking
   - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
+  - Machine Learning
+  - Wireless Sensors
+  - Structural Health Monitoring
 
 education:
-  - area: PhD Computer Science (AI Focus)
-    institution: Stanford University
-    date_start: 2015-09-01
-    date_end: 2019-06-30
+  - area: PhD Engineering (Structural focus)
+    institution: Pennsylvania State University
+    date_start: 2020-08-24
+    date_end: 2024-12-22
     summary: |
-      Thesis on _Scaling Laws for Neural Language Models_. Supervised by Prof. Andrew Ng. Published 5 papers in NeurIPS and ICML, with 2 best paper awards.
+      Thesis on _From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection_.
     button:
       text: 'Read Thesis'
       url: 'https://example.com/thesis.pdf'
-  - area: MS Computer Science
-    institution: Carnegie Mellon University
-    date_start: 2013-09-01
-    date_end: 2015-05-31
+  - area: MS Structural Engineering
+    institution: Chung-Ang University
+    date_start: 2018-09-01
+    date_end: 2020-06-22
     summary: |
-      GPA: 4.0/4.0
+      # GPA: 4.0/4.0
 
       Specialized in machine learning and robotics.
-  - area: BS Computer Science
-    institution: MIT
-    date_start: 2009-09-01
-    date_end: 2013-05-31
+  - area: BS Electrical Engineering
+    institution: Bahria University
+    date_start: 2013-09-01
+    date_end: 2017-05-31
     summary: |
-      GPA: 3.9/4.0
+      # GPA: 3.9/4.0
 
-      Minored in Mathematics. President of AI Club.
+      # Minored in Mathematics. President of AI Club.
 
 work:
   - position: Senior AI Research Scientist
