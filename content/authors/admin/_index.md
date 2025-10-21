@@ -63,7 +63,7 @@ education:
       Thesis: From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection.
     button:
       text: 'Read Thesis'
-      url: '[https://etda.libraries.psu.edu/catalog/26790mqs6680]'
+      url: '{https://etda.libraries.psu.edu/catalog/26790mqs6680}'
   - area: MS Structural Engineering
     institution: Chung-Ang University
     date_start: 2018-09-03
