@@ -55,31 +55,26 @@ interests:
   - Structural Health Monitoring
 
 education:
-  - area: PhD Engineering (Structural focus)
+  - area: PhD Architectural Engineering
     institution: Pennsylvania State University
     date_start: 2020-08-24
     date_end: 2024-12-22
     summary: |
-      Thesis on _From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection_.
+      Thesis: From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection.
     button:
       text: 'Read Thesis'
-      url: 'https://example.com/thesis.pdf'
+      url: '[https://example.com/thesis.pdf](https://etda.libraries.psu.edu/catalog/26790mqs6680)'
   - area: MS Structural Engineering
     institution: Chung-Ang University
-    date_start: 2018-09-01
-    date_end: 2020-06-22
+    date_start: 2018-09-03
+    date_end: 2020-08-21
     summary: |
-      # GPA: 4.0/4.0
 
-      Specialized in machine learning and robotics.
   - area: BS Electrical Engineering
     institution: Bahria University
     date_start: 2013-09-01
     date_end: 2017-05-31
     summary: |
-      # GPA: 3.9/4.0
-
-      # Minored in Mathematics. President of AI Club.
 
 work:
   - position: Senior AI Research Scientist
@@ -90,14 +85,15 @@ work:
     date_end: ''
     summary: |2-
       Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models. 50+ citations in 3 years.
-  - position: AI Research Intern
-    company_name: OpenAI
+    
+  - position: Development Engineer
+    company_name: Smart Grid & Power Lab
     company_url: 'https://openai.com/'
     company_logo: ''
     date_start: 2019-06-01
     date_end: 2019-12-31
     summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
+      Worked on development of wireless sensor system for fault identitifcation and localziation.
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
@@ -134,10 +130,10 @@ skills:
         icon: book-open
 
 languages:
+  - name: Urdu
+    percent: 100
   - name: English
     percent: 100
-  - name: Spanish
-    percent: 50
 
 # Awards.
 #   Add/remove as many awards below as you like.
@@ -166,5 +162,7 @@ awards:
     summary: |
       Recognized for contributions to scaling laws in deep learning.
 ---
+Rakeh Saleem is a seasoned Research Scientist and engineering professional working at the highly interdisciplinary nexus of the AEC industry and advanced data science. With over six years of experience, he 
+possesses a unique and powerful blend of domain expertise in civil infrastructure and automation combined with advanced skills in data science, AI, and ML/DL.
 
-Alex Johnson is a Senior AI Research Scientist at Meta AI, where he leads groundbreaking work on large language models and multimodal systems. His research has been published in top conferences like NeurIPS and ICML, with over 10,000 citations. Alex is passionate about pushing the boundaries of AI while ensuring ethical development. Outside of work, he enjoys hiking in the Rockies, building custom PCs, and mentoring the next generation of AI talent.
+What sets him apart is his ability to fuse deep domain expertise in civil infrastructure and automation with cutting-edge data science. Rakeh develops and deploys AI-driven solutions and predictive models for automated inspections, successfully transforming complex infrastructure challenges into actionable, data-driven results. His work is a demonstration of his commitment to bridging the gap between traditional engineering practices and advanced machine learning techniques, spanning critical areas like UAV-based inspections and real-time multimodal imaging.
