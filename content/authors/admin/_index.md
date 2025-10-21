@@ -63,7 +63,7 @@ education:
       Thesis: From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection.
     button:
       text: 'Read Thesis'
-      url: '[https://example.com/thesis.pdf](https://etda.libraries.psu.edu/catalog/26790mqs6680)'
+      url: '[https://etda.libraries.psu.edu/catalog/26790mqs6680]'
   - area: MS Structural Engineering
     institution: Chung-Ang University
     date_start: 2018-09-03
@@ -90,10 +90,10 @@ work:
     company_name: Smart Grid & Power Lab
     company_url: 'https://openai.com/'
     company_logo: ''
-    date_start: 2019-06-01
-    date_end: 2019-12-31
+    date_start: 2018-01-01
+    date_end: 2018-05-31
     summary: |
-      Worked on development of wireless sensor system for fault identitifcation and localziation.
+      Worked on the development of wireless sensor system for fault identification and localization.
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
