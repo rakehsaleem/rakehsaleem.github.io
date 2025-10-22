@@ -118,11 +118,11 @@ skills:
       - name: Machine Learning
         description: ''
         percent: 85
-        icon: fa-code
+        icon: cogs
       - name: Predictive Modeling
         description: ''
         percent: 85
-        icon: fa-chart-line
+        icon: chart-line
       - name: Statistical Analysis
         description: ''
         percent: 85
