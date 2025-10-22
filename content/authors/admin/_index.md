@@ -108,37 +108,109 @@ work:
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
-  - name: Technical Skills
+  - name: AI & Data Science
     items:
-      - name: Python & PyTorch
+      - name: Python
         description: ''
         percent: 95
         icon: code-bracket
-      - name: Machine Learning
+      - name: Deep Learning (PyTorch/TensorFlow)
         description: ''
         percent: 100
         icon: chart-bar
-      - name: Cloud Computing (AWS/GCP)
+      - name: Machine Learning
         description: ''
         percent: 85
         icon: cloud
-  - name: Hobbies
+      - name: Statistical Analysis
+        description: ''
+        percent: 85
+        icon: cloud
+      - name: Predictive Modeling
+        description: ''
+        percent: 85
+        icon: cloud
+      - name: Algorithm Development
+        description: ''
+        percent: 85
+        icon: cloud
+  - name: Computer Vision and Automation
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Hiking in the Rockies
+      - name: Computer Vision
         description: ''
         percent: 80
         icon: person-simple-walk
-      - name: Building Custom PCs
+      - name: Object Detection
         description: ''
         percent: 90
         icon: cpu-chip
-      - name: Sci-Fi Reading
+      - name: Image Processing
         description: ''
         percent: 70
         icon: book-open
-
+      - name: Eye Tracking
+        description: ''
+        percent: 70
+        icon: book-open
+      - name: Drone Piloting
+        description: ''
+        percent: 70
+        icon: book-open   
+  - name: Hardware & IoT Systems
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: IoT
+        description: ''
+        percent: 80
+        icon: person-simple-walk
+      - name: Hardware prototyping
+        description: ''
+        percent: 90
+        icon: cpu-chip
+      - name: Embedded Programming
+        description: ''
+        percent: 70
+        icon: book-open
+      - name: PCB/Circuit Designing
+        description: ''
+        percent: 70
+        icon: book-open
+      - name: Mixed-Signal I.C.
+        description: ''
+        percent: 70
+        icon: book-open
+  - name: Core Engineering & Tools
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: MATLAB 
+        description: ''
+        percent: 80
+        icon: person-simple-walk
+      - name: C++
+        description: ''
+        percent: 90
+        icon: cpu-chip
+      - name: Data Structures
+        description: ''
+        percent: 70
+        icon: book-open
+      - name: Git/GitHub
+        description: ''
+        percent: 70
+        icon: book-open
+      - name: Visual Studio
+        description: ''
+        percent: 70
+        icon: book-open
+      - name: Altium Designer
+        description: ''
+        percent: 70
+        icon: book-open
+                
 languages:
   - name: Urdu
     percent: 100
