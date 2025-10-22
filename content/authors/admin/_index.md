@@ -114,61 +114,61 @@ skills:
       - name: Deep Learning (PyTorch/TensorFlow)
         description: ''
         percent: 100
-        icon: chart-bar
+        icon: brands/python
       - name: Machine Learning
         description: ''
         percent: 85
-        icon: cloud
+        icon: code
       - name: Predictive Modeling
         description: ''
         percent: 85
-        icon: cloud
+        icon: chart-line
       - name: Statistical Analysis
         description: ''
         percent: 85
-        icon: cloud
+        icon: chart-pie
       - name: Algorithm Development
         description: ''
         percent: 85
-        icon: cloud
+        icon: puzzle-piece
   - name: Computer Vision and Automation
     color: '#eeac02'
     color_border: '#f0bf23'
-    icon: chart-bar
+    icon: fa-eye
     items:
       - name: Computer Vision
         description: ''
         percent: 80
-        icon: person-simple-walk
+        icon: camera
       - name: Object Detection
         description: ''
         percent: 90
-        icon: cpu-chip
+        icon: crosshairs
       - name: Image Processing
         description: ''
         percent: 70
-        icon: book-open
+        icon: image
       - name: Eye Tracking
         description: ''
         percent: 70
-        icon: book-open
+        icon: person-dots-from-line
       - name: User Study Design
         description: ''
         percent: 70
-        icon: book-open
+        icon: user-group
       - name: Drone Piloting
         description: ''
         percent: 70
-        icon: book-open   
+        icon: drone   
   - name: Hardware & IoT Systems
     color: '#eeac02'
     color_border: '#f0bf23'
-    icon: chart-bar
+    icon: fa-plug
     items:
       - name: IoT
         description: ''
         percent: 80
-        icon: person-simple-walk
+        icon: wifi
       - name: Hardware prototyping
         description: ''
         percent: 90
@@ -176,48 +176,48 @@ skills:
       - name: Embedded Programming
         description: ''
         percent: 70
-        icon: book-open
+        icon: code-branch
       - name: PCB/Circuit Designing
         description: ''
         percent: 70
-        icon: book-open
+        icon: square-terminal
       - name: Sensor & Data Fusion
         description: ''
         percent: 70
-        icon: book-open
+        icon: waves-square
   - name: Computational Engineering & Diagnostics
     color: '#eeac02'
     color_border: '#f0bf23'
-    icon: book-open
+    icon: fa-gear
     items:
       - name: MATLAB/C++
         description: ''
         percent: 80
-        icon: person-simple-walk
+        icon: fa-code
       - name: Structural Assessment
         description: ''
         percent: 90
-        icon: cpu-chip
+        icon: fa-ruler-triangle
       - name: Numerical Simulation
         description: ''
         percent: 70
-        icon: book-open
+        icon: calculator
       - name: Building Diagnostics
         description: ''
         percent: 70
-        icon: book-open
+        icon: house-chimney-medical
       - name: Data Structures
         description: ''
         percent: 70
-        icon: book-open
+        icon: hard-drive
       - name: Visual Studio
         description: ''
         percent: 70
-        icon: book-open
+        icon: laptop-code
       - name: Altium Designer
         description: ''
         percent: 70
-        icon: book-open
+        icon: drafting-compass
                 
 languages:
   - name: Urdu
