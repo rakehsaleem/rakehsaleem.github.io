@@ -105,10 +105,11 @@ work:
     summary: |
       Designed and prototyped a complete end-to-end IoT solution for power transmission lines, integrating custom non-contact hardware with a cloud-based dashboard for real-time fault identification and data analysis.
 
-# Skills
+# Technical Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
   - name: AI & Data Science
+    icon: chart-bar
     items:
       - name: Deep Learning (PyTorch/TensorFlow)
         description: ''
@@ -133,6 +134,7 @@ skills:
   - name: Computer Vision and Automation
     color: '#eeac02'
     color_border: '#f0bf23'
+    icon: chart-bar
     items:
       - name: Computer Vision
         description: ''
@@ -161,6 +163,7 @@ skills:
   - name: Hardware & IoT Systems
     color: '#eeac02'
     color_border: '#f0bf23'
+    icon: chart-bar
     items:
       - name: IoT
         description: ''
@@ -185,6 +188,7 @@ skills:
   - name: Computational Engineering & Diagnostics
     color: '#eeac02'
     color_border: '#f0bf23'
+    icon: book-open
     items:
       - name: MATLAB/C++
         description: ''
