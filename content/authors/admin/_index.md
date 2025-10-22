@@ -190,18 +190,10 @@ skills:
         description: ''
         percent: 80
         icon: code-bracket
-      - name: Structural Assessment
-        description: ''
-        percent: 90
-        icon: fa-ruler-triangle
       - name: Numerical Simulation
         description: ''
         percent: 70
         icon: calculator
-      - name: Building Diagnostics
-        description: ''
-        percent: 70
-        icon: fa-building
       - name: Data Structures
         description: ''
         percent: 70
