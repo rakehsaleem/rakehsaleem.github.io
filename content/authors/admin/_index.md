@@ -110,10 +110,6 @@ work:
 skills:
   - name: AI & Data Science
     items:
-      - name: Python
-        description: ''
-        percent: 95
-        icon: code-bracket
       - name: Deep Learning (PyTorch/TensorFlow)
         description: ''
         percent: 100
@@ -122,11 +118,11 @@ skills:
         description: ''
         percent: 85
         icon: cloud
-      - name: Statistical Analysis
+      - name: Predictive Modeling
         description: ''
         percent: 85
         icon: cloud
-      - name: Predictive Modeling
+      - name: Statistical Analysis
         description: ''
         percent: 85
         icon: cloud
@@ -154,6 +150,10 @@ skills:
         description: ''
         percent: 70
         icon: book-open
+      - name: User Study Design
+        description: ''
+        percent: 70
+        icon: book-open
       - name: Drone Piloting
         description: ''
         percent: 70
@@ -178,27 +178,31 @@ skills:
         description: ''
         percent: 70
         icon: book-open
-      - name: Mixed-Signal I.C.
+      - name: Sensor & Data Fusion
         description: ''
         percent: 70
         icon: book-open
-  - name: Core Engineering & Tools
+  - name: Computational Engineering & Diagnostics
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: MATLAB 
+      - name: MATLAB/C++
         description: ''
         percent: 80
         icon: person-simple-walk
-      - name: C++
+      - name: Structural Assessment
         description: ''
         percent: 90
         icon: cpu-chip
-      - name: Data Structures
+      - name: Numerical Simulation
         description: ''
         percent: 70
         icon: book-open
-      - name: Git/GitHub
+      - name: Building Diagnostics
+        description: ''
+        percent: 70
+        icon: book-open
+      - name: Data Structures
         description: ''
         percent: 70
         icon: book-open
