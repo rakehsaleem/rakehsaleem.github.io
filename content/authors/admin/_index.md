@@ -109,7 +109,6 @@ work:
 # Add your own SVG icons to `assets/media/icons/`
 skills:
   - name: AI & Data Science
-    icon: fa-brain
     items:
       - name: Deep Learning (PyTorch/TensorFlow)
         description: ''
@@ -118,11 +117,11 @@ skills:
       - name: Machine Learning
         description: ''
         percent: 85
-        icon: fa-robot
+        icon: robot
       - name: Predictive Modeling
         description: ''
         percent: 85
-        icon: fa-bar-chart
+        icon: bar-chart
       - name: Statistical Analysis
         description: ''
         percent: 85
@@ -134,7 +133,6 @@ skills:
   - name: Computer Vision and Automation
     color: '#eeac02'
     color_border: '#f0bf23'
-    icon: fa-eye
     items:
       - name: Computer Vision
         description: ''
@@ -163,7 +161,6 @@ skills:
   - name: Hardware & IoT Systems
     color: '#eeac02'
     color_border: '#f0bf23'
-    icon: fa-plug
     items:
       - name: IoT
         description: ''
@@ -188,7 +185,6 @@ skills:
   - name: Computational Engineering & Diagnostics
     color: '#eeac02'
     color_border: '#f0bf23'
-    icon: fa-gear
     items:
       - name: MATLAB/C++
         description: ''
