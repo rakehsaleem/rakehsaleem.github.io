@@ -118,11 +118,11 @@ skills:
       - name: Machine Learning
         description: ''
         percent: 85
-        icon: cogs
+        icon: fa-robot
       - name: Predictive Modeling
         description: ''
         percent: 85
-        icon: chart-line
+        icon: fa-bar-chart
       - name: Statistical Analysis
         description: ''
         percent: 85
@@ -143,15 +143,15 @@ skills:
       - name: Object Detection
         description: ''
         percent: 90
-        icon: crosshairs
+        icon: fa-crosshairs
       - name: Image Processing
         description: ''
         percent: 70
-        icon: image
+        icon: fa-file-image-o
       - name: Eye Tracking
         description: ''
         percent: 70
-        icon: person-dots-from-line
+        icon: fa-eye-slash
       - name: User Study Design
         description: ''
         percent: 70
@@ -159,7 +159,7 @@ skills:
       - name: Drone Piloting
         description: ''
         percent: 70
-        icon: drone   
+        icon: fa-paper-plane-o    
   - name: Hardware & IoT Systems
     color: '#eeac02'
     color_border: '#f0bf23'
@@ -176,11 +176,11 @@ skills:
       - name: Embedded Programming
         description: ''
         percent: 70
-        icon: code-branch
+        icon: fa-code
       - name: PCB/Circuit Designing
         description: ''
         percent: 70
-        icon: square-terminal
+        icon: fa-cogs
       - name: Sensor & Data Fusion
         description: ''
         percent: 70
@@ -193,7 +193,7 @@ skills:
       - name: MATLAB/C++
         description: ''
         percent: 80
-        icon: fa-code
+        icon: fa-file-code-o
       - name: Structural Assessment
         description: ''
         percent: 90
@@ -205,15 +205,15 @@ skills:
       - name: Building Diagnostics
         description: ''
         percent: 70
-        icon: house-chimney-medical
+        icon: fa-building
       - name: Data Structures
         description: ''
         percent: 70
-        icon: hard-drive
+        icon: fa-sitemap
       - name: Visual Studio
         description: ''
         percent: 70
-        icon: laptop-code
+        icon: fa-laptop
       - name: Altium Designer
         description: ''
         percent: 70
