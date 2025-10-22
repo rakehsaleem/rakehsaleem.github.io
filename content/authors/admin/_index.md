@@ -85,7 +85,7 @@ work:
     date_start: 2020-08-24
     date_end: 2024-12-22
     summary: |2-
-      Leading research on multimodal AI systems.
+      Leading research utilizing AI/ML, UAV-based platforms, and human-centric data (Eye Tracking) to develop and deploy reliable, intelligence-driven systems for faster and more accurate infrastructure inspection.
 
   - position: Graduate Researcher 
     company_name: Smart Infrastructure and Technology Lab
@@ -94,7 +94,7 @@ work:
     date_start: 2018-09-01
     date_end: 2020-06-22
     summary: |2-
-      Leading research on multimodal AI systems.
+      Developed and deployed Deep CNN and Computer Vision systems for site automation. Core deliverables included a UAV-based platform for high-accuracy asset diagnostics and a real-time monitoring system for construction safety and risk compliance.
         
   - position: Development Engineer
     company_name: Smart Grid & Power Lab
@@ -103,7 +103,7 @@ work:
     date_start: 2018-01-01
     date_end: 2018-05-31
     summary: |
-      Worked on the development of wireless sensor system for fault identification and localization.
+      Designed and prototyped a complete end-to-end IoT solution for power transmission lines, integrating custom non-contact hardware with a cloud-based dashboard for real-time fault identification and data analysis.
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
