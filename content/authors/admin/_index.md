@@ -85,7 +85,7 @@ work:
     date_start: 2020-08-24
     date_end: 2024-12-22
     summary: |2-
-      Leading research utilizing AI/ML, UAV-based platforms, and human-centric data (Eye Tracking) to develop and deploy reliable, intelligence-driven systems for faster and more accurate infrastructure inspection.
+      Led research utilizing AI/ML, UAV-based platforms, and human-centric data (Eye Tracking) to develop and deploy reliable, intelligence-driven systems for faster and more accurate infrastructure inspection.
 
   - position: Graduate Researcher 
     company_name: Smart Infrastructure and Technology Lab
