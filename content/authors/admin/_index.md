@@ -121,7 +121,7 @@ skills:
       - name: Predictive Modeling
         description: ''
         percent: 85
-        icon: bar-chart
+        icon: chart-bar
       - name: Statistical Analysis
         description: ''
         percent: 85
@@ -173,7 +173,7 @@ skills:
       - name: Embedded Programming
         description: ''
         percent: 70
-        icon: fa-code
+        icon: code-bracket
       - name: PCB/Circuit Designing
         description: ''
         percent: 70
@@ -189,7 +189,7 @@ skills:
       - name: MATLAB/C++
         description: ''
         percent: 80
-        icon: fa-file-code-o
+        icon: code-bracket
       - name: Structural Assessment
         description: ''
         percent: 90
