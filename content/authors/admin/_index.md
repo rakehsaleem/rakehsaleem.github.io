@@ -109,7 +109,7 @@ work:
 # Add your own SVG icons to `assets/media/icons/`
 skills:
   - name: AI & Data Science
-    icon: chart-bar
+    icon: fa-brain
     items:
       - name: Deep Learning (PyTorch/TensorFlow)
         description: ''
@@ -131,6 +131,93 @@ skills:
         description: ''
         percent: 85
         icon: cloud
+- name: Vision Systems & Human Interaction
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    icon: fa-eye
+    items:
+      - name: Computer Vision
+        icon: camera
+        description: ''
+        percent: 80
+      - name: Object Detection
+        description: ''
+        percent: 90
+        icon: crosshairs
+      - name: Image Processing
+        description: ''
+        percent: 70
+        icon: image
+      - name: Eye Tracking
+        description: ''
+        percent: 70
+        icon: person-dots-from-line
+      - name: User Study Design
+        description: ''
+        percent: 70
+        icon: user-group
+      - name: Drone Piloting
+        description: ''
+        percent: 70
+        icon: drone
+  - name: IoT & Hardware Development
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    icon: fa-plug
+    items:
+      - name: IoT
+        description: ''
+        percent: 80
+        icon: wifi
+      - name: Hardware Prototyping
+        description: ''
+        percent: 90
+        icon: microchip
+      - name: Embedded Programming
+        description: ''
+        percent: 70
+        icon: code-branch
+      - name: PCB/Circuit Designing
+        description: ''
+        percent: 70
+        icon: square-terminal
+      - name: Sensor & Data Fusion
+        description: ''
+        percent: 70
+        icon: waves-square
+  - name: Computational Engineering & Tools
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    icon: fa-gear
+    items:
+      - name: MATLAB/C++
+        description: ''
+        percent: 80
+        icon: fa-code
+      - name: Structural Assessment
+        description: ''
+        percent: 90
+        icon: fa-ruler-triangle
+      - name: Numerical Simulation
+        description: ''
+        percent: 70
+        icon: calculator
+      - name: Building Diagnostics
+        description: ''
+        percent: 70
+        icon: house-chimney-medical
+      - name: Data Structures
+        description: ''
+        percent: 70
+        icon: hard-drive
+      - name: Visual Studio
+        description: ''
+        percent: 70
+        icon: laptop-code
+      - name: Altium Designer
+        description: ''
+        percent: 70
+        icon: drafting-compass
   - name: Computer Vision and Automation
     color: '#eeac02'
     color_border: '#f0bf23'
