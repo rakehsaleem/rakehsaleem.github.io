@@ -134,7 +134,7 @@ skills:
         description: ''
         percent: 85
         icon: puzzle-piece
-  - name: Computer Vision and Automation
+  - name: Computer Vision
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
