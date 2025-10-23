@@ -32,7 +32,7 @@ hugoblox:
 
 links:
   - type: pdf
-    url: [https://www.mdpi.com/2071-1050/17/15/6930]
+    url: ""
   - type: code
    url: ""
   - type: dataset
