@@ -6,7 +6,7 @@ title: Rakeh Saleem
 name_pronunciation: ''
 
 # Full name (for SEO)
-first_name: Rakeh
+first_name: Muhammad Rakeh
 last_name: Saleem
 
 # Pronouns (optional)
