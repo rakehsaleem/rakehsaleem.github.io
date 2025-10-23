@@ -23,7 +23,9 @@ abstract: Sustainability has emerged as a prominent concern globally, extending 
 
 
 tags:
-- Source Themes
+- sustainability
+- engineering education
+- architectural engineering
 featured: true
 
 hugoblox:
@@ -31,21 +33,9 @@ hugoblox:
     arxiv: 1512.04133v1
 
 links:
-  - type: pdf
-    url: https://www.mdpi.com/2071-1050/17/15/6930
-  - type: code
-    url: ""
-  - type: dataset
-    url: ""
-  - type: poster
-    url: ""
-  - type: project
-    url: ""
-  - type: slides
-    url: https://www.slideshare.net/
   - type: source
-    url: ""
-  - type: video
+    url: https://www.mdpi.com/2071-1050/17/15/6930
+  - type: project
     url: ""
 
 # Featured image
