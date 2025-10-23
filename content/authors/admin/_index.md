@@ -114,14 +114,14 @@ work:
 skills:
   - name: AI & Data Science
     items:
-      - name: Deep Learning (PyTorch/TensorFlow)
+      - name: ML/DL
         description: ''
         percent: 100
-        icon: brands/python
-      - name: Machine Learning
+        icon: robot
+      - name: TensorFlow/Pytorch
         description: ''
         percent: 85
-        icon: robot
+        icon: brands/python
       - name: Predictive Modeling
         description: ''
         percent: 85
@@ -157,11 +157,7 @@ skills:
       - name: User Study Design
         description: ''
         percent: 70
-        icon: user-group
-      - name: Drone Piloting
-        description: ''
-        percent: 70
-        icon: fa-paper-plane-o    
+        icon: user-group  
   - name: Hardware & IoT Systems
     color: '#eeac02'
     color_border: '#f0bf23'
