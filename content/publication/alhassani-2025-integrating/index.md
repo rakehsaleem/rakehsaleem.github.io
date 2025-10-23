@@ -21,8 +21,6 @@ publication_short: ""
 
 abstract: Sustainability has emerged as a prominent concern globally, extending its influence into various domains, including education. It is recognized as of utmost importance to address global environmental challenges. However, there is a critical gap in the perception of innovative teaching strategies, i.e., interdisciplinary collaboration, experiential learning, and targeted approaches, to improve sustainability literacy and its applications. This review analyzes existing environmental and sustainability education frameworks and approaches to determine desired learning outcomes and challenges associated with sustainability education. Also, it explores and identifies concepts, theories, and assumptions found within the literature review, promoting sustainability integration within engineering education. The review was conducted to facilitate the development and improvement of sustainability education within the Architectural Engineering discipline, a field known for emphasizing educational innovation and technical excellence. By synthesizing existing ideas related to sustainability and sustainable development, this work aims to guide curriculum designers and educators in fostering sustainability competencies among engineering students within the built environment.
 
-# Summary. An optional shortened abstract.
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 
 tags:
 - Source Themes
