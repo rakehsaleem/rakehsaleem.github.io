@@ -82,14 +82,14 @@ education:
     summary: |
       **Thesis:** FPGA-based Digital Signal Processing of Under-sea Range Finder
 work:
-  - position: Independent Researcher 
-    company_name: 
+  - position: Solutions Consultant 
+    company_name: Research & Consulting
     company_url: ''
     company_logo: ''
     date_start: 2025-01-01
     date_end: 
     summary: |2-
-      working on open-source projects and learning new tools and skills (Large language models and Cloud Platforms)
+      Actively pursuing independent research and projects focused on developing and deploying open-source AI/ML solutions for infrastructure analytics, ensuring the continuous application of expertise and technical leadership.    
   - position: Graduate Researcher 
     company_name: Built Environment Analytics and Modeling Lab
     company_url: ''
