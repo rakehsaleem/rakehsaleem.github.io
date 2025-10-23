@@ -173,7 +173,7 @@ skills:
       - name: PCB/Circuit Designing
         description: ''
         percent: 70
-        icon: microchip
+        icon: cpu-chip
       - name: Hardware prototyping
         description: ''
         percent: 90
