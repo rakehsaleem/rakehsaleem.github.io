@@ -1,23 +1,13 @@
 ---
-title: Multimetric event-driven system for long-term wireless sensor operation for
-  SHM applications
+title: 'Multimetric event-driven system for long-term wireless sensor operation for
+  SHM applications'
 authors:
 - Muhammad Zohaib Sarwar
 - admin
 - Jong-Woong Park
 - Do-Soo Moon
 - Dong Joo Kim
-date: '2020-01-01'
-publishDate: '2025-10-23T01:18:49.277947Z'
-publication_types:
-- article-journal
-publication: '*IEEE Sensors Journal*'
-
-title: 'From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection'
-authors:
-- admin
-
-date: '2024-10-30'
+date: '2020-02-03'
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2025-10-23T01:18:49.361652Z'
@@ -26,23 +16,16 @@ publishDate: '2025-10-23T01:18:49.361652Z'
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
 publication_types:
-- thesis
+- article-journal
 
 # Publication name and optional abbreviated publication name.
-publication: '*PennState University*'
+publication: '*IEEE Sensors Journal*'
 publication_short: ""
 
 tags:
-- eye tracking
-- saliency maps
-- fixation maps
-- computer vision
-- visual attention
-- damage assessment
-- building inspection
-- artificial intelligence
-- disaster reconnaissance
-- human-building interaction
+- sensor systems
+- structural monitoring
+- event-detection system
 
 featured: false
 
@@ -52,7 +35,7 @@ hugoblox:
 
 links:
   - type: source
-    url: https://etda.libraries.psu.edu/catalog/26790mqs6680
+    url: https://ieeexplore.ieee.org/abstract/document/8979367
   - type: project
     url: ""
 
