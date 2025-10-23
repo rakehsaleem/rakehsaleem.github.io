@@ -3,7 +3,7 @@ title: Increasing energy efficiency with channel condition based activation for 
   cognitive radio mobile network
 authors:
 - M Zohaib Sarwar
-- M Rakeh Saleem
+- admin
 - M Moeez Haider
 - Junaid Imtiaz
 date: '2017-01-01'
