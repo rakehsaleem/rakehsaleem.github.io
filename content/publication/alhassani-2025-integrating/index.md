@@ -30,7 +30,7 @@ featured: true
 
 hugoblox:
   ids:
-    arxiv: 1512.04133v1
+    arxiv: ''
 
 links:
   - type: source
