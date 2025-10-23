@@ -117,7 +117,7 @@ skills:
       - name: Machine Learning
         description: ''
         percent: 100
-        icon: robot
+        icon: hero/arrow-path
       - name: TensorFlow/Pytorch
         description: ''
         percent: 85
@@ -141,15 +141,15 @@ skills:
       - name: Eye Tracking
         description: ''
         percent: 70
-        icon: fa-eye-slash
+        icon: hero/cursor-arrow-rays
       - name: Image Processing
         description: ''
         percent: 70
-        icon: fa-file-image-o
+        icon: hero/photo
       - name: Object Detection
         description: ''
         percent: 90
-        icon: fa-crosshairs
+        icon: hero/magnifying-glass
       - name: Computer Vision
         description: ''
         percent: 80
