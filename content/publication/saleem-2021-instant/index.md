@@ -2,7 +2,7 @@
 title: Instant bridge visual inspection using an unmanned aerial vehicle by image
   capturing and geo-tagging system and deep convolutional neural network
 authors:
-- Muhammad Rakeh Saleem
+- admin
 - Jong-Woong Park
 - Jin-Hwan Lee
 - Hyung-Jo Jung
