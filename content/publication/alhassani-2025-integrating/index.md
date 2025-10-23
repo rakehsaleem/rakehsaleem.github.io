@@ -51,7 +51,7 @@ links:
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: 'Image credit: [**Unsplash**](https://www.mdpi.com/sustainability/sustainability-17-06930/article_deploy/html/images/sustainability-17-06930-g001.png)'
+  caption: 'Image credit: [**Unsplash**]()'
   focal_point: ""
   preview_only: false
 
