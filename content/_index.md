@@ -34,12 +34,11 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        My research interests focus on
-        * Use this area to speak to your mission.
-        * I'm a research scientist in the Moonshot team at DeepMind.
-        * I blog about machine learning, deep learning, and moonshots.
+        My research interests include computer vision, AI-driven predictive modeling, wireless sensors, structural health monitoring, and UAV-based inspection.
 
-        Please reach out to collaborate 😃
+        If you need someone who can not only tackle complex challenges but also translate those solutions into impactful results across teams and industries, let’s connect. I’m excited to bring my interdisciplinary expertise, innovative mindset, and hands-on experience to your most demanding projects.
+    
+        Please [reach out](mailto:rakeh.muhammad@gmail.com) to collaborate 😃
     design:
       columns: '1'
   - block: collection
