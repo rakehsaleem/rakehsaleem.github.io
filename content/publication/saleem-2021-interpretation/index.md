@@ -1,22 +1,11 @@
 ---
-title: Interpretation of historic structure for non-invasive assessment using eye
-  tracking
+title: 'Interpretation of historic structure for non-invasive assessment using eye
+  tracking'
 authors:
 - admin
 - A Straus
 - R Napolitano
-date: '2021-01-01'
-publishDate: '2025-10-23T01:18:49.370161Z'
-publication_types:
-- article-journal
-publication: '*The International Archives of the Photogrammetry, Remote Sensing and
-  Spatial Information Sciences*'
-
-title: 'From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection'
-authors:
-- admin
-
-date: '2024-10-30'
+date: '2021-08-28'
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2025-10-23T01:18:49.361652Z'
@@ -25,23 +14,20 @@ publishDate: '2025-10-23T01:18:49.361652Z'
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
 publication_types:
-- thesis
+- article-journal
 
 # Publication name and optional abbreviated publication name.
-publication: '*PennState University*'
+publication: '*The International Archives of the Photogrammetry, Remote Sensing and
+  Spatial Information Sciences*'
 publication_short: ""
 
 tags:
+- fixation
+- diagnostics
 - eye tracking
-- saliency maps
-- fixation maps
-- computer vision
-- visual attention
 - damage assessment
+- historic structures
 - building inspection
-- artificial intelligence
-- disaster reconnaissance
-- human-building interaction
 
 featured: false
 
@@ -51,7 +37,7 @@ hugoblox:
 
 links:
   - type: source
-    url: https://etda.libraries.psu.edu/catalog/26790mqs6680
+    url: https://isprs-archives.copernicus.org/articles/XLVI-M-1-2021/653/2021/isprs-archives-XLVI-M-1-2021-653-2021.html
   - type: project
     url: ""
 
