@@ -169,11 +169,11 @@ skills:
       - name: Sensor & Data Fusion
         description: ''
         percent: 70
-        icon: waves-square
+        icon: hero/arrows-up-down
       - name: PCB/Circuit Designing
         description: ''
         percent: 70
-        icon: fa-cogs
+        icon: microchip
       - name: Hardware prototyping
         description: ''
         percent: 90
