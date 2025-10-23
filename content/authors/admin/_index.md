@@ -193,15 +193,15 @@ skills:
       - name: Visual Studio
         description: ''
         percent: 70
-        icon: fa-laptop
+        icon: hero/computer-desktop
       - name: Data Structures
         description: ''
         percent: 70
-        icon: fa-sitemap
+        icon: hero/circle-stack
       - name: Altium Designer
         description: ''
         percent: 70
-        icon: drafting-compass
+        icon: hero/pencil-square
       - name: Numerical Simulation
         description: ''
         percent: 70
