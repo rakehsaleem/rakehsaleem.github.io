@@ -114,7 +114,7 @@ work:
 skills:
   - name: AI & Data Science
     items:
-      - name: Machine Learning (ML/DL)
+      - name: Machine Learning
         description: ''
         percent: 100
         icon: robot
