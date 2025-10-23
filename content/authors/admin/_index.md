@@ -40,12 +40,16 @@ profiles:
   #  url: https://twitter.com/AlexAIResearch
   - icon: brands/github
     url: https://github.com/rakehsaleem
+    label: GitHub
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/rakeh-saleem/
+    label: LinkedIn
   - icon: academicons/google-scholar
     url: https://scholar.google.com/citations?user=sNDGyTYAAAAJ&hl=en
+    label: Google Scholar
   - icon: academicons/orcid
     url: https://orcid.org/0000-0002-6362-9872
+    label: ORCID
 
 interests:
   - Eye Tracking
