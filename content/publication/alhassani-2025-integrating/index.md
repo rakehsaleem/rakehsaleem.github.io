@@ -26,7 +26,7 @@ tags:
 - sustainability
 - engineering education
 - architectural engineering
-featured: true
+featured: false
 
 hugoblox:
   ids:
