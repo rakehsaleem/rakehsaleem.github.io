@@ -2,7 +2,7 @@
 title: 'Evaluating human expert knowledge in damage assessment using eye tracking:
   A disaster case study'
 authors:
-- Muhammad Rakeh Saleem
+- admin
 - Robert Mayne
 - Rebecca Napolitano
 date: '2024-01-01'
