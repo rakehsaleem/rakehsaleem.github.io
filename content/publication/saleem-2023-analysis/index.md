@@ -1,21 +1,12 @@
 ---
-title: Analysis of gaze patterns during facade inspection to understand inspector
-  sense-making processes
+title: 'Analysis of gaze patterns during facade inspection to understand inspector
+  sense-making processes'
 authors:
 - admin
 - Robert Mayne
 - Rebecca Napolitano
+- 
 date: '2023-01-01'
-publishDate: '2025-10-23T01:18:49.389161Z'
-publication_types:
-- article-journal
-publication: '*Scientific reports*'
-
-title: 'From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection'
-authors:
-- admin
-
-date: '2024-10-30'
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2025-10-23T01:18:49.361652Z'
@@ -24,22 +15,17 @@ publishDate: '2025-10-23T01:18:49.361652Z'
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
 publication_types:
-- thesis
+- article-journal
 
 # Publication name and optional abbreviated publication name.
-publication: '*PennState University*'
+publication: '*Scientific reports*'
 publication_short: ""
 
 tags:
 - eye tracking
-- saliency maps
-- fixation maps
-- computer vision
 - visual attention
 - damage assessment
 - building inspection
-- artificial intelligence
-- disaster reconnaissance
 - human-building interaction
 
 featured: false
@@ -50,7 +36,7 @@ hugoblox:
 
 links:
   - type: source
-    url: https://etda.libraries.psu.edu/catalog/26790mqs6680
+    url: https://www.nature.com/articles/s41598-023-29950-w
   - type: project
     url: ""
 
