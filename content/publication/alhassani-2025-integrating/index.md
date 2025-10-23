@@ -17,10 +17,6 @@ publication_types:
 publication: '*Sustainability*'
 
 
-
-
-publication_types: ["article-journal"]
-
 # Publication name and optional abbreviated publication name.
 publication: "*Journal of Source Themes, 1*(1)"
 publication_short: ""
