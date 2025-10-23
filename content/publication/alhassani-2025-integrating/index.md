@@ -5,19 +5,20 @@ authors:
 - admin
 - John Messner
 date: '2025-01-01'
-publishDate: '2025-10-23T01:18:49.439655Z'
-publication_types:
-- article-journal
-publication: '*Sustainability*'
-
-date: "2015-09-01T00:00:00Z"
 
 # Schedule page publish date (NOT publication's date).
-publishDate: "2017-01-01T00:00:00Z"
+publishDate: '2025-10-23T01:18:49.439655Z'
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
+publication_types:
+- article-journal
+publication: '*Sustainability*'
+
+
+
+
 publication_types: ["article-journal"]
 
 # Publication name and optional abbreviated publication name.
