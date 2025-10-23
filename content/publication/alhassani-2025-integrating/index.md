@@ -32,9 +32,9 @@ hugoblox:
 
 links:
   - type: pdf
-    url: http://arxiv.org/pdf/1512.04133v1
+    url: https://www.mdpi.com/2071-1050/17/15/6930
   - type: code
-    url: https://github.com/HugoBlox/hugo-blox-builder
+    url: ""
   - type: dataset
     url: ""
   - type: poster
