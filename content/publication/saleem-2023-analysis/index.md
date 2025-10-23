@@ -2,7 +2,7 @@
 title: Analysis of gaze patterns during facade inspection to understand inspector
   sense-making processes
 authors:
-- Muhammad Rakeh Saleem
+- admin
 - Robert Mayne
 - Rebecca Napolitano
 date: '2023-01-01'
