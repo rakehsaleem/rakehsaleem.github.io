@@ -1,5 +1,5 @@
 ---
-title: Eye tracking metrings in perceptiopn and visual attention research for human-infrastructure
+title: Eye tracking metrics in perception and visual attention research for human-infrastructure
   interaction
 authors:
 - Muhammad Rakeh Saleem
