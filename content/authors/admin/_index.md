@@ -117,7 +117,7 @@ skills:
       - name: Machine Learning
         description: ''
         percent: 100
-        icon: hero/robot
+        icon: hero/arrow-path
       - name: TensorFlow/Pytorch
         description: ''
         percent: 85
@@ -141,7 +141,7 @@ skills:
       - name: Eye Tracking
         description: ''
         percent: 70
-        icon: hero/user-alt
+        icon: hero/cursor-arrow-rays
       - name: Image Processing
         description: ''
         percent: 70
@@ -173,7 +173,7 @@ skills:
       - name: PCB/Circuit Designing
         description: ''
         percent: 70
-        icon: hero/microchip
+        icon: microchip
       - name: Hardware prototyping
         description: ''
         percent: 90
