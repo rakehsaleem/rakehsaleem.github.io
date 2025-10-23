@@ -3,7 +3,7 @@ title: Utilizing safety rule correlation for mobile scaffolds monitoring leverag
   deep convolution neural networks
 authors:
 - Numan Khan
-- Muhammad Rakeh Saleem
+- admin
 - Doyeop Lee
 - Man-Woo Park
 - Chansik Park
