@@ -23,7 +23,6 @@ publication: '*Structural Health Monitoring*'
 publication_short: ""
 
 tags:
-- automation
 - deep learning
 - damage detection
 - visual inspection
