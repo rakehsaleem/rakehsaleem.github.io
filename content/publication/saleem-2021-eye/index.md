@@ -2,7 +2,7 @@
 title: Eye tracking metrics in perception and visual attention research for human-infrastructure
   interaction
 authors:
-- Muhammad Rakeh Saleem
+- admin
 - Rebecca Napolitano
 date: '2021-01-01'
 publishDate: '2025-10-23T01:18:49.379161Z'
