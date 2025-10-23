@@ -213,12 +213,13 @@ languages:
   - name: English
     percent: 100
 
+<!-- 
 # Awards.
 #   Add/remove as many awards below as you like.
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
-  - title: Best Paper Award
+  - title: Best Poster Award
     url: https://neurips.cc/
     date: '2022-12-01'
     awarder: NeurIPS
@@ -239,6 +240,7 @@ awards:
     icon: hero/academic-cap
     summary: |
       Recognized for contributions to scaling laws in deep learning.
+-->
 ---
 Rakeh Saleem is a seasoned Research Scientist and Engineer working at a highly interdisciplinary nexus of the AEC industry and advanced data science. With over six years of experience, he possesses a unique and powerful blend of domain expertise in civil infrastructure and automation combined with advanced skills in data science, AI, and ML/DL.
 
