@@ -32,7 +32,7 @@ hugoblox:
 
 links:
   - type: pdf
-    url: ""
+    url: []
   - type: code
    url: ""
   - type: dataset
