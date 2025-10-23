@@ -2,7 +2,7 @@
 title: Interpretation of historic structure for non-invasive assessment using eye
   tracking
 authors:
-- MR Saleem
+- admin
 - A Straus
 - R Napolitano
 date: '2021-01-01'
