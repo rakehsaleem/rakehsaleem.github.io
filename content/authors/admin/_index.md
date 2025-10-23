@@ -114,7 +114,7 @@ work:
 skills:
   - name: AI & Data Science
     items:
-      - name: ML/DL
+      - name: Machine Learning (ML/DL)
         description: ''
         percent: 100
         icon: robot
@@ -138,22 +138,22 @@ skills:
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Computer Vision
-        description: ''
-        percent: 80
-        icon: camera
-      - name: Object Detection
-        description: ''
-        percent: 90
-        icon: fa-crosshairs
-      - name: Image Processing
-        description: ''
-        percent: 70
-        icon: fa-file-image-o
       - name: Eye Tracking
         description: ''
         percent: 70
         icon: fa-eye-slash
+      - name: Image Processing
+        description: ''
+        percent: 70
+        icon: fa-file-image-o
+      - name: Object Detection
+        description: ''
+        percent: 90
+        icon: fa-crosshairs
+      - name: Computer Vision
+        description: ''
+        percent: 80
+        icon: camera
       - name: User Study Design
         description: ''
         percent: 70
@@ -166,6 +166,14 @@ skills:
         description: ''
         percent: 80
         icon: wifi
+      - name: Sensor & Data Fusion
+        description: ''
+        percent: 70
+        icon: waves-square
+      - name: PCB/Circuit Designing
+        description: ''
+        percent: 70
+        icon: fa-cogs
       - name: Hardware prototyping
         description: ''
         percent: 90
@@ -174,15 +182,7 @@ skills:
         description: ''
         percent: 70
         icon: code-bracket
-      - name: PCB/Circuit Designing
-        description: ''
-        percent: 70
-        icon: fa-cogs
-      - name: Sensor & Data Fusion
-        description: ''
-        percent: 70
-        icon: waves-square
-  - name: Computational Engineering & Diagnostics
+  - name: Computational Engineering
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
@@ -190,23 +190,23 @@ skills:
         description: ''
         percent: 80
         icon: code-bracket
-      - name: Numerical Simulation
-        description: ''
-        percent: 70
-        icon: calculator
-      - name: Data Structures
-        description: ''
-        percent: 70
-        icon: fa-sitemap
       - name: Visual Studio
         description: ''
         percent: 70
         icon: fa-laptop
+      - name: Data Structures
+        description: ''
+        percent: 70
+        icon: fa-sitemap
       - name: Altium Designer
         description: ''
         percent: 70
         icon: drafting-compass
-                
+      - name: Numerical Simulation
+        description: ''
+        percent: 70
+        icon: calculator
+                        
 languages:
   - name: Urdu
     percent: 100
