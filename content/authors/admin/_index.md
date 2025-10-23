@@ -208,9 +208,9 @@ skills:
         icon: calculator
                         
 languages:
-  - name: Urdu
-    percent: 100
   - name: English
+    percent: 100
+  - name: Urdu
     percent: 100
 
 # Awards.
@@ -218,19 +218,19 @@ languages:
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
   - title: Travel Award
-    url: 
+    url: https://www.winterschool.ethz.ch/
     date: '2022-12-01'
     awarder: ETH Zürich
     icon: hero/currency-dollar
     summary: |
       Awarded to attend the eye tracking winter school and give an invited talk.
   - title: Academic Excellence Award
-    url: 
+    url: https://www.emi-conference.org/
     date: '2022-08-15'
     awarder: Penn State University
     icon: hero/currency-dollar
     summary: |
-
+      Awarded to attend the Engineering Mechanics Institute (EMI) conference.
 ---
 Rakeh Saleem is a seasoned Research Scientist and Engineer working at a highly interdisciplinary nexus of the AEC industry and advanced data science. With over six years of experience, he possesses a unique and powerful blend of domain expertise in civil infrastructure and automation combined with advanced skills in data science, AI, and ML/DL.
 
