@@ -3,7 +3,7 @@ title: Multimetric event-driven system for long-term wireless sensor operation f
   SHM applications
 authors:
 - Muhammad Zohaib Sarwar
-- Muhammad Rakeh Saleem
+- admin
 - Jong-Woong Park
 - Do-Soo Moon
 - Dong Joo Kim
