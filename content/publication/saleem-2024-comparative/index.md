@@ -1,20 +1,11 @@
 ---
-title: Comparative analysis of saliency map algorithms in capturing visual priorities
-  for building inspections
+title: 'Comparative analysis of saliency map algorithms in capturing visual priorities
+  for building inspections'
 authors:
 - admin
 - Rebecca Napolitano
-date: '2024-01-01'
-publishDate: '2025-10-23T01:18:49.414671Z'
-publication_types:
-- article-journal
-publication: '*Journal of Building Engineering*'
-
-title: 'From Gaze to Insight: Leveraging Eye Tracking for Structural Inspection'
-authors:
-- admin
-
-date: '2024-10-30'
+  
+date: '2024-11-15'
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2025-10-23T01:18:49.361652Z'
@@ -23,23 +14,18 @@ publishDate: '2025-10-23T01:18:49.361652Z'
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
 publication_types:
-- thesis
+- article-journal
 
 # Publication name and optional abbreviated publication name.
-publication: '*PennState University*'
+publication: '*Journal of Building Engineering*'
 publication_short: ""
 
 tags:
 - eye tracking
 - saliency maps
 - fixation maps
-- computer vision
 - visual attention
-- damage assessment
 - building inspection
-- artificial intelligence
-- disaster reconnaissance
-- human-building interaction
 
 featured: false
 
@@ -49,7 +35,7 @@ hugoblox:
 
 links:
   - type: source
-    url: https://etda.libraries.psu.edu/catalog/26790mqs6680
+    url: https://www.sciencedirect.com/science/article/pii/S2352710224022460
   - type: project
     url: ""
 
