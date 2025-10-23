@@ -22,7 +22,11 @@ publication: '*Buildings*'
 publication_short: ""
 
 tags:
-- fixations, eye tracking, damage assessment, visual features, saliency maps
+- fixations
+- eye tracking
+- saliency maps
+- visual features
+- damage assessment
 featured: true
 
 hugoblox:
