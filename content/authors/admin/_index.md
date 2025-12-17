@@ -82,6 +82,15 @@ education:
     summary: |
       **Thesis:** FPGA-based Digital Signal Processing of Under-sea Range Finder
 work:
+  - position: Data Scientist 
+    company_name: GA Telesis
+    company_url: ''
+    company_logo: ''
+    date_start: 2025-15-12
+    date_end: 
+    summary: |2-
+      Develop and deploy machine learning and neural network models using data-driven approaches and perform model optimization.
+
   - position: Solutions Consultant 
     company_name: Research & Consulting
     company_url: ''
@@ -89,7 +98,8 @@ work:
     date_start: 2025-01-01
     date_end: 
     summary: |2-
-      Actively pursuing independent research and projects focused on developing and deploying open-source AI/ML solutions for infrastructure analytics, ensuring the continuous application of expertise and technical leadership.    
+      Actively pursuing independent research and projects focused on developing and deploying open-source AI/ML solutions for infrastructure analytics, ensuring the continuous application of expertise and technical leadership.
+      
   - position: Graduate Researcher 
     company_name: Built Environment Analytics and Modeling Lab
     company_url: ''
