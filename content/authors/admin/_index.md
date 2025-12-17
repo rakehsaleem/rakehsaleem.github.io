@@ -86,8 +86,8 @@ work:
     company_name: Research & Consulting
     company_url: ''
     company_logo: ''
-    date_start: 2025-01-01
-    date_end: 2025-31-11
+    date_start: 2025-12-15
+    date_end: Present
     summary: |2-
       Actively pursuing independent research and projects focused on developing and deploying open-source AI/ML solutions for infrastructure analytics, ensuring the continuous application of expertise and technical leadership.
     
