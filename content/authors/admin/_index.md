@@ -96,7 +96,7 @@ work:
     company_url: ''
     company_logo: ''
     date_start: 2025-01-01
-    date_end: 2025-31-11
+    date_end: 2025-11-30
     summary: |2-
       Actively pursuing independent research and projects focused on developing and deploying open-source AI/ML solutions for infrastructure analytics, ensuring the continuous application of expertise and technical leadership.
       
