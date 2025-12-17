@@ -23,12 +23,12 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Research Scientist
+role: Data Scientist
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  #- name: Meta AI
-  #  url: https://ai.meta.com/
+  - name: GA Telesis
+    url: http://www.gatelesis.com/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
