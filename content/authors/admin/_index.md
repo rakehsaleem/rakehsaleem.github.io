@@ -28,7 +28,7 @@ role: Data Scientist
 # Organizations/Affiliations to display in Biography blox
 organizations:
   - name: GA Telesis
-    url: http://www.gatelesis.com/
+    url: https://www.gatelesis.com/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
