@@ -89,7 +89,7 @@ work:
     date_start: 2025-12-15
     date_end: ''
     summary: |2-
-      Actively pursuing independent research and projects focused on developing and deploying open-source AI/ML solutions for infrastructure analytics, ensuring the continuous application of expertise and technical leadership.
+      Leading the development and deployment of advanced AI and machine learning solutions to transform raw data into actionable intelligence, driving the organization’s transition toward a data-driven culture and optimized operational decision-making.
     
   - position: Solutions Consultant 
     company_name: Research & Consulting
