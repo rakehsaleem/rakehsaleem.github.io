@@ -84,7 +84,7 @@ education:
 work:
   - position: Data Scientist 
     company_name: GA Telesis
-    company_url: ''
+    company_url: 'https://www.gatelesis.com/'
     company_logo: ''
     date_start: 2025-12-15
     date_end: ''
