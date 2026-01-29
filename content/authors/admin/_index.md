@@ -52,12 +52,12 @@ profiles:
     label: ORCID
 
 interests:
-  - Eye Tracking
+  - Structural Health Monitoring
   - Computer Vision
   - Machine Learning
+  - Eye Tracking
   - Wireless Smart Sensors
-  - Structural Health Monitoring
-
+    
 education:
   - area: PhD in Architectural Engineering
     institution: Pennsylvania State University
