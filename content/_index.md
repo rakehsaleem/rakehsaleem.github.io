@@ -17,7 +17,7 @@ sections:
       # Show a call-to-action button under your biography? (optional)
       button:
         text: Download CV
-        url: https://github.com/rakehsaleem/rakehsaleem.github.io/blob/main/uploads/resume.pdf
+        url: uploads/resume.pdf
       headings:
         about: ''
         education: ''
