@@ -1,10 +1,10 @@
-# 🔬 Rakeh Saleem's Personal Website and Research Portfolio
+# Rakeh Saleem's Personal Website and Research Portfolio
 
 This repository hosts the source code for my professional website and academic portfolio, currently deployed via GitHub Pages at:
 
-**➡️ [https://rakehsaleem.github.io/](https://rakehsaleem.github.io/)**
+**[https://rakehsaleem.github.io/](https://rakehsaleem.github.io/)**
 
-## ✨ Project Summary
+## Project Summary
 This site serves as a comprehensive digital CV and portfolio, showcasing expertise at the intersection of **AI, Computer Vision, and Civil Infrastructure Engineering**.
 
 The portfolio highlights:
@@ -14,7 +14,7 @@ The portfolio highlights:
 
 ---
 
-## 💻 Technical Details
+## Technical Details
 
 The website is built using the following technologies:
 
@@ -36,5 +36,5 @@ hugo server
 ```
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 This site was initialized using the fantastic Academic CV Template from [Hugo Blox](https://github.com/HugoBlox/theme-academic-cv).
