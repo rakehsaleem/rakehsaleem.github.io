@@ -52,11 +52,11 @@ profiles:
     label: ORCID
 
 interests:
-  - Structural Health Monitoring
+  - Time Series Analysis
+  - Document AI
   - Computer Vision
   - Machine Learning
-  - Eye Tracking
-  - Wireless Smart Sensors
+  - Structural Health Monitoring
     
 education:
   - area: PhD in Architectural Engineering
