@@ -1,0 +1,25 @@
+/* 1. Make the main body and wrapper transparent */
+body, 
+#main-wrapper, 
+.page-wrapper {
+  background-color: transparent !important;
+}
+
+/* 2. Make the individual homepage widgets (sections) transparent */
+.home-section {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* 3. Adjust for Dark Mode if you use it */
+.dark-mode .home-section {
+  background-color: transparent !important;
+}
+
+/* 4. Fix potential z-index issues (Ensure the canvas stays in back) */
+.vanta-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: -1 !important; /* Forces it behind your text */
+}
