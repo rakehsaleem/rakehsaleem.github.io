@@ -23,7 +23,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Data Scientist
+role: Research Scientist | Computer vision & Machine Learning
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
