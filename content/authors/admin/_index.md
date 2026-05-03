@@ -255,10 +255,11 @@ I architect AI systems that bridge the gap between high-dimensional sensor data 
 With a PhD and 5+ years of experience across the full ML lifecycle—from fundamental research in Computer Vision and Transformers to building automated MLOps pipelines—I specialize in "Multimodal AI & Sensor Fusion." My expertise lies in bridging the gap between theoretical deep learning and real-world deployment on cloud (AWS) and edge (IoT/UAV) platforms.
 
 𝐂𝐨𝐫𝐞 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐄𝐱𝐩𝐞𝐫𝐭𝐢𝐬𝐞:
-• Deep Learning & GenAI: Architecture design using PyTorch/TensorFlow, Transformers, CNNs, and Time-Series forecasting (LSTM/XGBoost).
-• MLOps & Infrastructure: End-to-end model ownership using AWS SageMaker, MLflow, and Snowflake to build robust, automated data pipelines.
-• Computer Vision: Document AI (OCR), object detection, and high-resolution image analysis optimized for real-time inference.
-• Edge Intelligence: Deploying optimized models for autonomous systems, robotics, and UAV-based inspection.
+
+- Deep Learning & GenAI: Architecture design using PyTorch/TensorFlow, Transformers, CNNs, and Time-Series forecasting (LSTM/XGBoost).
+- MLOps & Infrastructure: End-to-end model ownership using AWS SageMaker, MLflow, and Snowflake to build robust, automated data pipelines.
+- Computer Vision: Document AI (OCR), object detection, and high-resolution image analysis optimized for real-time inference.
+- Edge Intelligence: Deploying optimized models for autonomous systems, robotics, and UAV-based inspection.
 
 Currently at GA Telesis, I lead the development of demand-forecasting MVPs and Document AI frameworks, focusing on reducing latency and maximizing model accuracy in production environments. I thrive at the intersection of complex engineering and high-performance computing, where the goal is to deliver measurable ROI through technical innovation.
 
