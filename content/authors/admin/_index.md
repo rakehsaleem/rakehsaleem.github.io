@@ -250,6 +250,16 @@ awards:
     summary: |
       Awarded to attend the Engineering Mechanics Institute (EMI) conference.
 ---
-At the convergence of physical infrastructure and digital intelligence, I specialize in transforming complex unstructured data into strategic automation and scalable AI solutions. My professional focus is defined by a unique capability to synthesize traditional engineering expertise with advanced machine learning, ensuring that intelligent systems are not only technically sophisticated but deeply grounded in real-world applications.
+I architect AI systems that bridge the gap between high-dimensional sensor data and production-ready intelligence. My career has been defined by a single mission: translating complex physical-world challenges into scalable Deep Learning solutions.
 
-With a background rooted in academic rigor and industrial adaptability, I have successfully bridged the gap between theoretical research and production-ready implementation. What makes me different is my ability to fuse data science with domain expertise in civil infrastructure and automation. My work spans structural health monitoring, UAV-based inspections, and real-time multimodal imaging, demonstrating my adaptability and problem-solving skills in diverse, fast-paced environments. I am passionate about applying AI to solve real-world challenges, and my ability to collaborate across fields, combined with my commitment to delivering impactful solutions, makes me an exceptional candidate to drive innovative research projects in academia and industry.
+With a PhD and 5+ years of experience across the full ML lifecycle—from fundamental research in Computer Vision and Transformers to building automated MLOps pipelines—I specialize in "Multimodal AI & Sensor Fusion." My expertise lies in bridging the gap between theoretical deep learning and real-world deployment on cloud (AWS) and edge (IoT/UAV) platforms.
+
+𝐂𝐨𝐫𝐞 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐄𝐱𝐩𝐞𝐫𝐭𝐢𝐬𝐞:
+• Deep Learning & GenAI: Architecture design using PyTorch/TensorFlow, Transformers, CNNs, and Time-Series forecasting (LSTM/XGBoost).
+• MLOps & Infrastructure: End-to-end model ownership using AWS SageMaker, MLflow, and Snowflake to build robust, automated data pipelines.
+• Computer Vision: Document AI (OCR), object detection, and high-resolution image analysis optimized for real-time inference.
+• Edge Intelligence: Deploying optimized models for autonomous systems, robotics, and UAV-based inspection.
+
+Currently at GA Telesis, I lead the development of demand-forecasting MVPs and Document AI frameworks, focusing on reducing latency and maximizing model accuracy in production environments. I thrive at the intersection of complex engineering and high-performance computing, where the goal is to deliver measurable ROI through technical innovation.
+
+If you are looking for an Applied Scientist who can not only design the model but also architect the system that serves it at scale, let’s connect.
