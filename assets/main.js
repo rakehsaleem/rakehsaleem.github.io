@@ -236,10 +236,12 @@
     var img = document.createElement('img');
     img.alt = org.name;
     img.loading = 'lazy';
-    // source chain: local SVG -> local PNG -> live favicon -> text name
+    // source chain: local PNG -> local SVG -> live favicon -> text name
+    // (PNG first: that's what exists today, so the common case loads with
+    //  zero 404s; drop in a .svg later and it still gets picked up)
     var sources = [
-      'assets/logos/' + org.slug + '.svg',
       'assets/logos/' + org.slug + '.png',
+      'assets/logos/' + org.slug + '.svg',
       'https://www.google.com/s2/favicons?domain=' + org.domain + '&sz=128'
     ];
     var i = 0;
@@ -325,11 +327,13 @@
         if (!en.isIntersecting || counted.has(en.target)) return;
         counted.add(en.target);
         var el = en.target;
-        var target = parseInt(el.getAttribute('data-count'), 10);
-        var suffix = el.getAttribute('data-suffix') || '';
         var t0 = null, DUR = 900;
         function step(ts) {
           if (!t0) t0 = ts;
+          // re-read target each frame so live Scholar data arriving
+          // mid-animation retargets the count-up instead of being overwritten
+          var target = parseInt(el.getAttribute('data-count'), 10);
+          var suffix = el.getAttribute('data-suffix') || '';
           var p = Math.min((ts - t0) / DUR, 1);
           p = 1 - Math.pow(1 - p, 3); // ease-out cubic
           el.textContent = Math.round(target * p) + suffix;

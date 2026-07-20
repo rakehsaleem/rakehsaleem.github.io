@@ -12,16 +12,24 @@ jobs:
   scholar:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Fetch Scholar stats
         run: python3 scripts/scholar_stats.py
-        continue-on-error: true   # if Scholar blocks today, keep yesterday's data
+        continue-on-error: true   # Scholar often blocks datacenter IPs; keep last good data
 
       - name: Commit if changed
         run: |
+          if [ ! -f assets/scholar.json ]; then
+            echo "No scholar.json produced this run (Scholar likely blocked the request). Skipping commit."
+            exit 0
+          fi
           git config user.name "scholar-bot"
           git config user.email "actions@users.noreply.github.com"
           git add assets/scholar.json
-          git diff --staged --quiet || git commit -m "chore: refresh Scholar stats"
-          git push
+          if git diff --staged --quiet; then
+            echo "scholar.json unchanged. Nothing to commit."
+          else
+            git commit -m "chore: refresh Scholar stats"
+            git push
+          fi

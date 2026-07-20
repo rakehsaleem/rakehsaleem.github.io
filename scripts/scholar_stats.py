@@ -29,12 +29,22 @@ HEADERS = {
 
 
 def main() -> int:
-    req = urllib.request.Request(URL, headers=HEADERS)
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            html = resp.read().decode("utf-8", errors="replace")
-    except Exception as exc:  # noqa: BLE001
-        print(f"fetch failed: {exc}", file=sys.stderr)
+    html = None
+    for attempt_url in (URL, URL.replace("&cstart=0&pagesize=100", "")):
+        req = urllib.request.Request(attempt_url, headers=HEADERS)
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                html = resp.read().decode("utf-8", errors="replace")
+            break
+        except Exception as exc:  # noqa: BLE001
+            print(f"fetch failed for {attempt_url}: {exc}", file=sys.stderr)
+    if html is None:
+        print(
+            "Scholar blocked or unreachable (common from datacenter IPs). "
+            "Tip: run this script locally from a home connection and commit "
+            "the resulting assets/scholar.json.",
+            file=sys.stderr,
+        )
         return 1
 
     # Sidebar table: [citations_all, citations_recent, h_all, h_recent, i10_all, i10_recent]
