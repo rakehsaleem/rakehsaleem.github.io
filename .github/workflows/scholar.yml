@@ -1,0 +1,27 @@
+name: Update Scholar stats
+
+on:
+  schedule:
+    - cron: "17 6 * * *"   # daily, 06:17 UTC
+  workflow_dispatch: {}     # allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  scholar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Scholar stats
+        run: python3 scripts/scholar_stats.py
+        continue-on-error: true   # if Scholar blocks today, keep yesterday's data
+
+      - name: Commit if changed
+        run: |
+          git config user.name "scholar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/scholar.json
+          git diff --staged --quiet || git commit -m "chore: refresh Scholar stats"
+          git push
