@@ -131,3 +131,12 @@ of your published findings, not raw study data. To swap the illustrated
 facade for a real inspection photo later, replace the inline SVG with an
 <img> and update the EXPERT hotspot coordinates (normalized 0-1) to
 match the damage locations in your photo.
+
+## Research network graph (replaces the gaze demo)
+
+`research.html` now opens with an interactive co-author/topic network —
+custom force simulation, no libraries. Drag nodes; hover to trace
+connections. Edit the NODES and LINKS arrays at the bottom of
+research.html to add collaborators or topics (each node: id, label,
+type 'author'/'topic', optional sub for affiliation). The background
+interaction site-wide is back to the quiet cursor proximity glow.

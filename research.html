@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Research — Rakeh Saleem</title>
-<meta name="description" content="Rakeh Saleem's research: gaze-informed computer vision, UAV structural inspection, and production time-series forecasting — multimodal AI and sensor fusion, with an interactive demo of how expert inspectors see.">
+<meta name="description" content="Rakeh Saleem's research: gaze-informed computer vision, UAV structural inspection, and production time-series forecasting — with an interactive map of collaborators and research topics.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Research — Rakeh Saleem">
-<meta property="og:description" content="Try the interactive demo: compare your visual attention against an expert inspector's fixation pattern.">
+<meta property="og:description" content="An interactive map of my research network — co-authors, institutions, and the topics that connect them.">
 <meta property="og:url" content="https://rakehsaleem.github.io/research.html">
 <meta name="theme-color" content="#B4530A" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#171009" media="(prefers-color-scheme: dark)">
@@ -17,26 +17,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
+.graph-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;max-width:880px;margin:0 auto}
+.map-wrap{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--tint-soft)}
+#worldMap .land{fill:color-mix(in srgb,var(--muted) 34%,var(--tint-soft));stroke:color-mix(in srgb,var(--muted) 40%,transparent);stroke-width:.7}
+[data-theme="dark"] #worldMap .land{fill:color-mix(in srgb,var(--muted) 30%,var(--card))}
+.map-zoom{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:6px}
+.map-zoom button{width:32px;height:32px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:16px;cursor:pointer;line-height:1}
+.map-zoom button:hover{border-color:var(--teal);color:var(--teal)}
+.map-pop{position:absolute;transform:translate(-50%,-114%);background:var(--card);border:1px solid var(--line);border-radius:11px;padding:10px 14px;box-shadow:0 10px 28px -14px rgba(0,0,0,.3);max-width:250px;z-index:6;pointer-events:none}
+.map-pop::after{content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%) rotate(45deg);width:10px;height:10px;background:var(--card);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.map-pop .ttl{font-family:'Space Grotesk',sans-serif;font-size:13.5px;font-weight:600}
+.map-pop .loc{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--teal);margin:2px 0 4px}
+.map-pop .ppl{font-size:12px;color:var(--muted);line-height:1.5}
+#netGraph{display:block;width:100%;height:500px;border:1px solid var(--line);border-radius:12px;background:var(--tint-soft);cursor:grab;touch-action:none}
+#netGraph.dragging{cursor:grabbing}
+.graph-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:12px;flex-wrap:wrap}
+.graph-legend{display:flex;gap:16px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.graph-legend span{display:inline-flex;align-items:center;gap:6px}
+.gdot{width:11px;height:11px;border-radius:50%;display:inline-block;border:1.5px solid var(--teal)}
 .traj{display:grid;grid-template-columns:210px minmax(0,1fr);gap:48px;align-items:start}
 .traj-side{position:sticky;top:96px}
 .traj-side p{font-size:13px;color:var(--faint);margin-top:8px;line-height:1.6}
 @media (max-width:760px){.traj{grid-template-columns:1fr;gap:20px}.traj-side{position:static}}
 .timeline{position:relative;padding-left:28px}
 .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;border-left:1.5px dashed var(--teal);opacity:.4}
-.t-item{position:relative;padding:0 0 26px}
+.t-item{position:relative;padding:0 0 30px}
 .t-item::before{content:"";position:absolute;left:-27px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--tint);border:2px solid var(--teal)}
 .t-date{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--teal);margin-bottom:2px}
 .t-item h3{font-size:16px;font-weight:600}
-.t-item p{font-size:13.5px;color:var(--muted);margin-top:3px}
-.demo-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;max-width:860px;margin:0 auto}
-#gazeStage{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);cursor:crosshair;touch-action:none}
-#gazeStage svg{display:block;width:100%;height:auto}
-#gazeStage canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.demo-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:14px;flex-wrap:wrap}
-.legend{display:flex;gap:16px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
-.legend span{display:inline-flex;align-items:center;gap:6px}
-.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
-.demo-note{font-size:12.5px;color:var(--faint);margin-top:12px;text-align:center}
+.t-item p{font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.65}
+.t-item ul{margin:8px 0 0;padding-left:18px}
+.t-item li{font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:6px}
+.t-item .tags{margin-top:10px}
 </style>
 </head>
 <body>
@@ -65,70 +77,79 @@
 
 <div class="page-head">
   <span class="kicker">Research</span>
-  <h1>How do experts see?</h1>
-  <p>My PhD used eye tracking to capture how expert inspectors visually assess damaged structures — and how to teach that attention to machines. Try it yourself.</p>
+  <h1>My research network</h1>
+  <p>The people, institutions, and ideas my work connects — co-authors from published papers and the topics that tie them together.</p>
 </div>
 
 <main class="wrap" style="padding-bottom:72px">
 
-  <div class="demo-card">
-    <p style="font-size:14px;color:var(--muted);margin-bottom:14px"><strong style="color:var(--ink)">Inspect this facade.</strong> Move your cursor over the building the way you'd look for damage — your attention paints a heatmap. Then compare it with where a trained inspector's eyes actually go.</p>
-    <div id="gazeStage" aria-label="Interactive inspection demo: move your cursor over the building facade">
-      <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="720" height="400" fill="var(--tint-soft)"/>
-        <!-- wall -->
-        <rect x="60" y="40" width="600" height="330" fill="var(--tint)" stroke="var(--line)" stroke-width="2"/>
-        <!-- roof line / parapet -->
-        <rect x="48" y="28" width="624" height="18" fill="var(--card)" stroke="var(--line)" stroke-width="2"/>
-        <!-- foundation -->
-        <rect x="48" y="352" width="624" height="18" fill="var(--card)" stroke="var(--line)" stroke-width="2"/>
-        <!-- windows row 1 -->
-        <g stroke="var(--line)" stroke-width="2" fill="var(--card)">
-          <rect x="100" y="80" width="80" height="90"/><rect x="240" y="80" width="80" height="90"/>
-          <rect x="400" y="80" width="80" height="90"/><rect x="540" y="80" width="80" height="90"/>
-          <!-- windows row 2 -->
-          <rect x="100" y="220" width="80" height="90"/><rect x="240" y="220" width="80" height="90"/>
-          <rect x="540" y="220" width="80" height="90"/>
-          <!-- door -->
-          <rect x="396" y="240" width="88" height="112"/>
-        </g>
-        <g stroke="var(--line)" stroke-width="1.4">
-          <line x1="140" y1="80" x2="140" y2="170"/><line x1="100" y1="125" x2="180" y2="125"/>
-          <line x1="280" y1="80" x2="280" y2="170"/><line x1="240" y1="125" x2="320" y2="125"/>
-          <line x1="440" y1="80" x2="440" y2="170"/><line x1="400" y1="125" x2="480" y2="125"/>
-          <line x1="580" y1="80" x2="580" y2="170"/><line x1="540" y1="125" x2="620" y2="125"/>
-          <line x1="140" y1="220" x2="140" y2="310"/><line x1="100" y1="265" x2="180" y2="265"/>
-          <line x1="280" y1="220" x2="280" y2="310"/><line x1="240" y1="265" x2="320" y2="265"/>
-          <line x1="580" y1="220" x2="580" y2="310"/><line x1="540" y1="265" x2="620" y2="265"/>
-        </g>
-        <!-- DAMAGE: stepped crack from window corner (top-right of window 3) -->
-        <path d="M480 84 l14 -8 l-4 -10 l16 -9 l-3 -11" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round"/>
-        <path d="M480 170 l12 10 l-3 12 l15 9 l-2 14 l13 8" fill="none" stroke="var(--muted)" stroke-width="2.2" stroke-linecap="round"/>
-        <!-- foundation crack -->
-        <path d="M200 370 l-4 -18 l7 -14 l-5 -16" fill="none" stroke="var(--muted)" stroke-width="2.2" stroke-linecap="round"/>
-        <!-- damp stain under window sill (row1, window 2) -->
-        <ellipse cx="280" cy="188" rx="34" ry="13" fill="var(--muted)" opacity=".18"/>
-        <ellipse cx="272" cy="182" rx="20" ry="8" fill="var(--muted)" opacity=".15"/>
-        <!-- spalling patch near lintel of door -->
-        <path d="M410 232 q10 -8 22 -4 q12 3 18 -2 l6 8 q-14 8 -28 6 q-12 -1 -18 -8Z" fill="var(--muted)" opacity=".22"/>
-        <!-- hairline crack from door corner -->
-        <path d="M484 352 l10 -14 l-2 -12 l11 -10" fill="none" stroke="var(--muted)" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
-      <canvas id="userHeat"></canvas>
-      <canvas id="expertHeat"></canvas>
-    </div>
-    <div class="demo-bar">
-      <div class="legend">
-        <span><span class="dot" style="background:#C25A0F"></span>Your attention</span>
-        <span><span class="dot" style="background:#0F8A6C"></span>Expert fixations</span>
-      </div>
-      <div style="display:flex;gap:10px">
-        <button class="btn" id="resetBtn">Reset</button>
-        <button class="btn primary" id="expertBtn">Compare with expert</button>
+  <div class="graph-card">
+    <canvas id="netGraph" aria-label="Interactive network graph of co-authors and research topics"></canvas>
+    <div class="graph-bar">
+      <div class="graph-legend">
+        <span><span class="gdot" style="background:var(--teal)"></span>Me</span>
+        <span><span class="gdot" style="background:var(--card)"></span>Co-authors</span>
+        <span><span class="gdot" style="background:var(--tint);border-style:dashed"></span>Topics</span>
       </div>
     </div>
-    <p class="demo-note">Illustrated facade; expert hotspots are representative of fixation patterns from my published eye-tracking studies — trained inspectors concentrate on crack initiation points at openings, moisture staining, spalling, and foundation distress, while novices scan more uniformly.</p>
   </div>
+
+
+  <section style="padding:56px 0 0">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">Footprint</span>
+        <h2>Where the network lives</h2>
+      </div>
+    </div>
+    <div class="graph-card">
+      <div class="map-wrap" id="mapWrap">
+        <svg id="worldMap" viewBox="0 0 1000 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive world map of collaborator locations; click a marker for details" style="display:block;width:100%;height:auto;touch-action:none;cursor:grab">
+        <path id="landPath" class="land" fill-rule="evenodd" d="M49 540L45 538 52 537 58 541 49 540ZM233 518L220 518 216 516 231 516 233 518ZM283 250L279 248 276 251 278 253 275 254 275 252 268 250 264 245 264 246 262 245 262 241 257 234 247 232 237 224 232 226 212 217 207 212 208 207 205 203 188 182 186 175 181 173 181 178 196 201 194 202 188 196 188 192 180 186 183 183 179 180 174 169 165 163 154 145 156 127 154 119 158 119 159 122 159 116 151 111 146 110 145 105 141 103 128 86 120 85 111 81 91 77 88 77 89 80 79 82 79 77 82 75 72 82 74 83 72 86 60 93 42 98 62 87 64 83 50 84 50 81 49 79 45 80 41 78 39 74 40 73 43 69 53 67 51 65 53 64 42 65 33 61 43 58 51 59 37 52 50 45 65 42 121 50 139 46 141 47 144 45 151 48 154 46 155 48 163 47 184 52 180 53 195 53 198 55 201 53 198 52 200 51 205 50 218 54 227 54 226 52 229 51 233 52 233 55 237 53 238 49 232 46 232 42 236 40 239 41 246 46 243 47 248 48 248 51 252 49 256 51 255 53 257 56 262 50 262 47 270 47 274 51 272 53 274 56 268 58 262 58 257 64 248 67 248 70 245 70 238 76 237 83 241 83 244 89 248 88 264 95 271 95 272 102 278 109 282 104 278 97 287 91 285 86 282 83 285 80 283 72 295 71 302 76 307 76 308 83 312 85 321 78 329 89 328 92 341 97 345 102 345 105 333 112 316 112 302 123 309 118 319 115 322 117 319 119 321 125 325 127 329 126 332 122 334 126 318 134 316 134 316 131 321 128 314 129 304 135 303 138 306 140 295 143 300 143 295 143 292 149 290 147 292 151 289 155 288 148 288 152 286 151 288 153 290 160 274 174 278 189 277 195 273 192 267 179 264 180 260 177 251 178 252 182 239 180 230 187 228 204 234 216 238 218 246 216 249 209 258 207 253 225 264 225 268 227 267 241 272 248 275 249 279 246 287 249 292 241 296 241 301 237 302 238 300 240 301 248 303 245 302 242 305 240 306 238 311 243 320 245 321 243 328 243 326 244 327 245 331 247 331 250 336 252 341 258 350 259 357 264 361 272 359 277 365 279 365 282 367 280 375 283 376 287 389 288 402 296 404 302 402 308 393 321 391 337 386 351 383 354 376 355 368 360 365 364 364 373 351 392 344 393 338 390 342 400 340 404 335 406 327 407 327 413 326 414 319 414 320 417 324 419 319 422 318 427 313 429 312 431 318 434 317 437 308 446 311 451 307 451 303 453 303 456 292 451 290 439 294 433 290 432 293 430 293 424 297 425 298 418 296 417 295 422 294 421 297 408 296 401 302 385 305 343 305 339 301 335 289 327 278 302 274 298 274 294 278 287 275 285 275 282 278 275 281 273 286 265 283 250ZM143 110L151 112 157 117 151 116 144 113 143 110ZM269 66L262 69 261 67 258 68 260 66 261 60 277 67 275 68 269 66ZM20 65L5 62 4 59 0 60 2 62 0 63 0 50 14 56 16 58 15 56 23 57 28 60 21 61 20 65ZM227 46L234 49 223 48 227 46ZM216 49L185 51 174 46 188 45 172 45 171 43 177 42 168 41 173 37 180 35 183 36 181 38 188 37 192 38 195 37 199 41 201 40 199 36 201 36 207 37 210 43 219 46 215 48 216 49ZM227 42L215 38 215 37 221 37 218 35 221 34 230 34 228 36 232 38 231 41 227 42ZM158 43L150 40 156 34 153 32 173 32 179 35 169 38 165 42 158 43ZM233 35L237 33 249 34 238 40 235 40 233 35ZM240 30L234 31 231 30 237 28 240 30ZM184 31L189 29 173 29 179 25 197 28 193 25 196 24 206 28 188 32 184 31ZM230 24L246 24 252 28 275 27 278 30 255 32 243 30 242 27 230 24ZM215 25L226 24 229 27 227 30 223 30 220 30 220 28 215 28 215 25ZM177 24L163 27 159 26 169 21 177 21 177 24ZM226 17L235 18 230 20 226 17ZM211 18L207 16 220 17 223 20 208 19 211 18ZM243 9L262 15 248 19 242 19 239 17 241 15 231 13 238 10 237 9 243 9ZM333 546L321 546 316 544 328 544 332 542 335 543 333 546ZM380 543L360 546 350 545 358 542 365 536 370 536 378 538 380 543ZM305 506L310 513 309 517 292 517 295 514 300 514 301 508 305 506ZM293 453L302 457 305 453 309 452 312 456 319 459 308 462 299 458 293 453ZM331 451L330 450 333 448 340 449 331 451ZM479 264L465 254 459 242 454 238 454 233 451 229 454 225 455 218 455 212 453 209 460 191 473 179 474 170 481 165 484 160 494 162 504 157 526 154 531 156 529 166 542 171 544 174 553 178 556 175 556 171 560 169 580 176 586 174 594 176 600 163 600 157 590 159 588 157 582 158 577 157 573 152 574 149 573 147 576 144 580 144 581 142 587 142 593 139 607 142 615 141 615 137 602 128 606 125 605 124 609 122 597 125 597 127 601 129 594 131 590 128 592 126 585 124 582 129 580 129 577 137 580 142 573 145 572 143 569 142 566 143 568 145 566 146 563 145 567 153 564 153 564 157 562 158 554 145 554 140 537 127 534 128 535 132 551 145 547 144 546 146 547 149 545 152 543 145 534 140 528 133 525 131 518 135 509 135 508 139 502 142 499 148 500 150 494 157 488 157 485 159 482 156 475 156 475 151 474 150 476 143 474 136 478 133 495 134 496 132 497 126 492 121 488 119 487 117 496 117 495 113 497 115 504 112 505 109 511 107 513 102 523 101 524 99 523 94 524 89 529 87 528 90 530 91 527 94 530 99 535 98 539 100 549 96 555 98 559 95 560 88 563 87 567 89 568 85 565 82 581 79 578 78 564 80 559 77 558 71 560 69 571 63 566 60 562 60 559 63 559 65 550 70 548 75 552 79 547 84 544 92 536 95 529 81 523 85 516 84 514 73 529 65 541 54 553 47 578 42 587 45 583 46 586 48 589 47 601 49 614 55 614 57 607 60 592 57 597 60 597 65 603 67 601 64 603 62 610 64 612 64 610 61 617 58 622 59 624 57 621 51 628 52 630 54 627 54 627 56 629 57 649 50 651 50 649 52 663 50 667 52 670 50 667 48 668 47 690 53 692 51 686 48 685 43 694 36 702 37 702 39 700 42 702 45 702 50 705 52 698 59 701 59 708 54 707 52 708 50 704 48 707 44 703 42 708 39 707 37 710 39 709 42 712 43 711 40 715 39 726 41 724 34 741 33 739 32 742 29 780 25 790 21 798 25 809 24 817 27 804 33 814 33 815 35 821 34 842 37 842 34 853 35 857 36 858 38 857 40 865 44 867 40 889 41 887 38 890 37 915 39 925 44 942 43 944 45 944 47 947 48 966 48 971 51 974 50 972 47 973 46 1000 50 1000 63 993 64 998 70 998 72 993 71 982 74 973 80 969 78 962 80 954 80 950 85 953 87 953 92 950 92 949 95 950 96 945 98 945 102 940 103 940 106 936 109 932 95 933 90 936 87 940 86 955 76 957 71 953 71 945 78 943 74 935 75 928 80 931 82 920 83 920 81 916 81 895 83 875 97 884 100 889 99 893 102 893 105 889 118 884 125 875 134 871 136 867 135 854 146 860 156 859 162 851 164 850 156 852 156 846 152 848 147 845 146 836 149 839 144 838 143 828 148 826 150 830 154 840 154 840 156 836 157 831 162 834 164 839 173 837 176 839 179 838 185 830 197 822 203 808 207 807 211 805 211 805 207 801 206 794 213 794 215 802 227 804 234 803 239 792 250 792 245 787 243 785 238 780 236 780 234 778 234 776 247 777 248 779 253 786 260 790 274 782 269 778 257 774 250 773 252 774 240 770 222 765 226 762 225 762 218 754 203 751 203 751 206 742 207 740 211 728 223 723 225 722 244 715 252 713 249 704 225 702 207 696 209 692 205 693 202 684 194 671 195 659 193 657 188 652 190 643 186 639 178 633 179 641 196 642 192 643 193 644 199 650 198 657 191 658 198 663 200 666 204 661 211 660 215 654 221 646 224 645 226 635 232 621 236 618 223 609 208 607 200 596 185 597 181 597 180 594 187 590 179 599 199 599 202 602 205 604 216 607 218 609 225 620 237 619 239 624 243 642 238 642 243 633 264 612 287 609 294 608 298 610 301 609 306 612 314 613 327 611 331 597 344 598 358 590 363 590 372 583 381 572 390 563 390 554 393 551 391 551 383 542 368 540 351 533 338 532 333 535 323 538 318 536 308 537 306 533 295 524 282 527 268 524 262 516 264 512 257 505 258 495 262 487 261 479 264ZM640 145L638 145 636 150 637 154 641 156 650 156 650 149 646 146 647 143 652 142 649 139 647 139 647 142 646 136 643 135 640 130 647 128 647 123 636 124 630 130 632 136 640 145ZM303 212L310 216 304 217 302 220 293 217 299 216 297 212 303 212ZM276 202L294 212 284 212 286 210 281 207 272 204 273 203 264 206 269 202 276 202ZM351 117L353 117 354 121 353 124 350 123 349 120 346 123 344 123 346 121 344 120 335 119 341 110 345 107 346 107 342 113 344 112 346 113 345 114 351 115 351 117ZM479 96L484 97 483 102 481 105 472 107 475 103 473 100 479 96ZM440 65L433 63 438 62 432 61 439 58 443 60 460 58 459 60 462 62 448 68 437 66 440 65ZM291 55L286 56 285 54 289 52 291 53 291 55ZM311 46L314 49 309 51 328 57 322 63 315 58 311 59 311 61 319 65 320 68 319 71 309 67 316 73 303 70 292 64 282 64 284 62 295 61 295 59 298 55 296 53 286 50 288 49 281 46 274 47 254 45 251 44 254 42 250 42 249 39 254 35 262 34 260 36 262 38 264 35 271 34 276 37 276 40 284 37 311 46ZM442 4L411 6 439 7 436 9 456 7 466 9 444 13 451 13 445 17 445 21 449 23 440 24 445 26 446 29 443 29 446 32 440 32 443 34 442 35 435 35 438 39 431 39 439 41 440 44 435 45 429 42 430 44 427 46 438 46 423 51 412 53 405 57 389 61 386 68 381 71 382 73 380 79 366 77 357 67 350 56 353 52 357 51 359 47 352 49 348 48 349 44 357 44 345 41 348 38 337 28 330 26 310 26 302 23 315 22 296 20 317 15 319 14 311 13 333 7 353 7 360 5 376 8 370 6 370 5 403 1 442 4ZM288 37L278 37 275 34 283 34 288 37ZM275 3L298 3 328 5 312 8 318 8 302 14 286 15 290 16 288 16 291 18 278 22 284 24 276 26 251 25 251 23 256 23 255 20 264 21 256 19 264 15 259 12 273 12 257 12 246 7 262 4 269 6 275 3ZM3 557L16 558 28 556 61 561 87 561 102 560 103 558 73 555 75 550 64 546 82 547 93 544 85 541 69 540 61 536 60 533 80 534 94 531 94 528 97 527 124 524 167 525 183 522 188 525 201 527 222 526 215 523 212 518 232 522 250 521 252 518 263 521 274 522 277 520 288 523 309 520 314 517 310 509 313 499 325 492 339 487 341 488 328 493 326 495 327 497 323 498 318 503 328 512 331 522 321 527 304 532 285 532 295 536 284 537 283 540 291 544 334 551 338 553 362 549 381 550 387 547 421 544 418 540 401 541 401 537 420 532 451 527 456 525 457 523 454 523 457 520 471 514 479 515 481 513 499 515 522 509 530 512 537 510 575 511 589 509 594 505 607 509 651 496 671 503 678 501 691 503 694 507 688 511 692 512 689 516 694 517 697 517 705 509 716 508 720 504 730 500 741 500 744 497 749 500 766 501 777 501 786 495 795 500 816 496 833 501 842 498 874 497 875 494 882 500 904 500 907 503 913 504 929 505 949 512 976 515 970 522 961 524 954 530 954 533 958 537 964 539 949 540 944 546 971 555 1000 558 1000 576 0 576 0 558 3 557ZM535 152L538 152 543 151 542 157 535 154 535 152ZM523 142L526 142 527 144 527 148 523 148 523 142ZM486 93L484 95 483 90 484 87 486 84 492 84 489 88 495 87 491 93 494 93 501 103 505 103 503 107 504 108 484 112 491 108 485 106 488 105 487 101 491 101 492 99 487 97 486 93ZM548 24L538 22 541 21 529 14 547 13 560 17 553 18 548 24ZM548 12L564 11 576 13 564 15 548 12ZM638 330L631 361 626 363 622 361 620 351 623 344 622 336 623 332 629 330 633 326 637 318 640 328 639 331 638 330ZM821 306L801 304 793 301 795 298 802 300 808 299 821 306ZM785 292L774 272 765 260 771 261 780 271 782 271 788 278 787 280 795 288 794 297 791 297 785 292ZM824 283L823 291 819 292 815 288 811 290 806 288 803 277 805 271 809 272 809 269 814 268 825 255 827 258 831 260 826 267 831 275 827 275 826 281 824 283ZM726 250L727 257 723 258 721 251 723 246 726 250ZM806 216L802 217 802 214 808 212 806 216ZM691 25L662 32 654 38 655 41 660 44 649 44 643 40 651 34 649 34 655 31 655 30 684 24 691 25ZM776 20L784 15 793 17 792 19 776 20ZM753 12L767 9 778 14 778 17 772 17 753 12ZM643 11L632 13 629 12 631 11 625 11 643 11ZM983 413L984 416 980 422 981 423 976 424 974 430 970 432 963 431 964 427 974 420 978 414 980 412 981 415 983 413ZM906 422L902 413 912 413 911 421 906 422ZM983 409L985 406 985 402 981 392 984 395 987 401 987 399 991 403 996 403 994 408 992 408 987 416 985 415 987 412 986 410 983 409ZM835 390L828 394 820 391 822 385 815 364 816 366 815 363 817 365 815 359 816 352 824 347 836 343 842 332 844 335 843 333 849 325 853 324 857 327 860 328 863 320 868 318 866 315 868 315 876 319 879 317 880 319 876 328 889 337 892 332 894 319 896 313 900 326 902 325 904 328 907 341 913 346 916 352 919 352 919 356 925 362 927 371 925 383 918 396 917 402 906 407 902 405 903 403 899 406 891 404 888 398 884 396 884 392 880 395 883 387 878 394 873 386 865 382 850 385 845 387 843 390 835 390ZM956 345L958 346 964 351 960 350 956 345ZM844 309L854 306 843 312 844 309ZM908 300L919 313 911 312 906 305 902 303 898 305 898 308 896 309 886 305 882 306 885 302 883 296 871 290 869 292 867 287 871 285 867 285 863 281 868 279 872 281 873 287 876 289 879 286 884 284 902 291 906 296 910 298 911 300 908 300ZM912 297L917 295 919 296 921 292 923 292 922 296 917 299 912 297ZM856 287L862 288 863 291 855 289 856 287ZM834 277L833 280 836 283 843 280 838 284 842 294 841 297 841 293 838 294 836 287 834 288 835 296 832 296 832 290 830 287 833 278 836 274 841 275 848 273 844 277 834 277ZM855 279L854 275 855 271 857 277 855 279 857 281 855 279ZM844 255L845 254 843 252 839 254 843 249 844 251 849 248 848 246 851 247 851 257 850 254 848 260 844 255ZM832 243L825 250 832 240 832 243ZM843 247L840 246 842 242 843 242 843 244 845 241 843 247ZM845 240L847 240 845 236 848 237 849 241 847 241 848 244 847 244 845 240ZM838 231L844 232 845 237 841 233 835 232 836 230 834 228 833 224 834 225 835 217 840 217 840 221 838 228 838 231ZM837 194L837 203 835 205 834 200 837 194ZM869 170L868 169 869 165 874 165 869 170ZM877 167L875 164 864 166 867 168 863 175 862 171 859 168 868 161 877 160 880 155 882 156 887 152 889 144 893 141 894 148 892 152 890 162 881 163 877 167ZM889 140L890 135 893 134 894 127 900 132 904 131 904 135 900 136 898 139 893 137 892 140 889 140ZM897 123L895 126 895 109 893 106 894 102 896 98 902 116 898 115 896 120 899 125 897 123ZM903 28L901 30 886 31 880 29 886 26 903 28Z"/>
+        <g id="arcG">
+        <path class="arc" d="M277,191 Q270,165 284,143" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 6" opacity=".45"/>
+        <path class="arc" d="M277,191 Q267,164 281,138" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 6" opacity=".45"/>
+        <path class="arc" d="M277,191 Q278,161 301,141" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 6" opacity=".45"/>
+        <path class="arc" d="M277,191 Q275,163 294,143" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 6" opacity=".45"/>
+        <path class="arc" d="M277,191 Q165,152 61,208" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 6" opacity=".45"/>
+        <path class="arc" d="M277,191 Q561,103 853,154" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 6" opacity=".45"/>
+        <path class="arc" d="M277,191 Q562,105 854,158" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 6" opacity=".45"/>
+        <path class="arc" d="M277,191 Q376,74 529,68" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 6" opacity=".45"/>
+        <path class="arc" d="M277,191 Q446,129 609,207" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 6" opacity=".45"/>
+        <path class="arc" d="M277,191 Q486,109 703,167" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 6" opacity=".45"/>
+        <path class="arc" d="M277,191 Q385,102 524,121" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 6" opacity=".45"/>
+        </g>
+        <g id="mkG">
+        <circle class="mk" data-x="284" data-y="143" data-r="7" data-title="Penn State University" data-loc="State College, PA, USA" data-ppl="Rebecca Napolitano · John Messner" cx="284" cy="143" r="7" fill="var(--teal)" stroke="var(--card)" stroke-width="2" opacity=".92" style="cursor:pointer"/>
+        <circle class="mk" data-x="281" data-y="138" data-r="5" data-title="Salamanca City School District" data-loc="Salamanca, NY, USA" data-ppl="Aaron Straus" cx="281" cy="138" r="5" fill="var(--teal)" stroke="var(--card)" stroke-width="2" opacity=".92" style="cursor:pointer"/>
+        <circle class="mk" data-x="301" data-y="141" data-r="5" data-title="Chariho Regional High School" data-loc="Rhode Island, USA" data-ppl="Robert Mayne" cx="301" cy="141" r="5" fill="var(--teal)" stroke="var(--card)" stroke-width="2" opacity=".92" style="cursor:pointer"/>
+        <circle class="mk" data-x="294" data-y="143" data-r="5" data-title="Thornton Tomasetti" data-loc="New York, NY, USA" data-ppl="Invited industry seminar (2024)" cx="294" cy="143" r="5" fill="var(--teal)" stroke="var(--card)" stroke-width="2" opacity=".92" style="cursor:pointer"/>
+        <circle class="mk" data-x="61" data-y="208" data-r="5" data-title="University of Hawaiʻi" data-loc="Honolulu, HI, USA" data-ppl="Do-Soo Moon" cx="61" cy="208" r="5" fill="var(--teal)" stroke="var(--card)" stroke-width="2" opacity=".92" style="cursor:pointer"/>
+        <circle class="mk" data-x="853" data-y="154" data-r="9" data-title="Seoul — Chung-Ang · Hanyang · Myongji" data-loc="Seoul metro, South Korea" data-ppl="Jong-Woong Park · Numan Khan · Doyeop Lee · Chansik Park (Chung-Ang) · Dong Joo Kim (Hanyang) · Man-Woo Park (Myongji)" cx="853" cy="154" r="9" fill="var(--teal)" stroke="var(--card)" stroke-width="2" opacity=".92" style="cursor:pointer"/>
+        <circle class="mk" data-x="854" data-y="158" data-r="6" data-title="KAIST" data-loc="Daejeon, South Korea" data-ppl="Hyung-Jo Jung · Jin-Hwan Lee" cx="854" cy="158" r="6" fill="var(--teal)" stroke="var(--card)" stroke-width="2" opacity=".92" style="cursor:pointer"/>
+        <circle class="mk" data-x="529" data-y="68" data-r="6" data-title="NTNU" data-loc="Trondheim, Norway" data-ppl="Muhammad Zohaib Sarwar" cx="529" cy="68" r="6" fill="var(--teal)" stroke="var(--card)" stroke-width="2" opacity=".92" style="cursor:pointer"/>
+        <circle class="mk" data-x="609" data-y="207" data-r="5" data-title="King Abdulaziz University" data-loc="Jeddah, Saudi Arabia" data-ppl="Faisal Alhassani" cx="609" cy="207" r="5" fill="var(--teal)" stroke="var(--card)" stroke-width="2" opacity=".92" style="cursor:pointer"/>
+        <circle class="mk" data-x="703" data-y="167" data-r="6" data-title="Bahria University & NUST" data-loc="Islamabad, Pakistan" data-ppl="Muhammad Moeez Haider · Junaid Imtiaz" cx="703" cy="167" r="6" fill="var(--teal)" stroke="var(--card)" stroke-width="2" opacity=".92" style="cursor:pointer"/>
+        <circle class="mk" data-x="524" data-y="121" data-r="5" data-title="ETH Zürich" data-loc="Zürich, Switzerland" data-ppl="Invited talk (2023)" cx="524" cy="121" r="5" fill="var(--teal)" stroke="var(--card)" stroke-width="2" opacity=".92" style="cursor:pointer"/>
+        <g id="mePin" class="mk" data-x="277" data-y="191" data-r="10" data-title="GA Telesis — me" data-loc="Fort Lauderdale, FL, USA" data-ppl="Where I build production AI today" transform="translate(277,191)" style="cursor:pointer">
+          <path d="M0,0 C-6,-9 -10,-13 -10,-18 A10,10 0 1 1 10,-18 C10,-13 6,-9 0,0 Z" fill="var(--teal)" stroke="var(--card)" stroke-width="1.5"/>
+          <circle cx="0" cy="-18" r="3.6" fill="var(--card)"/>
+        </g>
+        </g>
+        </svg>
+        <div class="map-zoom">
+          <button id="mzIn" aria-label="Zoom in">+</button>
+          <button id="mzOut" aria-label="Zoom out">−</button>
+          <button id="mzReset" aria-label="Reset view">⌂</button>
+        </div>
+        <div class="map-pop" id="mapPop" hidden>
+          <div class="ttl" id="mpTtl"></div>
+          <div class="loc" id="mpLoc"></div>
+          <div class="ppl" id="mpPpl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section style="padding:64px 0 0">
     <div class="sec-head">
@@ -159,46 +180,72 @@
         <div class="icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 20h18M5 20V12m4.5 8V8m4.5 12v-9m4.5 9V5"/></svg>
         </div>
-        <h3>Models in production</h3>
-        <p>At GA Telesis: intermittent-demand forecasting with Transformer and gradient-boosting ensembles on AWS SageMaker — 76% of SKU forecasts within actual demand range — plus a Document AI pipeline for privacy-sensitive aviation documents.</p>
-        <div class="tags"><span class="tag">forecasting</span><span class="tag">MLOps</span></div>
+        <h3>Forecasting demand at scale</h3>
+        <p>At GA Telesis I built the production system that predicts intermittent demand for aviation aftermarket parts — a multi-horizon Transformer/TFT ensemble with LSTM and LightGBM, delivering forecasts and prediction intervals to demand planners daily, with 76% of SKU forecasts within actual demand range.</p>
+        <div class="tags"><span class="tag">TFT</span><span class="tag">intermittent demand</span><span class="tag">SageMaker</span></div>
       </article>
     </div>
   </section>
+
   <section style="padding:64px 0 0">
     <div class="traj">
       <div class="traj-side">
         <span class="kicker">Trajectory</span>
         <h2 style="font-size:26px;font-weight:600">Experience</h2>
         <p>Eight years from embedded sensors to production AI.</p>
-        <a href="assets/resume.pdf" style="font-size:14px;color:var(--teal);font-weight:500">Full CV &rarr;</a>
+        <a href="assets/resume.pdf" style="font-size:14px;color:var(--teal);font-weight:500">Full CV →</a>
       </div>
       <div class="timeline">
-      <div class="t-item">
-        <div class="t-date">Dec 2025 &mdash; Present</div>
-        <h3>Data Scientist &middot; GA Telesis, Digital Innovation Group</h3>
-        <p>Production demand forecasting (76% of SKU forecasts within actual range) and Document AI for PII redaction &mdash; Snowflake&rarr;S3 ETL, MLflow, SageMaker batch inference, Power BI delivery.</p>
-      </div>
-      <div class="t-item">
-        <div class="t-date">Jan 2025 &mdash; Nov 2025</div>
-        <h3>Independent Researcher</h3>
-        <p>Extended the gaze-informed vision work into a working prototype simulating expert inspector attention; peer review for computer vision journals.</p>
-      </div>
-      <div class="t-item">
-        <div class="t-date">2020 &mdash; 2024</div>
-        <h3>PhD &middot; Penn State, BEAM Lab</h3>
-        <p>Gaze-supervised computer vision for structural damage assessment; multimodal eye-tracking + UAV pipelines; mentored 8 undergraduate researchers.</p>
-      </div>
-      <div class="t-item">
-        <div class="t-date">2018 &mdash; 2020</div>
-        <h3>Graduate Researcher &middot; Chung-Ang University</h3>
-        <p>Real-time CNNs on edge devices for safety monitoring; end-to-end UAV imaging pipeline across 50+ inspection flights.</p>
-      </div>
-      <div class="t-item">
-        <div class="t-date">2018</div>
-        <h3>Development Engineer &middot; NUST</h3>
-        <p>Wireless time-critical sensing on embedded C++ microcontrollers &mdash; 97% transmission reliability.</p>
-      </div>
+        <div class="t-item">
+          <div class="t-date">Dec 2025 — Present</div>
+          <h3>Data Scientist · GA Telesis, Digital Innovation Group</h3>
+          <ul>
+            <li>Delivered a production demand-forecasting MVP in 3.5 months — multi-horizon Transformer/TFT ensemble on SageMaker; 76% of SKU forecasts within actual demand range over a 3-month horizon.</li>
+            <li>Led the Phase-2 expansion (LSTM, LightGBM), improving the Transformer by 6.5% and TFT by 11% over the MVP baseline.</li>
+            <li>Designed a Document AI PoC for on-premise PII redaction — fine-tuned LayoutLMv3 + PaddleOCR on 1,800 annotated images; benchmarked against Qwen-VL and Florence-2 on 50K+ documents; authored the build-vs-buy analysis informing HQ strategy.</li>
+            <li>Built the MLOps backbone: Snowflake→S3 ETL, MLflow tracking, automated batch inference, and Power BI dashboards for demand planners.</li>
+          </ul>
+          <div class="tags"><span class="tag">TFT</span><span class="tag">LightGBM</span><span class="tag">SageMaker</span><span class="tag">Snowflake</span><span class="tag">LayoutLMv3</span><span class="tag">MLflow</span></div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">Jan 2025 — Nov 2025</div>
+          <h3>Independent Researcher</h3>
+          <ul>
+            <li>Extended the doctoral research into a working Python prototype simulating expert inspector attention patterns for training inspection models.</li>
+            <li>Peer-reviewed computer vision manuscripts for academic journals.</li>
+            <li>Deepened production-ML skills — AWS, MLOps, time-series forecasting — in preparation for the industry transition.</li>
+          </ul>
+          <div class="tags"><span class="tag">PyTorch</span><span class="tag">prototyping</span><span class="tag">peer review</span><span class="tag">AWS</span></div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">2020 — 2024</div>
+          <h3>PhD · Penn State, BEAM Lab</h3>
+          <ul>
+            <li>Developed gaze-supervised computer vision models for automated damage assessment — expert inspectors' eye-tracking data guiding CNN attention to improve generalization to unseen structures.</li>
+            <li>Optimized deep CNN architectures for high-resolution anomaly detection: 20% lower inference latency at 85% detection accuracy for edge deployment.</li>
+            <li>Built multimodal pipelines synchronizing eye-tracking telemetry with UAV video streams.</li>
+            <li>Led industry-backed research projects and mentored 8 undergraduate researchers.</li>
+          </ul>
+          <div class="tags"><span class="tag">eye-tracking</span><span class="tag">CNNs</span><span class="tag">edge AI</span><span class="tag">multimodal</span><span class="tag">mentoring</span></div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">2018 — 2020</div>
+          <h3>Graduate Researcher · Chung-Ang University</h3>
+          <ul>
+            <li>Deployed real-time deep CNNs for automated safety monitoring on edge devices — 25% faster dynamic risk detection.</li>
+            <li>Built the end-to-end UAV imaging pipeline with custom image-stitching over high-resolution geospatial data from 50+ inspection flights.</li>
+          </ul>
+          <div class="tags"><span class="tag">TensorFlow</span><span class="tag">UAV</span><span class="tag">image stitching</span><span class="tag">edge devices</span></div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">2018</div>
+          <h3>Development Engineer · NUST</h3>
+          <ul>
+            <li>Engineered a wireless, time-critical sensor system for fault identification — embedded C++ on edge microcontrollers.</li>
+            <li>Achieved 97% data-transmission reliability in deployment.</li>
+          </ul>
+          <div class="tags"><span class="tag">embedded C++</span><span class="tag">microcontrollers</span><span class="tag">wireless sensing</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -218,92 +265,414 @@
 
 <script src="assets/main.js"></script>
 <script>
+/* ---- Interactive research network graph (weighted) ----
+   Edge thickness between me and a co-author = number of joint papers.
+   Edit NODES/LINKS to grow the map. Author nodes: papers = joint-paper
+   count (drives node size + edge weight). */
 (function () {
-  var stage = document.getElementById('gazeStage');
-  var userC = document.getElementById('userHeat');
-  var expC = document.getElementById('expertHeat');
-  var uctx = userC.getContext('2d');
-  var ectx = expC.getContext('2d');
+  var canvas = document.getElementById('netGraph');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-  function size() {
-    var r = stage.getBoundingClientRect();
-    [userC, expC].forEach(function (c) {
-      c.width = r.width * dpr; c.height = r.height * dpr;
-    });
-    uctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ectx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    expertShown = false; ectx.clearRect(0, 0, 1e4, 1e4);
-  }
-
-  function splat(ctx, x, y, radius, rgb, alpha) {
-    var g = ctx.createRadialGradient(x, y, 0, x, y, radius);
-    g.addColorStop(0, 'rgba(' + rgb + ',' + alpha + ')');
-    g.addColorStop(1, 'rgba(' + rgb + ',0)');
-    ctx.fillStyle = g;
-    ctx.beginPath(); ctx.arc(x, y, radius, 0, 6.2832); ctx.fill();
-  }
-
-  // --- visitor attention: paint while the pointer moves over the stage ---
-  var pos = null, raf = null;
-  function loop() {
-    if (pos) splat(uctx, pos.x, pos.y, 30, '194,90,15', 0.055);
-    raf = requestAnimationFrame(loop);
-  }
-  function toLocal(e) {
-    var r = stage.getBoundingClientRect();
-    var cx = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
-    var cy = (e.touches ? e.touches[0].clientY : e.clientY) - r.top;
-    return { x: cx, y: cy };
-  }
-  stage.addEventListener('pointermove', function (e) {
-    pos = toLocal(e);
-    if (!raf) raf = requestAnimationFrame(loop);
-  });
-  stage.addEventListener('pointerleave', function () { pos = null; });
-
-  // --- expert fixations: hotspots aligned with the damage in the SVG ---
-  // normalized to the 720x400 viewBox: [x, y, weight]
-  var EXPERT = [
-    [0.678, 0.44, 1.0],  // crack initiation at window corner (below win 3)
-    [0.700, 0.52, 0.8],  // crack propagation path
-    [0.672, 0.20, 0.7],  // crack above window head
-    [0.278, 0.905, 0.9], // foundation crack
-    [0.388, 0.465, 0.85],// damp stain under sill
-    [0.590, 0.585, 0.75],// spalling at door lintel
-    [0.684, 0.86, 0.5],  // hairline at door corner
-    [0.155, 0.21, 0.25], // brief check: far window head joint
-    [0.805, 0.615, 0.25] // brief check: window sill line
+  var NODES = [
+    { id: 'me',   label: 'Rakeh Saleem', type: 'me' },
+    // co-authors — papers = joint publications
+    { id: 'rn',  label: 'Rebecca Napolitano', type: 'author', sub: 'Penn State University', papers: 5 },
+    { id: 'zs',  label: 'Muhammad Zohaib Sarwar', type: 'author', sub: 'NTNU, Trondheim', papers: 3 },
+    { id: 'rm',  label: 'Robert Mayne', type: 'author', sub: 'Chariho Regional High School', papers: 2 },
+    { id: 'fa',  label: 'Faisal Alhassani', type: 'author', sub: 'King Abdulaziz University', papers: 2 },
+    { id: 'jwp', label: 'Jong-Woong Park', type: 'author', sub: 'Chung-Ang University', papers: 2 },
+    { id: 'as',  label: 'Aaron Straus', type: 'author', sub: 'Salamanca City Schools, NY', papers: 1 },
+    { id: 'jm',  label: 'John Messner', type: 'author', sub: 'Penn State University', papers: 1 },
+    { id: 'jhl', label: 'Jin-Hwan Lee', type: 'author', sub: 'KAIST', papers: 1 },
+    { id: 'hjj', label: 'Hyung-Jo Jung', type: 'author', sub: 'KAIST', papers: 1 },
+    { id: 'dsm', label: 'Do-Soo Moon', type: 'author', sub: 'University of Hawai\u02bbi', papers: 1 },
+    { id: 'djk', label: 'Dong Joo Kim', type: 'author', sub: 'Hanyang University', papers: 1 },
+    { id: 'nk',  label: 'Numan Khan', type: 'author', sub: 'Chung-Ang University', papers: 1 },
+    { id: 'dl',  label: 'Doyeop Lee', type: 'author', sub: 'Chung-Ang University', papers: 1 },
+    { id: 'mwp', label: 'Man-Woo Park', type: 'author', sub: 'Myongji University', papers: 1 },
+    { id: 'cp',  label: 'Chansik Park', type: 'author', sub: 'Chung-Ang University', papers: 1 },
+    { id: 'mmh', label: 'Muhammad Moeez Haider', type: 'author', sub: 'Bahria University', papers: 1 },
+    { id: 'ji',  label: 'Junaid Imtiaz', type: 'author', sub: 'Bahria University', papers: 1 },
+    // topics
+    { id: 'gaze', label: 'Gaze & eye tracking',     type: 'topic' },
+    { id: 'uav',  label: 'UAV inspection',          type: 'topic' },
+    { id: 'sens', label: 'SHM & wireless sensing',  type: 'topic' },
+    { id: 'safe', label: 'Construction safety',     type: 'topic' },
+    { id: 'sedu', label: 'Sustainability education',type: 'topic' },
+    { id: 'fcst', label: 'Demand forecasting',      type: 'topic' },
+    { id: 'doc',  label: 'Document AI',             type: 'topic' }
   ];
-  var expertShown = false;
-  document.getElementById('expertBtn').addEventListener('click', function () {
-    if (expertShown) return;
-    expertShown = true;
-    var r = stage.getBoundingClientRect();
-    var i = 0;
-    (function reveal() {
-      if (i >= EXPERT.length) return;
-      var h = EXPERT[i];
-      var x = h[0] * r.width, y = h[1] * r.height;
-      var n = 0, total = Math.round(14 * h[2]);
-      (function pulse() {
-        splat(ectx, x + (Math.random() - .5) * 14, y + (Math.random() - .5) * 14,
-              26 + 14 * h[2], '15,138,108', 0.10);
-        if (++n < total) requestAnimationFrame(pulse);
-      })();
-      i += 1;
-      setTimeout(reveal, 130);
-    })();
-  });
+  // [source, target, weight] — weight = joint papers (me-author) or 1
+  var LINKS = [
+    ['me','rn',5], ['me','zs',3], ['me','rm',2], ['me','fa',2], ['me','jwp',2],
+    ['me','as',1], ['me','jm',1], ['me','jhl',1], ['me','hjj',1], ['me','dsm',1],
+    ['me','djk',1], ['me','nk',1], ['me','dl',1], ['me','mwp',1], ['me','cp',1],
+    ['me','mmh',1], ['me','ji',1],
+    ['me','gaze',5], ['me','sens',3], ['me','sedu',2], ['me','uav',1],
+    ['me','safe',1], ['me','fcst',1], ['me','doc',1],
+    ['rn','gaze',1], ['rm','gaze',1], ['as','gaze',1],
+    ['zs','uav',1], ['zs','sens',1], ['jwp','uav',1], ['jwp','sens',1],
+    ['jhl','uav',1], ['hjj','uav',1], ['dsm','sens',1], ['djk','sens',1],
+    ['mmh','sens',1], ['ji','sens',1],
+    ['nk','safe',1], ['dl','safe',1], ['mwp','safe',1], ['cp','safe',1],
+    ['fa','sedu',1], ['jm','sedu',1]
+  ];
 
-  document.getElementById('resetBtn').addEventListener('click', function () {
-    uctx.clearRect(0, 0, 1e4, 1e4);
-    ectx.clearRect(0, 0, 1e4, 1e4);
-    expertShown = false;
+  var byId = {};
+  NODES.forEach(function (n) { byId[n.id] = n; });
+  var edges = LINKS.map(function (l) { return { a: byId[l[0]], b: byId[l[1]], w: l[2] || 1 }; });
+  var neighbors = {};
+  NODES.forEach(function (n) { neighbors[n.id] = {}; });
+  edges.forEach(function (e) { neighbors[e.a.id][e.b.id] = 1; neighbors[e.b.id][e.a.id] = 1; });
+
+  var W, H;
+  function radius(n) {
+    if (n.type === 'me') return 26;
+    if (n.type === 'author') return 10 + (n.papers || 1) * 1.6;
+    return 10;
+  }
+
+  function size() {
+    var r = canvas.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    wake();
+  }
+
+  NODES.forEach(function (n) {
+    n.x = 0.5 + (Math.random() - 0.5) * 0.6;
+    n.y = 0.5 + (Math.random() - 0.5) * 0.6;
+    n.vx = 0; n.vy = 0; n.fixed = false;
   });
+  var started = false;
+  function toPx() {
+    if (started) return;
+    NODES.forEach(function (n) { n.x *= W; n.y *= H; });
+    byId.me.x = W / 2; byId.me.y = H / 2;
+    started = true;
+  }
+
+  function cv(name) {
+    var v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    return v || '#B4530A';
+  }
+
+  var hover = null, drag = null, raf = null, selected = null, downAt = null, moved = 0;
+
+  function tick() {
+    toPx();
+    var SPRING = 0.011, REPEL = 4200, CENTER = 0.012, DAMP = 0.86;
+    for (var i = 0; i < NODES.length; i++) {
+      for (var j = i + 1; j < NODES.length; j++) {
+        var a = NODES[i], b = NODES[j];
+        var dx = b.x - a.x, dy = b.y - a.y;
+        var d2 = dx * dx + dy * dy + 0.01;
+        var d = Math.sqrt(d2);
+        var f = REPEL / d2;
+        a.vx -= (dx / d) * f; a.vy -= (dy / d) * f;
+        b.vx += (dx / d) * f; b.vy += (dy / d) * f;
+      }
+    }
+    edges.forEach(function (e) {
+      var rest;
+      if (e.a.type === 'me' && e.b.type === 'author') rest = 160 - e.w * 14; // more papers = closer
+      else if (e.b.type === 'topic' || e.a.type === 'topic') rest = 105;
+      else rest = 130;
+      var dx = e.b.x - e.a.x, dy = e.b.y - e.a.y;
+      var d = Math.sqrt(dx * dx + dy * dy) + 0.01;
+      var f = SPRING * (d - rest);
+      e.a.vx += (dx / d) * f; e.a.vy += (dy / d) * f;
+      e.b.vx -= (dx / d) * f; e.b.vy -= (dy / d) * f;
+    });
+    var t = performance.now();
+    NODES.forEach(function (n, i) {
+      if (n.type !== 'me' && !n.fixed) {
+        n.vx += Math.sin(t * 0.00042 + i * 1.7) * 0.05;
+        n.vy += Math.cos(t * 0.00036 + i * 2.3) * 0.05;
+      }
+    });
+    NODES.forEach(function (n) {
+      n.vx += (W / 2 - n.x) * CENTER * (n.type === 'me' ? 4 : 1);
+      n.vy += (H / 2 - n.y) * CENTER * (n.type === 'me' ? 4 : 1);
+      if (n.fixed) { n.vx = 0; n.vy = 0; return; }
+      n.vx *= DAMP; n.vy *= DAMP;
+      n.x += n.vx; n.y += n.vy;
+      var pad = radius(n) + 14;
+      n.x = Math.max(pad, Math.min(W - pad, n.x));
+      n.y = Math.max(pad, Math.min(H - pad, n.y));
+    });
+  }
+
+  function render() {
+    ctx.clearRect(0, 0, W, H);
+    var accent = cv('--teal'), card = cv('--card'), tint = cv('--tint'),
+        ink = cv('--ink'), muted = cv('--muted');
+    var focal = hover || selected;
+    var focusSet = null;
+    if (focal) {
+      focusSet = {}; focusSet[focal.id] = 1;
+      Object.keys(neighbors[focal.id]).forEach(function (k) { focusSet[k] = 1; });
+    }
+    edges.forEach(function (e) {
+      var dim = focusSet && !(focusSet[e.a.id] && focusSet[e.b.id]);
+      ctx.strokeStyle = accent;
+      ctx.globalAlpha = dim ? 0.06 : Math.min(0.22 + e.w * 0.09, 0.62);
+      ctx.lineWidth = 0.7 + e.w * 0.6;
+      ctx.setLineDash(e.a.type === 'topic' || e.b.type === 'topic' ? [3, 5] : []);
+      ctx.beginPath();
+      ctx.moveTo(e.a.x, e.a.y);
+      ctx.lineTo(e.b.x, e.b.y);
+      ctx.stroke();
+    });
+    ctx.setLineDash([]);
+    ctx.globalAlpha = 1;
+    NODES.forEach(function (n) {
+      var r = radius(n);
+      var dim = focusSet && !focusSet[n.id];
+      ctx.globalAlpha = dim ? 0.22 : 1;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r, 0, 6.2832);
+      ctx.fillStyle = n.type === 'me' ? accent : n.type === 'author' ? card : tint;
+      ctx.fill();
+      ctx.lineWidth = n === hover ? 2.2 : 1.5;
+      ctx.strokeStyle = accent;
+      if (n.type === 'topic') ctx.setLineDash([3, 4]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      if (n.type === 'me') {
+        ctx.fillStyle = card;
+        ctx.font = '600 11px "Space Grotesk", sans-serif';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText('RS', n.x, n.y);
+      }
+      ctx.fillStyle = dim ? muted : ink;
+      ctx.font = (n.type === 'topic' ? '400 ' : '500 ') + '11px Inter, sans-serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+      ctx.fillText(n.label, n.x, n.y + r + 4);
+      if (n.sub && (hover === n || selected === n)) {
+        ctx.fillStyle = muted;
+        ctx.font = '400 9.5px "IBM Plex Mono", monospace';
+        ctx.fillText(n.sub, n.x, n.y + r + 17);
+      }
+      ctx.globalAlpha = 1;
+    });
+  }
+
+  var visible = true;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      visible = en[0].isIntersecting;
+      if (visible) wake();
+    }, { threshold: 0 }).observe(canvas);
+  }
+  function loop() {
+    tick();
+    render();
+    raf = visible ? requestAnimationFrame(loop) : null;
+  }
+  function wake() { if (!raf) raf = requestAnimationFrame(loop); }
+
+  function localPos(e) {
+    var r = canvas.getBoundingClientRect();
+    return { x: e.clientX - r.left, y: e.clientY - r.top };
+  }
+  function nodeAt(p) {
+    for (var i = NODES.length - 1; i >= 0; i--) {
+      var n = NODES[i];
+      var dx = p.x - n.x, dy = p.y - n.y;
+      if (dx * dx + dy * dy < Math.pow(radius(n) + 8, 2)) return n;
+    }
+    return null;
+  }
+  canvas.addEventListener('pointerdown', function (e) {
+    var p = localPos(e);
+    var n = nodeAt(p);
+    downAt = p; moved = 0;
+    if (n) {
+      drag = n; n.fixed = true;
+      canvas.classList.add('dragging');
+      canvas.setPointerCapture(e.pointerId);
+      wake();
+    } else {
+      selected = null; wake();
+    }
+  });
+  canvas.addEventListener('pointermove', function (e) {
+    var p = localPos(e);
+    if (drag) { drag.x = p.x; drag.y = p.y; if (downAt) moved += Math.abs(p.x - downAt.x) + Math.abs(p.y - downAt.y); downAt = p; }
+    else { hover = nodeAt(p); canvas.style.cursor = hover ? 'pointer' : 'grab'; }
+    wake();
+  });
+  canvas.addEventListener('pointerup', function () {
+    if (drag) {
+      if (moved < 6) { selected = (selected === drag) ? null : drag; } // a click, not a drag
+      drag.fixed = false; drag = null; canvas.classList.remove('dragging');
+    }
+    wake();
+  });
+  canvas.addEventListener('pointerleave', function () { hover = null; wake(); });
+  new MutationObserver(function () { wake(); })
+    .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
   size();
   window.addEventListener('resize', size);
+})();
+</script>
+<script>
+/* ---- Interactive footprint map: pan, zoom, arcs, click popups ---- */
+(function () {
+  var svg = document.getElementById('worldMap');
+  if (!svg) return;
+  var wrap = document.getElementById('mapWrap');
+  var pop = document.getElementById('mapPop');
+  var FULL = { x: 0, y: 0, w: 1000, h: 470 };
+  var vb = { x: 0, y: 0, w: 1000, h: 470 };
+  var MINW = 110; // ~9x max zoom
+  var active = null; // marker element with open popup
+
+  var landPath = document.getElementById('landPath');
+  var arcs = [].slice.call(svg.querySelectorAll('.arc'));
+  var mks = [].slice.call(svg.querySelectorAll('.mk'));
+
+  function apply() {
+    svg.setAttribute('viewBox', vb.x + ' ' + vb.y + ' ' + vb.w + ' ' + vb.h);
+    var k = vb.w / FULL.w; // <1 when zoomed in: keeps screen sizes constant
+    landPath.setAttribute('stroke-width', (0.7 * k).toFixed(2));
+    arcs.forEach(function (a) {
+      a.setAttribute('stroke-width', (1.6 * k).toFixed(2));
+      a.setAttribute('stroke-dasharray', (4 * k) + ' ' + (6 * k));
+    });
+    mks.forEach(function (m) {
+      if (m.tagName === 'circle') {
+        m.setAttribute('r', (parseFloat(m.dataset.r) * k).toFixed(2));
+        m.setAttribute('stroke-width', (2 * k).toFixed(2));
+      } else { // the me-pin group
+        m.setAttribute('transform', 'translate(' + m.dataset.x + ',' + m.dataset.y + ') scale(' + k + ')');
+      }
+    });
+    positionPop();
+  }
+
+  function positionPop() {
+    if (!active) return;
+    var r = svg.getBoundingClientRect(), wr = wrap.getBoundingClientRect();
+    var mx = parseFloat(active.dataset.x), my = parseFloat(active.dataset.y);
+    var left = (mx - vb.x) / vb.w * r.width + (r.left - wr.left);
+    var top = (my - vb.y) / vb.h * r.height + (r.top - wr.top);
+    var k = vb.w / FULL.w;
+    top -= (active.tagName === 'g' ? 28 * k / (vb.w / FULL.w) : parseFloat(active.dataset.r)) * (r.width / vb.w) * k;
+    pop.style.left = left + 'px';
+    pop.style.top = top + 'px';
+  }
+
+  function showPop(m) {
+    active = m;
+    document.getElementById('mpTtl').textContent = m.dataset.title;
+    document.getElementById('mpLoc').textContent = m.dataset.loc;
+    document.getElementById('mpPpl').textContent = m.dataset.ppl;
+    pop.hidden = false;
+    positionPop();
+  }
+  function hidePop() { active = null; pop.hidden = true; }
+
+  function clamp() {
+    vb.w = Math.max(MINW, Math.min(FULL.w, vb.w));
+    vb.h = vb.w * FULL.h / FULL.w;
+    vb.x = Math.max(0, Math.min(FULL.w - vb.w, vb.x));
+    vb.y = Math.max(0, Math.min(FULL.h - vb.h, vb.y));
+  }
+  function svgPoint(cx, cy) {
+    var r = svg.getBoundingClientRect();
+    return { x: vb.x + (cx - r.left) / r.width * vb.w,
+             y: vb.y + (cy - r.top) / r.height * vb.h };
+  }
+  function zoomAt(p, factor) {
+    var nw = vb.w * factor;
+    if (nw < MINW) factor = MINW / vb.w;
+    if (nw > FULL.w) factor = FULL.w / vb.w;
+    vb.x = p.x - (p.x - vb.x) * factor;
+    vb.y = p.y - (p.y - vb.y) * factor;
+    vb.w *= factor;
+    clamp(); apply();
+  }
+
+  svg.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    zoomAt(svgPoint(e.clientX, e.clientY), e.deltaY < 0 ? 0.82 : 1 / 0.82);
+  }, { passive: false });
+
+  // pan + pinch via pointer events
+  var pointers = {};
+  var panStart = null, pinchStart = null;
+  svg.addEventListener('pointerdown', function (e) {
+    // presses on a marker belong to the marker's click handler —
+    // capturing here would swallow its pointerup (the popup bug)
+    if (e.target.closest && e.target.closest('.mk')) return;
+    hidePop();
+    pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+    var keys = Object.keys(pointers);
+    if (keys.length === 1) {
+      panStart = { x: e.clientX, y: e.clientY, vx: vb.x, vy: vb.y };
+      svg.setPointerCapture(e.pointerId);
+    } else if (keys.length === 2) {
+      var a = pointers[keys[0]], b = pointers[keys[1]];
+      pinchStart = { d: Math.hypot(a.x - b.x, a.y - b.y), w: vb.w,
+                     cx: (a.x + b.x) / 2, cy: (a.y + b.y) / 2 };
+      panStart = null;
+    }
+  });
+  svg.addEventListener('pointermove', function (e) {
+    if (!pointers[e.pointerId]) return;
+    pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+    var keys = Object.keys(pointers);
+    if (keys.length === 2 && pinchStart) {
+      var a = pointers[keys[0]], b = pointers[keys[1]];
+      var d = Math.hypot(a.x - b.x, a.y - b.y);
+      var p = svgPoint(pinchStart.cx, pinchStart.cy);
+      var targetW = pinchStart.w * pinchStart.d / Math.max(d, 1);
+      zoomAt(p, targetW / vb.w);
+    } else if (panStart) {
+      var r = svg.getBoundingClientRect();
+      vb.x = panStart.vx - (e.clientX - panStart.x) * vb.w / r.width;
+      vb.y = panStart.vy - (e.clientY - panStart.y) * vb.h / r.height;
+      clamp(); apply();
+    }
+  });
+  function endPointer(e) {
+    delete pointers[e.pointerId];
+    if (Object.keys(pointers).length < 2) pinchStart = null;
+    if (Object.keys(pointers).length < 1) panStart = null;
+  }
+  svg.addEventListener('pointerup', endPointer);
+  svg.addEventListener('pointercancel', endPointer);
+
+  // marker clicks (suppress when it was a pan)
+  mks.forEach(function (m) {
+    var down = null;
+    m.addEventListener('pointerdown', function (e) { down = { x: e.clientX, y: e.clientY }; });
+    m.addEventListener('pointerup', function (e) {
+      if (down && Math.hypot(e.clientX - down.x, e.clientY - down.y) < 6) {
+        e.stopPropagation();
+        if (active === m) hidePop(); else showPop(m);
+      }
+      down = null;
+    });
+  });
+
+  document.getElementById('mzIn').addEventListener('click', function () {
+    zoomAt({ x: vb.x + vb.w / 2, y: vb.y + vb.h / 2 }, 0.7);
+  });
+  document.getElementById('mzOut').addEventListener('click', function () {
+    zoomAt({ x: vb.x + vb.w / 2, y: vb.y + vb.h / 2 }, 1 / 0.7);
+  });
+  document.getElementById('mzReset').addEventListener('click', function () {
+    vb = { x: 0, y: 0, w: 1000, h: 470 }; hidePop(); apply();
+  });
+  window.addEventListener('resize', positionPop);
+  apply();
 })();
 </script>
 </body>

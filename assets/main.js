@@ -36,13 +36,10 @@
     });
   }
 
-  /* ---------- gaze-trail background ----------
-     Static dot grid (calibration-grid texture) + a live scanpath:
-     linger and a numbered fixation circle grows with dwell time;
-     move and a thin dashed saccade line connects to the next
-     fixation. The trail fades like a decaying gaze overlay —
-     the same fixation/saccade event logic used in eye-tracking
-     analysis, applied to the cursor. */
+  /* ---------- dot-grid background with cursor glow ----------
+     A static grid of faint dots; dots within a soft radius of the
+     cursor warm toward the accent and swell slightly, with an eased
+     trailing motion. Deliberately quiet — texture, not spectacle. */
   var canvas = document.getElementById('dotgrid');
   if (!canvas) return;
 
@@ -50,10 +47,12 @@
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   var ctx = canvas.getContext('2d');
-  var SPACING = 26, DOT_R = 1.1;
+  var SPACING = 26, BASE_R = 1.1, MAX_R = 2.3, RADIUS = 125;
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
-  var W, H, dotsLayer = null;
-  var baseRGB, tealRGB, baseAlpha;
+  var W, H, cols, rows;
+  var mouse = { x: -9999, y: -9999 };
+  var eased = { x: -9999, y: -9999 };
+  var baseRGB, tealRGB, baseAlpha, tealAlpha;
 
   function cssVar(name) {
     return getComputedStyle(root).getPropertyValue(name).trim();
@@ -64,152 +63,88 @@
     var n = parseInt(hex, 16);
     return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
   }
-
-  function buildDotsLayer() {
-    dotsLayer = document.createElement('canvas');
-    dotsLayer.width = W * dpr; dotsLayer.height = H * dpr;
-    var dctx = dotsLayer.getContext('2d');
-    dctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    dctx.fillStyle = 'rgba(' + baseRGB.join(',') + ',' + baseAlpha + ')';
-    for (var x = 0; x <= W + SPACING; x += SPACING) {
-      for (var y = 0; y <= H + SPACING; y += SPACING) {
-        dctx.beginPath(); dctx.arc(x, y, DOT_R, 0, 6.2832); dctx.fill();
-      }
-    }
-  }
-
-  function blitDots() {
-    ctx.clearRect(0, 0, W, H);
-    if (dotsLayer) ctx.drawImage(dotsLayer, 0, 0, W, H);
-  }
-
   function refreshPalette(skipDraw) {
     var dark = root.getAttribute('data-theme') === 'dark';
     baseRGB = hexToRGB(cssVar('--line') || (dark ? '#342718' : '#EAE1D5'));
     tealRGB = hexToRGB(cssVar('--teal') || (dark ? '#E8956D' : '#B4530A'));
     baseAlpha = dark ? 0.5 : 0.8;
-    if (W) buildDotsLayer();
-    if (!skipDraw) { blitDots(); wake(); }
+    tealAlpha = dark ? 0.6 : 0.55;
+    if (!skipDraw) drawStatic();
   }
-
   function resize() {
     W = window.innerWidth; H = window.innerHeight;
     canvas.width = W * dpr; canvas.height = H * dpr;
     canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    if (baseRGB) { buildDotsLayer(); blitDots(); }
+    cols = Math.ceil(W / SPACING) + 1;
+    rows = Math.ceil(H / SPACING) + 1;
+    drawStatic();
   }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function draw(px, py) {
+    if (!baseRGB || !W) return;
+    ctx.clearRect(0, 0, W, H);
+    // soft ambient wash of the accent around the cursor (behind the dots)
+    if (px > -999) {
+      var dark = root.getAttribute('data-theme') === 'dark';
+      var g = ctx.createRadialGradient(px, py, 0, px, py, RADIUS * 1.5);
+      g.addColorStop(0, 'rgba(' + tealRGB.join(',') + ',' + (dark ? 0.18 : 0.16) + ')');
+      g.addColorStop(1, 'rgba(' + tealRGB.join(',') + ',0)');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(px, py, RADIUS * 1.5, 0, 6.2832);
+      ctx.fill();
+    }
+    var r2 = RADIUS * RADIUS;
+    for (var i = 0; i < cols; i++) {
+      for (var j = 0; j < rows; j++) {
+        var x = i * SPACING, y = j * SPACING;
+        var dx = x - px, dy = y - py;
+        var d2 = dx * dx + dy * dy;
+        var t = 0;
+        if (d2 < r2) {
+          t = 1 - Math.sqrt(d2) / RADIUS;
+          t = t * t * (3 - 2 * t); // smoothstep falloff
+        }
+        var rr = lerp(BASE_R, MAX_R, t);
+        var cr = Math.round(lerp(baseRGB[0], tealRGB[0], t));
+        var cg = Math.round(lerp(baseRGB[1], tealRGB[1], t));
+        var cb = Math.round(lerp(baseRGB[2], tealRGB[2], t));
+        var ca = lerp(baseAlpha, tealAlpha, t);
+        ctx.beginPath();
+        ctx.arc(x, y, rr, 0, 6.2832);
+        ctx.fillStyle = 'rgba(' + cr + ',' + cg + ',' + cb + ',' + ca + ')';
+        ctx.fill();
+      }
+    }
+  }
+  function drawStatic() { draw(-9999, -9999); }
 
   refreshPalette(true);
   resize();
-  blitDots();
   window.addEventListener('resize', resize);
 
-  // Static grid only: touch devices or reduced-motion preference
-  if (!finePointer || reduceMotion) {
-    var wake = function () {};
-    return;
+  if (!finePointer || reduceMotion) return;
+
+  var raf = null, idle = true;
+  function loop() {
+    eased.x = lerp(eased.x, mouse.x, 0.16);
+    eased.y = lerp(eased.y, mouse.y, 0.16);
+    draw(eased.x, eased.y);
+    var settled = Math.abs(eased.x - mouse.x) < 0.4 && Math.abs(eased.y - mouse.y) < 0.4;
+    if (settled && mouse.x === -9999) { idle = true; raf = null; drawStatic(); return; }
+    raf = requestAnimationFrame(loop);
   }
-
-  /* --- scanpath state --- */
-  var FIX_DIST = 9;      // px: movement below this = still fixating
-  var MIN_R = 5, MAX_R = 24;
-  var GROW = 0.016;      // px of radius per ms of dwell
-  var FADE = 3200;       // ms for a finished fixation to fade out
-  var MAX_FIX = 14;      // trail length cap
-  var fixations = [];    // finished: {x,y,r,end,n}
-  var cur = null;        // active:   {x,y,r,t0,n}
-  var counter = 1;
-  var raf = null;
-
-  function dist(ax, ay, bx, by) {
-    var dx = ax - bx, dy = ay - by;
-    return Math.sqrt(dx * dx + dy * dy);
+  function wake() {
+    if (idle) { idle = false; raf = requestAnimationFrame(loop); }
   }
-
-  function teal(a) { return 'rgba(' + tealRGB.join(',') + ',' + a + ')'; }
-
-  function drawFix(f, alpha, now) {
-    ctx.beginPath();
-    ctx.arc(f.x, f.y, f.r, 0, 6.2832);
-    ctx.fillStyle = teal(0.09 * alpha);
-    ctx.fill();
-    ctx.lineWidth = 1.3;
-    ctx.strokeStyle = teal(0.55 * alpha);
-    ctx.stroke();
-    if (f.r >= 10) {
-      ctx.fillStyle = teal(0.75 * alpha);
-      ctx.font = '500 9px "IBM Plex Mono", monospace';
-      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      ctx.fillText(String(f.n), f.x, f.y);
-    }
-  }
-
-  function render(now) {
-    blitDots();
-    var items = fixations.slice();
-    if (cur) items.push(cur);
-    // saccade lines between consecutive fixations
-    ctx.setLineDash([3, 6]);
-    ctx.lineWidth = 1;
-    for (var i = 1; i < items.length; i++) {
-      var a = alphaOf(items[i - 1], now), b = alphaOf(items[i], now);
-      var la = Math.min(a, b);
-      if (la <= 0) continue;
-      ctx.strokeStyle = teal(0.4 * la);
-      ctx.beginPath();
-      ctx.moveTo(items[i - 1].x, items[i - 1].y);
-      ctx.lineTo(items[i].x, items[i].y);
-      ctx.stroke();
-    }
-    ctx.setLineDash([]);
-    for (var j = 0; j < items.length; j++) {
-      var al = alphaOf(items[j], now);
-      if (al > 0) drawFix(items[j], al, now);
-    }
-  }
-
-  function alphaOf(f, now) {
-    if (!f.end) return 1;
-    return Math.max(0, 1 - (now - f.end) / FADE);
-  }
-
-  function loop(now) {
-    if (cur) cur.r = Math.min(MAX_R, MIN_R + (now - cur.t0) * GROW);
-    // prune fully faded
-    fixations = fixations.filter(function (f) { return alphaOf(f, now) > 0; });
-    render(now);
-    if (cur || fixations.length) {
-      raf = requestAnimationFrame(loop);
-    } else {
-      counter = 1;      // fresh scanpath numbering next time
-      blitDots();
-      raf = null;
-    }
-  }
-  function wake() { if (!raf) raf = requestAnimationFrame(loop); }
-
   window.addEventListener('mousemove', function (e) {
-    var x = e.clientX, y = e.clientY;
-    var now = performance.now();
-    if (cur && dist(x, y, cur.x, cur.y) < FIX_DIST + cur.r * 0.3) {
-      // still within the fixation: drift its center gently toward the cursor
-      cur.x += (x - cur.x) * 0.12;
-      cur.y += (y - cur.y) * 0.12;
-    } else {
-      if (cur) {
-        cur.end = now;
-        fixations.push(cur);
-        if (fixations.length > MAX_FIX) fixations.shift();
-      }
-      cur = { x: x, y: y, r: MIN_R, t0: now, n: counter++ };
-    }
+    mouse.x = e.clientX; mouse.y = e.clientY;
+    if (eased.x === -9999) { eased.x = mouse.x; eased.y = mouse.y; }
     wake();
   }, { passive: true });
-
   document.addEventListener('mouseleave', function () {
-    if (cur) { cur.end = performance.now(); fixations.push(cur); cur = null; }
-    wake();
+    mouse.x = -9999; mouse.y = -9999; wake();
   });
 })();
 
