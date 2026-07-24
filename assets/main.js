@@ -248,7 +248,41 @@
     .catch(function () { /* keep the static fallback numbers */ });
 })();
 
+/* ---------- masthead typewriter ("currently ...") ---------- */
+(function () {
+  var el = document.getElementById('typeLine');
+  if (!el) return;
+  var LINES = [
+    'teaching machines to see like expert inspectors',
+    'forecasting the unforecastable',
+    'flying drones along coastlines at golden hour',
+    'people watching (professionally, it\'s called eye tracking)',
+    'plotting my next adventure over a cup of tea'
+  ];
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.textContent = LINES[0];
+    return;
+  }
+  var li = 0, ci = 0, deleting = false;
+  function step() {
+    var line = LINES[li];
+    if (!deleting) {
+      ci++;
+      el.textContent = line.slice(0, ci);
+      if (ci === line.length) { deleting = true; setTimeout(step, 2300); return; }
+      setTimeout(step, 42 + Math.random() * 46);
+    } else {
+      ci--;
+      el.textContent = line.slice(0, ci);
+      if (ci === 0) { deleting = false; li = (li + 1) % LINES.length; setTimeout(step, 380); return; }
+      setTimeout(step, 24);
+    }
+  }
+  setTimeout(step, 600);
+})();
+
 /* ---------- count-up stats + scroll reveal ---------- */
+
 (function () {
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!('IntersectionObserver' in window)) return;

@@ -43,6 +43,21 @@ a{color:inherit;text-decoration:none}
 /* Interactive dot-grid background */
 #dotgrid{position:fixed;inset:0;z-index:-1;pointer-events:none}
 
+/* Masthead — full-width statement above the intro */
+.mast{position:relative;z-index:1;text-align:center;padding:88px 24px 64px}
+.mast-name{font-family:'Space Grotesk',sans-serif;font-size:clamp(46px,8vw,86px);font-weight:600;letter-spacing:-0.02em;line-height:1.05}
+.mast-sub{font-size:clamp(15px,2vw,19px);font-weight:500;color:var(--ink);opacity:.85;margin-top:16px}
+.mast-sub .sep{color:var(--teal);opacity:.7;margin:0 6px}
+.mast-now{font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--muted);margin-top:16px;min-height:1.6em}
+.mast-now .type{color:var(--teal);font-weight:500}
+.mast-now .caret{color:var(--teal);animation:blink 1.05s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.mast-chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:color-mix(in srgb,var(--card) 82%,transparent);border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:14px;font-weight:500;backdrop-filter:blur(4px)}
+.chip svg{color:var(--teal)}
+.mast .btn{margin-top:32px}
+@media (prefers-reduced-motion:reduce){.mast-now .caret{animation:none}}
+
 /* Hero shell with background image layer */
 .hero-shell{position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
@@ -108,10 +123,12 @@ nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 8
 [data-theme="dark"] .btn.primary{color:#2A1608}
 .btn.primary:hover{background:var(--teal-bright)}
 
-/* Photo card: circular portrait in a square tint block */
-.photo-card{position:relative;border:1px solid var(--line);border-radius:20px;aspect-ratio:1/1;background:var(--tint);display:flex;align-items:center;justify-content:center}
-.photo-card img{width:72%;aspect-ratio:1/1;border-radius:50%;object-fit:cover;border:4px solid var(--card);box-shadow:0 0 0 1px var(--line)}
-.avatar-fallback{display:none;align-items:center;justify-content:center;width:72%;aspect-ratio:1/1;border-radius:50%;background:var(--teal);color:#FDF4EC;font-family:'Space Grotesk',sans-serif;font-size:64px;font-weight:600}
+/* Photo card: circular portrait + caption in a square tint block (Aashna-style) */
+.photo-card{position:relative;border:1px solid var(--line);border-radius:20px;aspect-ratio:1/1;background:var(--tint);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:24px;text-align:center;max-width:330px;width:100%;justify-self:end}
+.photo-card img{width:60%;aspect-ratio:1/1;border-radius:50%;object-fit:cover;border:4px solid var(--card);box-shadow:0 0 0 1px var(--line)}
+.avatar-fallback{display:none;align-items:center;justify-content:center;width:60%;aspect-ratio:1/1;border-radius:50%;background:var(--teal);color:#FDF4EC;font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:600}
+.photo-card h3{font-size:16.5px;font-weight:600;margin-top:12px}
+.photo-card .sub{font-size:13px;color:var(--muted)}
 
 /* Stats */
 .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--tint-soft)}
@@ -198,7 +215,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;font-size:13.5px;color:va
 
 @media (max-width:860px){
   .hero{grid-template-columns:1fr;padding:48px 0 40px;gap:36px}
-  .photo-card{max-width:380px;margin:0 auto}
+  .photo-card{max-width:300px;margin:0 auto;justify-self:center}
   .stats-inner{grid-template-columns:repeat(2,1fr);gap:28px 12px}
   .contact-grid{grid-template-columns:1fr}
   .nav-links{display:none}

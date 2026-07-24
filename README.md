@@ -11,7 +11,7 @@ This site is a digital portfolio showcasing my work at the intersection of **AI,
 It highlights:
 
 * **Applied research** — gaze-supervised computer vision, UAV-based structural inspection, and structural health monitoring, with an interactive map of my co-author network across six countries.
-* **Production ML** — demand forecasting and Document AI systems built at GA Telesis (Transformers, LightGBM, AWS SageMaker, Snowflake).
+* **Production ML** — demand forecasting and document-AI systems built in industry (transformers, gradient boosting, AWS).
 * **Publications & talks** — 11 peer-reviewed papers with live citation metrics, plus invited talks at ETH Zürich and Thornton Tomasetti.
 * **Open-source projects** — pulled live from the GitHub API.
 
