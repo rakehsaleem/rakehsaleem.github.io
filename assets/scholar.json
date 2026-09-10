@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-29",
-  "citations": 324,
+  "updated": "2026-09-10",
+  "citations": 328,
   "h_index": 7,
   "i10_index": 6,
   "publications_count": 15,
@@ -14,13 +14,13 @@
     {
       "title": "Instant bridge visual inspection using an unmanned aerial vehicle by image capturing and geo-tagging system and deep convolutional neural network",
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sNDGyTYAAAAJ&pagesize=100&citation_for_view=sNDGyTYAAAAJ:d1gkVwhDpl0C",
-      "citations": 90,
+      "citations": 91,
       "year": 2021
     },
     {
       "title": "Multimetric event-driven system for long-term wireless sensor operation for SHM applications",
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sNDGyTYAAAAJ&pagesize=100&citation_for_view=sNDGyTYAAAAJ:u-x6o8ySG0sC",
-      "citations": 38,
+      "citations": 39,
       "year": 2020
     },
     {
@@ -30,10 +30,10 @@
       "year": 2025
     },
     {
-      "title": "Analysis of gaze patterns during facade inspection to understand inspector sense-making processes",
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sNDGyTYAAAAJ&pagesize=100&citation_for_view=sNDGyTYAAAAJ:zYLM7Y9cAGgC",
+      "title": "Evaluating human expert knowledge in damage assessment using eye tracking: A disaster case study",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sNDGyTYAAAAJ&pagesize=100&citation_for_view=sNDGyTYAAAAJ:YsMSGLbcyi4C",
       "citations": 14,
-      "year": 2023
+      "year": 2024
     }
   ]
 }
