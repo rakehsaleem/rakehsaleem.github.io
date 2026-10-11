@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-06",
-  "citations": 337,
+  "updated": "2026-10-11",
+  "citations": 339,
   "h_index": 7,
   "i10_index": 6,
   "publications_count": 15,
@@ -14,7 +14,7 @@
     {
       "title": "Instant bridge visual inspection using an unmanned aerial vehicle by image capturing and geo-tagging system and deep convolutional neural network",
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sNDGyTYAAAAJ&pagesize=100&citation_for_view=sNDGyTYAAAAJ:d1gkVwhDpl0C",
-      "citations": 95,
+      "citations": 96,
       "year": 2021
     },
     {
@@ -32,7 +32,7 @@
     {
       "title": "Analysis of gaze patterns during facade inspection to understand inspector sense-making processes",
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sNDGyTYAAAAJ&pagesize=100&citation_for_view=sNDGyTYAAAAJ:zYLM7Y9cAGgC",
-      "citations": 15,
+      "citations": 16,
       "year": 2023
     }
   ]
