@@ -88,53 +88,50 @@ svg .heat2{fill:var(--teal);opacity:.14}
     <div class="feat-head" role="button" tabindex="0" aria-expanded="false">
       <div class="feat-vis">
         <svg viewBox="0 0 520 300" aria-hidden="true">
-          <!-- kitchen, top-down: walls, window on the left wall, door -->
-          <rect x="24" y="44" width="190" height="150" rx="3" fill="var(--card)" stroke="var(--teal)" stroke-width="3"/>
-          <line x1="24" y1="96" x2="24" y2="136" stroke="var(--card)" stroke-width="5"/>
-          <line x1="21" y1="96" x2="21" y2="136" class="lnf"/><line x1="27" y1="96" x2="27" y2="136" class="lnf"/>
-          <line x1="152" y1="194" x2="186" y2="194" stroke="var(--card)" stroke-width="5"/>
-          <path d="M186 194 V160 A34 34 0 0 0 152 194" class="lnf" stroke-dasharray="3 4"/>
-          <!-- L-shaped counter, sink, cooktop, island -->
-          <rect x="30" y="50" width="178" height="20" rx="2" class="bxa"/>
-          <rect x="188" y="70" width="20" height="80" rx="2" class="bxa"/>
-          <rect x="74" y="54" width="28" height="12" rx="4" class="bx"/>
-          <g class="lnf"><circle cx="140" cy="56" r="3"/><circle cx="152" cy="56" r="3"/><circle cx="140" cy="65" r="3"/><circle cx="152" cy="65" r="3"/></g>
-          <rect x="70" y="106" width="82" height="32" rx="3" class="bx"/>
-          <!-- vision reads the island off a site photo -->
-          <path d="M60 110 v-10 h10 M152 100 h10 v10 M162 134 v10 h-10 M70 144 h-10 v-10" class="ln" stroke-width="2"/>
-          <ellipse cx="111" cy="122" rx="30" ry="14" class="heat2"/>
-          <g transform="translate(150,6) rotate(7)">
-            <rect x="0" y="0" width="64" height="54" rx="3" fill="var(--card)" stroke="var(--line)" stroke-width="1.3"/>
-            <rect x="5" y="5" width="54" height="36" rx="2" fill="var(--tint)"/>
-            <path d="M9 30 h46 M20 24 h22 v8 h-22 Z" class="lnf"/>
-            <circle cx="49" cy="13" r="4" class="lnf"/>
-          </g>
-          <path d="M158 62 C140 80 130 92 124 104" class="ln" stroke-dasharray="2 4"/>
-          <!-- dimension -->
-          <line x1="24" y1="212" x2="214" y2="212" class="lnf"/>
-          <line x1="24" y1="206" x2="24" y2="218" class="lnf"/><line x1="214" y1="206" x2="214" y2="218" class="lnf"/>
-          <text x="119" y="230" text-anchor="middle" class="tl">12' 6"</text>
-          <!-- priced in code: a bill of materials -->
-          <path d="M220 119 H230" class="ln"/><path d="M226 114 l5 5 -5 5" class="ln"/>
-          <path d="M236 64 H292 V176 L285 182 L278 176 L271 182 L264 176 L257 182 L250 176 L243 182 L236 176 Z" class="bx"/>
-          <g class="lnf"><line x1="242" y1="80" x2="268" y2="80"/><line x1="242" y1="94" x2="272" y2="94"/><line x1="242" y1="108" x2="264" y2="108"/><line x1="242" y1="122" x2="270" y2="122"/><line x1="242" y1="136" x2="262" y2="136"/></g>
-          <g class="tla" text-anchor="end"><text x="288" y="83">$</text><text x="288" y="97">$</text><text x="288" y="111">$</text><text x="288" y="125">$</text><text x="288" y="139">$</text></g>
-          <line x1="242" y1="150" x2="288" y2="150" class="ln"/>
-          <rect x="242" y="156" width="46" height="8" rx="2" fill="var(--teal)" opacity=".8"/>
-          <text x="264" y="204" text-anchor="middle" class="tla">BOM</text>
-          <path d="M296 119 H306" class="ln"/><path d="M302 114 l5 5 -5 5" class="ln"/>
-          <!-- CP-SAT crew schedule -->
-          <rect x="312" y="44" width="184" height="150" rx="8" class="bx"/>
-          <g class="lnf" opacity=".55"><line x1="350" y1="54" x2="350" y2="186"/><line x1="378" y1="54" x2="378" y2="186"/><line x1="406" y1="54" x2="406" y2="186"/><line x1="434" y1="54" x2="434" y2="186"/><line x1="462" y1="54" x2="462" y2="186"/><line x1="490" y1="54" x2="490" y2="186"/></g>
-          <circle cx="332" cy="64" r="4" class="ln"/><path d="M325 75 q7 -8 14 0" class="ln"/><circle cx="332" cy="90" r="4" class="ln"/><path d="M325 101 q7 -8 14 0" class="ln"/><circle cx="332" cy="116" r="4" class="ln"/><path d="M325 127 q7 -8 14 0" class="ln"/><circle cx="332" cy="142" r="4" class="ln"/><path d="M325 153 q7 -8 14 0" class="ln"/><circle cx="332" cy="168" r="4" class="ln"/><path d="M325 179 q7 -8 14 0" class="ln"/>
-          <rect x="350" y="62" width="50" height="12" rx="3" fill="var(--teal)" opacity=".85"/>
-          <rect x="400" y="88" width="34" height="12" rx="3" fill="var(--teal)" opacity=".6"/>
-          <rect x="434" y="114" width="30" height="12" rx="3" fill="var(--teal)" opacity=".7"/>
-          <rect x="406" y="140" width="36" height="12" rx="3" fill="var(--teal)" opacity=".4"/>
-          <rect x="464" y="166" width="22" height="12" rx="3" fill="var(--teal)" opacity=".9"/>
-          <g class="ln" stroke-dasharray="2 3" stroke-width="1.2"><path d="M400 74 V88"/><path d="M434 100 V114"/><path d="M464 126 V166"/><path d="M400 74 C402 112 404 130 406 140"/></g>
-          <text x="404" y="212" text-anchor="middle" class="tla">CP-SAT schedule</text>
-          <text x="24" y="282" class="tl">a site photo and plan in; a priced BOM and crew schedule out</text>
+          <!-- inputs: address, site photos, plans -->
+          <rect x="24" y="60" width="36" height="36" rx="9" class="bx"/><path d="M42 88 c-5 -7 -8 -10 -8 -14.5 a8 8 0 1 1 16 0 c0 4.5 -3 7.5 -8 14.5Z" class="ln"/><circle cx="42" cy="73.5" r="2.6" fill="var(--teal)"/><rect x="24" y="108" width="36" height="36" rx="9" class="bx"/><rect x="32" y="118" width="20" height="16" rx="2" class="ln"/><path d="M34 132 l5 -6 4 4 3 -3 4 5" class="ln"/><circle cx="47" cy="122.5" r="1.8" fill="var(--teal)"/><rect x="24" y="156" width="36" height="36" rx="9" class="bx"/><rect x="32" y="166" width="20" height="16" rx="1" class="ln"/><path d="M32 174 h9 v8 M46 166 v6 h6" class="ln"/>
+          <text x="24" y="210" class="tl">address,</text><text x="24" y="222" class="tl">photos, plans</text>
+          <path d="M68 128 H84" class="ln"/><path d="M80 123 l5 5 -5 5" class="ln"/>
+          <!-- the designed room, as a 3D cutaway -->
+          <polygon points="178.0,100.0 273.3,155.0 197.1,199.0 101.8,144.0" fill="var(--card)" stroke="var(--line)" stroke-width="1.3"/>
+          <line x1="197.1" y1="111.0" x2="120.8" y2="155.0" class="lnf" opacity=".3"/>
+          <line x1="216.1" y1="122.0" x2="139.9" y2="166.0" class="lnf" opacity=".3"/>
+          <line x1="235.2" y1="133.0" x2="158.9" y2="177.0" class="lnf" opacity=".3"/>
+          <line x1="254.2" y1="144.0" x2="178.0" y2="188.0" class="lnf" opacity=".3"/>
+          <line x1="158.9" y1="111.0" x2="254.2" y2="166.0" class="lnf" opacity=".3"/>
+          <line x1="139.9" y1="122.0" x2="235.2" y2="177.0" class="lnf" opacity=".3"/>
+          <line x1="120.8" y1="133.0" x2="216.1" y2="188.0" class="lnf" opacity=".3"/>
+          <polygon points="178.0,100.0 273.3,155.0 273.3,100.0 178.0,45.0" fill="var(--card)" stroke="var(--line)" stroke-width="1.3" stroke-linejoin="round"/>
+          <polygon points="178.0,100.0 101.8,144.0 101.8,89.0 178.0,45.0" fill="var(--tint)" stroke="var(--line)" stroke-width="1.3" stroke-linejoin="round"/>
+          <polygon points="210.4,86.8 240.9,104.4 240.9,87.9 210.4,70.3" fill="var(--tint-soft)" stroke="var(--teal)" stroke-width="1.2"/>
+          <line x1="225.6" y1="95.6" x2="225.6" y2="79.1" stroke="var(--teal)" stroke-width="1"/>
+          <polygon points="122.7,131.9 107.5,140.7 107.5,98.9 122.7,90.1" fill="var(--tint-soft)" stroke="var(--faint)" stroke-width="1.2"/>
+          <polygon points="130.4,127.5 145.6,136.3 145.6,114.3 130.4,105.5" fill="var(--tint)" stroke="var(--teal)" stroke-width="1.2" stroke-linejoin="round"/><polygon points="178.0,117.6 145.6,136.3 145.6,114.3 178.0,95.6" fill="var(--tint-soft)" stroke="var(--teal)" stroke-width="1.2" stroke-linejoin="round"/><polygon points="162.8,86.8 178.0,95.6 145.6,114.3 130.4,105.5" fill="var(--card)" stroke="var(--teal)" stroke-width="1.2" stroke-linejoin="round"/>
+          <polygon points="178.0,117.6 252.3,160.5 252.3,138.5 178.0,95.6" fill="var(--tint)" stroke="var(--teal)" stroke-width="1.2" stroke-linejoin="round"/><polygon points="267.5,151.7 252.3,160.5 252.3,138.5 267.5,129.7" fill="var(--tint-soft)" stroke="var(--teal)" stroke-width="1.2" stroke-linejoin="round"/><polygon points="193.2,86.8 267.5,129.7 252.3,138.5 178.0,95.6" fill="var(--card)" stroke="var(--teal)" stroke-width="1.2" stroke-linejoin="round"/>
+          <polygon points="200.9,95.6 214.2,103.3 206.6,107.7 193.2,100.0" fill="var(--tint-soft)" stroke="var(--faint)" stroke-width="1"/>
+          <ellipse cx="239.9" cy="119.2" rx="3" ry="1.7" class="lnf"/>
+          <ellipse cx="248.5" cy="124.2" rx="3" ry="1.7" class="lnf"/>
+          <ellipse cx="234.2" cy="122.6" rx="3" ry="1.7" class="lnf"/>
+          <ellipse cx="242.8" cy="127.5" rx="3" ry="1.7" class="lnf"/>
+          <polygon points="162.8,152.8 200.9,174.8 200.9,152.8 162.8,130.8" fill="var(--tint)" stroke="var(--teal)" stroke-width="1.2" stroke-linejoin="round"/><polygon points="218.0,164.9 200.9,174.8 200.9,152.8 218.0,142.9" fill="var(--tint-soft)" stroke="var(--teal)" stroke-width="1.2" stroke-linejoin="round"/><polygon points="179.9,120.9 218.0,142.9 200.9,152.8 162.8,130.8" fill="var(--card)" stroke="var(--teal)" stroke-width="1.2" stroke-linejoin="round"/>
+          <ellipse cx="190.4" cy="136.8" rx="26" ry="12" class="heat2"/>
+          <ellipse cx="190.4" cy="136.8" rx="13" ry="6" class="heat1"/>
+          <text x="180" y="222" text-anchor="middle" class="tl">CAD plan + 3D model</text>
+          <path d="M282 128 H296" class="ln"/><path d="M292 123 l5 5 -5 5" class="ln"/>
+          <!-- three priced options; one recommended -->
+          <rect x="304" y="44" width="192" height="78" rx="9" class="bx"/>
+          <rect x="316" y="54" width="48" height="58" rx="6" class="bx"/><text x="325" y="68" class="tla">A</text><rect x="338" y="92" width="16" height="12" rx="2" fill="var(--teal)" opacity=".4"/><rect x="376" y="54" width="48" height="58" rx="6" class="bxa"/><text x="385" y="68" class="tla">B</text><rect x="398" y="82" width="16" height="22" rx="2" fill="var(--teal)" opacity=".9"/><rect x="436" y="54" width="48" height="58" rx="6" class="bx"/><text x="445" y="68" class="tla">C</text><rect x="458" y="72" width="16" height="32" rx="2" fill="var(--teal)" opacity=".4"/><path d="M392 58 l4 4 7 -8" class="ln" stroke-width="2"/>
+          <text x="400" y="136" text-anchor="middle" class="tla">3 priced options, 1 recommended</text>
+          <!-- the approved scope becomes a crew schedule -->
+          <rect x="304" y="146" width="192" height="60" rx="9" class="bx"/>
+          <rect x="316" y="156" width="52" height="8" rx="2" fill="var(--teal)" opacity=".85"/>
+          <rect x="368" y="168" width="40" height="8" rx="2" fill="var(--teal)" opacity=".6"/>
+          <rect x="368" y="180" width="30" height="8" rx="2" fill="var(--teal)" opacity=".4"/>
+          <rect x="408" y="192" width="46" height="8" rx="2" fill="var(--teal)" opacity=".85"/>
+          <rect x="454" y="156" width="30" height="8" rx="2" fill="var(--teal)" opacity=".5"/>
+          <g class="ln" stroke-dasharray="2 3" stroke-width="1.1"><path d="M368 164 V180"/><path d="M408 176 V192"/><path d="M454 192 V164"/></g>
+          <text x="400" y="220" text-anchor="middle" class="tla">CP-SAT crew schedule</text>
+          <text x="24" y="284" class="tl">from a street address to a client proposal and a crew schedule</text>
         </svg>
       </div>
       <div class="feat-body">
@@ -162,50 +159,40 @@ svg .heat2{fill:var(--teal);opacity:.14}
     <div class="feat-head" role="button" tabindex="0" aria-expanded="false">
       <div class="feat-vis">
         <svg viewBox="0 0 520 300" aria-hidden="true">
+          <!-- on-device boundary -->
+          <rect x="186" y="18" width="228" height="240" rx="22" class="lnf" stroke-dasharray="4 6"/>
+          <text x="198" y="36" class="tl">on-device</text>
           <!-- no cloud AI -->
-          <g transform="translate(30,30)">
+          <g transform="translate(442,34)">
             <path d="M6 30 a12 12 0 0 1 2 -23 a16 16 0 0 1 30 1 a11 11 0 0 1 4 22 Z" class="lnf"/>
             <line x1="2" y1="38" x2="46" y2="-2" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round"/>
           </g>
-          <!-- the person speaks; a waveform in the bubble -->
-          <circle cx="58" cy="138" r="14" class="ln"/>
-          <path d="M36 194 q0 -26 22 -26 q22 0 22 26 v20 h-44 Z" fill="var(--tint)" class="ln"/>
-          <path d="M90 86 h32 a8 8 0 0 1 8 8 v10 a8 8 0 0 1 -8 8 h-22 l-8 8 v-8 h-2 a8 8 0 0 1 -8 -8 v-10 a8 8 0 0 1 8 -8 Z" class="bx"/>
-          <g class="ln" stroke-width="2" stroke-linecap="round"><line x1="96" y1="97" x2="96" y2="101"/><line x1="101" y1="94" x2="101" y2="104"/><line x1="106" y1="91" x2="106" y2="107"/><line x1="111" y1="94" x2="111" y2="104"/><line x1="116" y1="96" x2="116" y2="102"/><line x1="121" y1="93" x2="121" y2="105"/></g>
-          <!-- on-device boundary -->
-          <rect x="134" y="28" width="358" height="226" rx="16" class="lnf" stroke-dasharray="4 6"/>
-          <text x="148" y="46" class="tl">on-device</text>
-          <!-- the PC: a local model as a small neural cortex -->
-          <rect x="144" y="56" width="222" height="148" rx="10" class="bx"/>
-          <rect x="154" y="66" width="202" height="122" rx="5" fill="var(--tint)" opacity=".7"/>
-          <path d="M236 204 l-8 22 h66 l-8 -22" class="bx"/>
-          <g class="lnf"><line x1="255" y1="127" x2="281" y2="162"/><line x1="255" y1="127" x2="229" y2="162"/><line x1="255" y1="127" x2="203" y2="127"/><line x1="255" y1="127" x2="229" y2="92"/><line x1="255" y1="127" x2="281" y2="92"/><line x1="176" y1="86" x2="229" y2="92"/><line x1="334" y1="86" x2="281" y2="92"/><line x1="176" y1="170" x2="229" y2="162"/><line x1="334" y1="170" x2="281" y2="162"/><line x1="255" y1="80" x2="229" y2="92"/><line x1="255" y1="176" x2="229" y2="162"/><line x1="178" y1="127" x2="203" y2="127"/></g>
-          <g fill="var(--faint)" opacity=".6"><circle cx="176" cy="86" r="3.5"/><circle cx="334" cy="86" r="3.5"/><circle cx="176" cy="170" r="3.5"/><circle cx="334" cy="170" r="3.5"/><circle cx="255" cy="80" r="3.5"/><circle cx="255" cy="176" r="3.5"/><circle cx="178" cy="127" r="3.5"/></g>
-          <circle cx="281" cy="162" r="7" class="bx"/><circle cx="229" cy="162" r="7" class="bx"/><circle cx="203" cy="127" r="7" class="bx"/><circle cx="229" cy="92" r="7" class="bx"/><circle cx="281" cy="92" r="7" class="bx"/>
-          <!-- the active path: model -> tool node -> guard -> calendar -->
-          <line x1="255" y1="127" x2="307" y2="127" class="ln" stroke-width="2.2"/>
-          <circle cx="307" cy="127" r="13" class="heat2"/><circle cx="307" cy="127" r="7" class="bxa"/>
-          <g fill="var(--teal)"><circle cx="284" cy="127" r="2.6"/><circle cx="294" cy="127" r="2.6" opacity=".6"/></g>
-          <circle cx="255" cy="127" r="24" class="bxa"/>
-          <text x="255" y="131" text-anchor="middle" class="tla">LLM</text>
-          <path d="M314 127 H374" class="ln" stroke-width="2"/>
-          <path d="M388 108 l14 6 v12 c0 10 -6 17 -14 21 c-8 -4 -14 -11 -14 -21 v-12 Z" class="bxa"/>
-          <path d="M381 128 l5 5 9 -10" class="ln"/>
-          <rect x="368" y="156" width="40" height="18" rx="9" class="bxa"/>
-          <text x="388" y="169" text-anchor="middle" class="tla">yes?</text>
-          <!-- tools; the calendar is the one in use -->
-          <path d="M402 127 C412 127 412 67 404 67" class="ln" stroke-width="2"/>
-          <g class="lnf"><path d="M402 127 C424 127 430 113 440 113"/><path d="M402 127 C424 127 430 167 440 167"/><path d="M402 127 C412 127 412 213 404 213"/></g>
-          <rect x="398" y="44" width="46" height="46" rx="12" class="heat2"/>
-          <rect x="404" y="50" width="34" height="34" rx="8" class="bxa"/>
-          <rect x="412" y="59" width="18" height="17" rx="2" class="ln"/><line x1="412" y1="64" x2="430" y2="64" class="ln"/><circle cx="421" cy="70" r="2" fill="var(--teal)"/>
-          <rect x="440" y="96" width="34" height="34" rx="8" class="bx"/>
-          <path d="M450 104 h9 l6 6 v14 h-15 Z" class="ln"/><line x1="453" y1="114" x2="462" y2="114" class="lnf"/><line x1="453" y1="119" x2="462" y2="119" class="lnf"/>
-          <rect x="440" y="150" width="34" height="34" rx="8" class="bx"/>
-          <rect x="448" y="160" width="18" height="13" rx="2" class="ln"/><path d="M448 161 l9 7 9 -7" class="ln"/>
-          <rect x="404" y="196" width="34" height="34" rx="8" class="bx"/>
-          <path d="M412 207 h6 l2 3 h10 v12 h-18 Z" class="ln"/>
-          <text x="20" y="284" class="tl">voice in, a local model reasons, a guarded tool acts after a yes</text>
+          <text x="466" y="90" text-anchor="middle" class="tl">no cloud AI</text>
+          <!-- the person asks by voice; the answer comes back -->
+          <circle cx="64" cy="140" r="14" class="ln"/>
+          <path d="M42 196 q0 -26 22 -26 q22 0 22 26 v20 h-44 Z" fill="var(--tint)" class="ln"/>
+          <path d="M94 84 h32 a8 8 0 0 1 8 8 v10 a8 8 0 0 1 -8 8 h-22 l-8 8 v-8 h-2 a8 8 0 0 1 -8 -8 v-10 a8 8 0 0 1 8 -8 Z" class="bx"/>
+          <g class="ln" stroke-width="2" stroke-linecap="round"><line x1="100" y1="95" x2="100" y2="99"/><line x1="105" y1="92" x2="105" y2="102"/><line x1="110" y1="89" x2="110" y2="105"/><line x1="115" y1="92" x2="115" y2="102"/><line x1="120" y1="94" x2="120" y2="100"/><line x1="125" y1="91" x2="125" y2="103"/></g>
+          <path d="M96 138 H250" class="ln" stroke-width="1.8"/><path d="M245 133 l6 5 -6 5" class="ln"/>
+          <path d="M252 152 H100" class="lnf" stroke-dasharray="3 4"/><path d="M106 147 l-6 5 6 5" class="lnf"/>
+          <!-- tools orbit the model; the guard ring sits between them -->
+          <line x1="300.0" y1="91.0" x2="300.0" y2="60.0" class="lnf"/><line x1="340.7" y1="114.5" x2="367.5" y2="99.0" class="ln" stroke-width="2.2"/><line x1="340.7" y1="161.5" x2="367.5" y2="177.0" class="lnf"/><line x1="300.0" y1="185.0" x2="300.0" y2="216.0" class="lnf"/><line x1="259.3" y1="161.5" x2="232.5" y2="177.0" class="lnf"/><line x1="259.3" y1="114.5" x2="232.5" y2="99.0" class="lnf"/>
+          <circle cx="300" cy="138" r="66" fill="none" stroke="var(--teal)" stroke-width="1.4" stroke-dasharray="3 5" opacity=".75"/>
+          <rect x="284.0" y="26.0" width="32" height="32" rx="9" class="bx"/><path d="M294.0 33.0 h8 l5 5 v13 h-13 Z" class="ln"/><path d="M297.0 43.0 h7 M297.0 47.0 h7" class="lnf"/><rect x="361.1" y="68.0" width="44" height="44" rx="12" class="heat2"/><rect x="367.1" y="74.0" width="32" height="32" rx="9" class="bxa"/><rect x="375.1" y="83.0" width="16" height="15" rx="2" class="ln"/><path d="M375.1 88.0 h16 M379.1 80.0 v5 M387.1 80.0 v5" class="ln"/><rect x="367.1" y="170.0" width="32" height="32" rx="9" class="bx"/><rect x="374.1" y="180.0" width="18" height="13" rx="2" class="ln"/><path d="M374.1 181.0 l9 7 9 -7" class="ln"/><rect x="284.0" y="218.0" width="32" height="32" rx="9" class="bx"/><path d="M291.0 227.0 h6 l2 3 h10 v12 h-18 Z" class="ln"/><rect x="200.9" y="170.0" width="32" height="32" rx="9" class="bx"/><circle cx="216.9" cy="186.0" r="8.5" class="ln"/><ellipse cx="216.9" cy="186.0" rx="3.6" ry="8.5" class="ln"/><path d="M208.4 186.0 h17" class="ln"/><rect x="200.9" y="74.0" width="32" height="32" rx="9" class="bx"/><circle cx="216.9" cy="90.0" r="8.5" class="ln"/><path d="M216.9 85.0 v5 l4 2.5" class="ln"/>
+          <!-- the local model on a GPU -->
+          <g class="ln" stroke-width="1.4"><line x1="255" y1="112" x2="262" y2="112"/><line x1="338" y1="112" x2="345" y2="112"/><line x1="274" y1="93" x2="274" y2="100"/><line x1="274" y1="176" x2="274" y2="183"/><line x1="255" y1="125" x2="262" y2="125"/><line x1="338" y1="125" x2="345" y2="125"/><line x1="287" y1="93" x2="287" y2="100"/><line x1="287" y1="176" x2="287" y2="183"/><line x1="255" y1="138" x2="262" y2="138"/><line x1="338" y1="138" x2="345" y2="138"/><line x1="300" y1="93" x2="300" y2="100"/><line x1="300" y1="176" x2="300" y2="183"/><line x1="255" y1="151" x2="262" y2="151"/><line x1="338" y1="151" x2="345" y2="151"/><line x1="313" y1="93" x2="313" y2="100"/><line x1="313" y1="176" x2="313" y2="183"/><line x1="255" y1="164" x2="262" y2="164"/><line x1="338" y1="164" x2="345" y2="164"/><line x1="326" y1="93" x2="326" y2="100"/><line x1="326" y1="176" x2="326" y2="183"/></g>
+          <rect x="262" y="100" width="76" height="76" rx="10" class="bxa"/>
+          <rect x="272" y="110" width="56" height="56" rx="6" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+          <text x="300" y="136" text-anchor="middle" class="tla">LLM</text>
+          <text x="300" y="150" text-anchor="middle" class="tl">8 GB GPU</text>
+          <!-- the guard checks the active tool call and asks first -->
+          <g transform="translate(357.2,105.0)">
+            <path d="M0 -12 l10 4 v8 c0 7 -4 11 -10 14 c-6 -3 -10 -7 -10 -14 v-8 Z" class="bxa"/>
+            <path d="M-4 0 l3 3 6 -7" class="ln"/>
+          </g>
+          <rect x="322" y="66" width="38" height="17" rx="8.5" class="bxa"/>
+          <text x="341" y="78" text-anchor="middle" class="tla">yes?</text>
+          <text x="20" y="284" class="tl">ask by voice; a local model picks a tool; the guard asks before it acts</text>
         </svg>
       </div>
       <div class="feat-body">
@@ -484,7 +471,7 @@ svg .heat2{fill:var(--teal);opacity:.14}
 
 <footer>
   <div class="wrap foot-inner">
-    <span>© 2026 Rakeh Saleem · Fort Lauderdale, FL</span>
+    <span>© 2026 Rakeh Saleem · Coral Springs, FL</span>
     <div class="socials">
       <a href="https://github.com/rakehsaleem" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/rakeh-saleem/" target="_blank" rel="noopener">LinkedIn</a>
