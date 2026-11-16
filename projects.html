@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Rakeh Saleem</title>
-<meta name="description" content="Open-source projects by Rakeh Saleem, Applied Scientist — deep learning crack detection, UAV inspection systems, embedded sensors, and computer vision for infrastructure.">
+<title>Projects | Rakeh Saleem</title>
+<meta name="description" content="Projects by Rakeh Saleem, PhD: MASON multi-agent renovation AI, MAISI simulated-gaze distillation for drones, production demand forecasting, UAV inspection, and computer vision for infrastructure.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Projects — Rakeh Saleem">
+<meta property="og:title" content="Projects | Rakeh Saleem">
 <meta property="og:description" content="Open-source projects: crack detection, UAV inspection, sensors, and ML for infrastructure.">
 <meta property="og:url" content="https://rakehsaleem.github.io/projects.html">
 <meta name="theme-color" content="#B4530A" media="(prefers-color-scheme: light)">
@@ -28,7 +28,7 @@
 .feat.open .chev{transform:rotate(180deg)}
 .feat-body p{font-size:14px;color:var(--muted)}
 .feat-more{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.feat.open .feat-more{max-height:420px}
+.feat.open .feat-more{max-height:900px}
 .feat-more-inner{padding:0 24px 22px;border-top:1px dashed var(--line);margin:0 0 0 0;padding-top:16px}
 .feat-more-inner ul{margin:0 0 12px;padding-left:18px}
 .feat-more-inner li{font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:5px}
@@ -73,7 +73,7 @@ svg .heat2{fill:var(--teal);opacity:.14}
 <div class="page-head">
   <span class="kicker">Open source</span>
   <h1>My projects</h1>
-  <p>Code from my research and side quests — crack detection, UAV inspection, embedded sensors, and machine learning for the built world. Pulled live from GitHub.</p>
+  <p>Code from my research and side quests: crack detection, UAV inspection, embedded sensors, and machine learning for the built world. Pulled live from GitHub.</p>
 </div>
 
 <section class="wrap" style="padding-bottom:8px">
@@ -83,6 +83,136 @@ svg .heat2{fill:var(--teal);opacity:.14}
       <h2>Things I've built and studied</h2>
     </div>
   </div>
+
+  <article class="feat" id="feat-mason">
+    <div class="feat-head" role="button" tabindex="0" aria-expanded="false">
+      <div class="feat-vis">
+        <svg viewBox="0 0 520 300" aria-hidden="true">
+          <!-- kitchen, top-down: walls, window, door -->
+          <rect x="34" y="40" width="226" height="176" rx="3" fill="var(--card)" stroke="var(--teal)" stroke-width="3"/>
+          <line x1="96" y1="40" x2="152" y2="40" stroke="var(--card)" stroke-width="5"/>
+          <line x1="96" y1="37" x2="152" y2="37" class="lnf"/><line x1="96" y1="43" x2="152" y2="43" class="lnf"/>
+          <line x1="42" y1="216" x2="84" y2="216" stroke="var(--card)" stroke-width="5"/>
+          <path d="M44 216 V176 A40 40 0 0 1 84 216" class="lnf" stroke-dasharray="3 4"/>
+          <!-- L-shaped counter run, sink, cooktop, island -->
+          <rect x="40" y="46" width="214" height="24" rx="2" class="bxa"/>
+          <rect x="230" y="70" width="24" height="98" rx="2" class="bxa"/>
+          <rect x="108" y="51" width="32" height="14" rx="5" class="bx"/>
+          <g class="lnf"><circle cx="190" cy="54" r="3.4"/><circle cx="204" cy="54" r="3.4"/><circle cx="190" cy="63" r="3.4"/><circle cx="204" cy="63" r="3.4"/></g>
+          <rect x="98" y="118" width="88" height="40" rx="3" class="bx"/>
+          <!-- vision: the agent reads the island from a site photo -->
+          <path d="M86 120 v-12 h12 M174 108 h12 v12 M186 156 v12 h-12 M98 168 h-12 v-12" class="ln" stroke-width="2"/>
+          <ellipse cx="142" cy="138" rx="34" ry="17" class="heat2"/>
+          <text x="142" y="100" text-anchor="middle" class="tla">island · read from photo</text>
+          <!-- dimension line -->
+          <line x1="34" y1="234" x2="260" y2="234" class="lnf"/>
+          <line x1="34" y1="228" x2="34" y2="240" class="lnf"/><line x1="260" y1="228" x2="260" y2="240" class="lnf"/>
+          <text x="147" y="252" text-anchor="middle" class="tl">12' 6"  ·  code checks pass</text>
+          <!-- priced in code -->
+          <path d="M268 96 h20 l9 9 -9 9 h-20 Z" class="bxa"/>
+          <circle cx="273" cy="105" r="2" fill="var(--teal)"/>
+          <text x="285" y="109" text-anchor="middle" class="tla">$</text>
+          <path d="M266 136 C280 136 286 136 300 136" class="ln"/>
+          <path d="M294 130 l7 6 -7 6" class="ln"/>
+          <!-- CP-SAT crew schedule -->
+          <rect x="306" y="40" width="190" height="176" rx="8" class="bx"/>
+          <g class="lnf" opacity=".55"><line x1="346" y1="50" x2="346" y2="206"/><line x1="374" y1="50" x2="374" y2="206"/><line x1="402" y1="50" x2="402" y2="206"/><line x1="430" y1="50" x2="430" y2="206"/><line x1="458" y1="50" x2="458" y2="206"/><line x1="486" y1="50" x2="486" y2="206"/></g>
+          <g><circle cx="326" cy="64" r="7" class="bxa"/><circle cx="326" cy="94" r="7" class="bxa"/><circle cx="326" cy="124" r="7" class="bxa"/><circle cx="326" cy="154" r="7" class="bxa"/><circle cx="326" cy="184" r="7" class="bxa"/></g>
+          <rect x="346" y="58" width="56" height="12" rx="3" fill="var(--teal)" opacity=".85"/>
+          <rect x="402" y="88" width="36" height="12" rx="3" fill="var(--teal)" opacity=".6"/>
+          <rect x="438" y="118" width="32" height="12" rx="3" fill="var(--teal)" opacity=".7"/>
+          <rect x="410" y="148" width="38" height="12" rx="3" fill="var(--teal)" opacity=".4"/>
+          <rect x="470" y="178" width="16" height="12" rx="3" fill="var(--teal)" opacity=".9"/>
+          <g class="ln" stroke-dasharray="2 3" stroke-width="1.2"><path d="M402 70 V88"/><path d="M438 100 V118"/><path d="M470 130 V178"/><path d="M402 70 C402 140 406 148 410 154"/></g>
+          <text x="401" y="232" text-anchor="middle" class="tla">CP-SAT crew schedule</text>
+          <text x="34" y="284" class="tl">photos and plans in; a priced design and a crew schedule out</text>
+        </svg>
+      </div>
+      <div class="feat-body">
+        <h3>MASON · multi-agent renovation platform
+          <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+        </h3>
+        <p>What I'm building at Kaba Construction: a two-stage platform that takes a kitchen or bath from address to client proposal, then from approved scope to bill of materials and crew schedule.</p>
+        <div class="tags"><span class="tag">LangGraph</span><span class="tag">multi-agent</span><span class="tag">OR-Tools CP-SAT</span><span class="tag">Pydantic</span></div>
+      </div>
+    </div>
+    <div class="feat-more"><div class="feat-more-inner">
+      <ul>
+        <li><strong>Stage 1, before the site visit:</strong> pulls and cross-checks property records from several live sources, designs three renovation options with scaled CAD plans and interactive 3D models, prices each one, and produces a client proposal PDF.</li>
+        <li><strong>Hybrid by design:</strong> LLM agents write design direction and read site photos and plans through Pydantic-validated structured outputs; any rewrite that changes a number is rejected, so every quantity, price, and hour comes from deterministic Python.</li>
+        <li><strong>Stage 2, in progress:</strong> a LangGraph takeoff and budget critic feed a CP-SAT crew scheduler with task precedence, crew-size limits, skill matching, and room-occupancy constraints.</li>
+        <li>Runs offline without API keys, with an offline test suite that blocks every real network call.</li>
+      </ul>
+      <div class="feat-links">
+        <a href="contact.html">Ask me about it →</a>
+      </div>
+    </div></div>
+  </article>
+
+  <article class="feat" id="feat-agent">
+    <div class="feat-head" role="button" tabindex="0" aria-expanded="false">
+      <div class="feat-vis">
+        <svg viewBox="0 0 520 300" aria-hidden="true">
+          <!-- no cloud AI -->
+          <g transform="translate(36,34)">
+            <path d="M6 30 a12 12 0 0 1 2 -23 a16 16 0 0 1 30 1 a11 11 0 0 1 4 22 Z" class="lnf"/>
+            <line x1="2" y1="38" x2="46" y2="-2" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round"/>
+          </g>
+          <!-- the person, speaking -->
+          <circle cx="66" cy="128" r="14" class="ln"/>
+          <path d="M44 184 q0 -26 22 -26 q22 0 22 26 v20 h-44 Z" fill="var(--tint)" class="ln"/>
+          <g class="ln" stroke-linecap="round"><path d="M90 120 q7 8 0 16"/><path d="M98 113 q12 15 0 30" opacity=".7"/><path d="M106 106 q17 22 0 44" opacity=".45"/></g>
+          <!-- on-device boundary -->
+          <rect x="128" y="28" width="364" height="226" rx="16" class="lnf" stroke-dasharray="4 6"/>
+          <text x="144" y="46" class="tl">on-device</text>
+          <!-- the PC: a local model as a small neural cortex -->
+          <rect x="144" y="56" width="222" height="148" rx="10" class="bx"/>
+          <rect x="154" y="66" width="202" height="122" rx="5" fill="var(--tint)" opacity=".7"/>
+          <path d="M236 204 l-8 22 h66 l-8 -22" class="bx"/>
+          <g class="lnf"><line x1="255" y1="127" x2="307" y2="127"/><line x1="255" y1="127" x2="281" y2="162"/><line x1="255" y1="127" x2="229" y2="162"/><line x1="255" y1="127" x2="203" y2="127"/><line x1="255" y1="127" x2="229" y2="92"/><line x1="255" y1="127" x2="281" y2="92"/></g>
+          <g><circle cx="307" cy="127" r="7" class="bx"/><circle cx="281" cy="162" r="7" class="bx"/><circle cx="229" cy="162" r="7" class="bx"/><circle cx="203" cy="127" r="7" class="bx"/><circle cx="229" cy="92" r="7" class="bx"/></g>
+          <circle cx="281" cy="92" r="14" class="heat2"/><circle cx="281" cy="92" r="7" class="bxa"/>
+          <g fill="var(--teal)"><circle cx="264" cy="114" r="2.4"/><circle cx="272" cy="103" r="2.4" opacity=".6"/></g>
+          <circle cx="255" cy="127" r="22" class="bxa"/>
+          <text x="255" y="131" text-anchor="middle" class="tla">LLM</text>
+          <!-- guard between the model and its tools -->
+          <path d="M366 127 H374" class="ln"/>
+          <path d="M388 108 l14 6 v12 c0 10 -6 17 -14 21 c-8 -4 -14 -11 -14 -21 v-12 Z" class="bxa"/>
+          <path d="M381 128 l5 5 9 -10" class="ln"/>
+          <!-- tools -->
+          <g class="lnf"><path d="M402 127 C412 127 412 67 404 67"/><path d="M402 127 C424 127 430 113 440 113"/><path d="M402 127 C424 127 430 167 440 167"/><path d="M402 127 C412 127 412 213 404 213"/></g>
+          <rect x="404" y="50" width="34" height="34" rx="8" class="bx"/>
+          <rect x="412" y="59" width="18" height="17" rx="2" class="ln"/><line x1="412" y1="64" x2="430" y2="64" class="ln"/>
+          <rect x="440" y="96" width="34" height="34" rx="8" class="bx"/>
+          <path d="M450 104 h9 l6 6 v14 h-15 Z" class="ln"/><line x1="453" y1="114" x2="462" y2="114" class="lnf"/><line x1="453" y1="119" x2="462" y2="119" class="lnf"/>
+          <rect x="440" y="150" width="34" height="34" rx="8" class="bx"/>
+          <rect x="448" y="160" width="18" height="13" rx="2" class="ln"/><path d="M448 161 l9 7 9 -7" class="ln"/>
+          <rect x="404" y="196" width="34" height="34" rx="8" class="bx"/>
+          <path d="M412 207 h6 l2 3 h10 v12 h-18 Z" class="ln"/>
+          <text x="20" y="284" class="tl">voice in, a local model reasons, guarded tools act; no cloud AI</text>
+        </svg>
+      </div>
+      <div class="feat-body">
+        <h3>On-device AI agent with voice, RAG, and guarded tools
+          <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+        </h3>
+        <p>An autonomous agent that runs entirely on a consumer GPU (8&nbsp;GB): it reasons with a local LLM, listens for a custom wake word, and acts through about 50 validated tools, with no cloud AI service and no API bill.</p>
+        <div class="tags"><span class="tag">LangGraph</span><span class="tag">Ollama</span><span class="tag">Pydantic</span><span class="tag">RAG</span><span class="tag">speech AI</span></div>
+      </div>
+    </div>
+    <div class="feat-more"><div class="feat-more-inner">
+      <ul>
+        <li><strong>Agent loop:</strong> a LangGraph state graph on local Ollama models (Qwen 2.5 for chat, DeepSeek-R1 for deep reasoning) picks among about 50 Pydantic-validated tools: documents, files, calendar, mail drafts, web, reminders, maps, and daily briefings.</li>
+        <li><strong>Memory and search:</strong> conversations and facts persist in SQLite; documents are searched by meaning (ChromaDB) and by exact words (SQLite FTS5), with the source named in every answer.</li>
+        <li><strong>Voice on the CPU:</strong> a custom-trained wake word, a speaker voiceprint so only the owner can wake it, faster-whisper speech-to-text, and Piper text-to-speech, leaving the GPU free for the model.</li>
+        <li><strong>Safety in code, not prompts:</strong> every tool has a permission tier, risky actions pause with LangGraph <code>interrupt()</code> until a yes, outside text is treated as untrusted, and a prompt-injection eval plants instructions in pages, mail, and files.</li>
+        <li>Over 1,700 offline tests; 62/62 on the tool-choice eval against the local model.</li>
+      </ul>
+      <div class="feat-links">
+        <a href="contact.html">Ask me about it →</a>
+      </div>
+    </div></div>
+  </article>
 
   <article class="feat" id="feat-gaze">
     <div class="feat-head" role="button" tabindex="0" aria-expanded="false">
@@ -128,7 +258,7 @@ svg .heat2{fill:var(--teal);opacity:.14}
     </div>
     <div class="feat-more"><div class="feat-more-inner">
       <ul>
-        <li>Eye-tracking studies with expert building inspectors across facade and disaster case studies — published in Scientific Reports, Buildings, and the Journal of Building Engineering.</li>
+        <li>Eye-tracking studies with expert building inspectors across facade and disaster case studies, published in Scientific Reports, Buildings, and the Journal of Building Engineering.</li>
         <li>Benchmarked saliency-map algorithms against expert visual priorities; used gaze to guide CNN attention, improving generalization to unseen structures.</li>
         <li>Optimized architectures for edge deployment: 20% lower inference latency at 85% detection accuracy.</li>
       </ul>
@@ -192,18 +322,18 @@ svg .heat2{fill:var(--teal);opacity:.14}
         </svg>
       </div>
       <div class="feat-body">
-        <h3>Simulated gaze &amp; lightweight saliency
+        <h3>MAISI · simulated gaze &amp; edge distillation
           <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
         </h3>
-        <p>The active post-PhD extension: when real expert gaze is scarce, simulate it — LLM-designed inspector agents scan a 3D facade, generating training data for compact saliency models.</p>
-        <div class="tags"><span class="tag">simulation</span><span class="tag">ViT distillation</span><span class="tag">edge AI</span></div>
+        <p>The active post-PhD extension: when real expert gaze is scarce, simulate it. Virtual inspectors scan photoreal 3D structures in Unity, generating training data for a compact saliency model that runs on a drone.</p>
+        <div class="tags"><span class="tag">Sim2Real</span><span class="tag">ViT distillation</span><span class="tag">Unity</span><span class="tag">edge AI</span></div>
       </div>
     </div>
     <div class="feat-more"><div class="feat-more-inner">
       <ul>
-        <li>End-to-end framework: real PhD fixation data + a 3D concrete facade + LLM-generated inspector personas (junior → expert tiers) drive a Unity simulation of visual inspection behavior.</li>
-        <li>600 simulated sessions produce fixation sequences, surface heatmaps, and KDE-derived saliency ground truth.</li>
-        <li>A multimodal ViT teacher is distilled ~8.9× into a MobileNet-class student — under 100MB, sub-50ms inference — then fine-tuned on real gaze for deployment on inspection drones.</li>
+        <li>A Unity package spawns 30 parameterized inspector agents (novice, intermediate, expert) across procedural bridge, building, and tunnel scenes with randomized defects, logging 3D raycast fixations, scanpaths, and saliency ground truth.</li>
+        <li>A Sim2Real gate compares synthetic and real expert gaze (MMD², Wasserstein, KLD, NSS) before any training data is accepted.</li>
+        <li>A multimodal ViT teacher (RGB + gaze, 89.7M parameters) is distilled into an RGB-only student (11.6M, 7.7× smaller): 11.5&nbsp;MB as INT8 ONNX, 3.9&nbsp;ms per frame on a desktop CPU, with no eye tracker needed at deployment.</li>
       </ul>
       <div class="feat-links">
         <a href="research.html">Research page →</a>
@@ -258,7 +388,7 @@ svg .heat2{fill:var(--teal);opacity:.14}
       <ul>
         <li>Built the end-to-end acquisition pipeline: flight planning, image capture with geo-tagging, and custom image stitching over high-resolution geospatial data.</li>
         <li>Data from 50+ inspection flights; real-time deep CNNs on edge devices improved dynamic risk-detection speed by 25%.</li>
-        <li>Published in Structural Health Monitoring (2021) — my most-cited work.</li>
+        <li>Published in Structural Health Monitoring (2021), one of my most-cited papers.</li>
       </ul>
       <div class="feat-links">
         <a href="https://journals.sagepub.com/doi/10.1177/1475921720932384" target="_blank" rel="noopener">SHM paper →</a>
@@ -289,15 +419,15 @@ svg .heat2{fill:var(--teal);opacity:.14}
         <h3>Demand forecasting in production
           <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
         </h3>
-        <p>A production system for forecasting intermittent, hard-to-predict demand — transformer and gradient-boosting ensembles delivering forecasts with uncertainty bands to decision-makers.</p>
+        <p>A production system for forecasting intermittent, hard-to-predict demand, using transformer and gradient-boosting ensembles to deliver forecasts with uncertainty bands to decision-makers.</p>
         <div class="tags"><span class="tag">TFT</span><span class="tag">LightGBM</span><span class="tag">SageMaker</span></div>
       </div>
     </div>
     <div class="feat-more"><div class="feat-more-inner">
       <ul>
-        <li>Took the system from zero to production rapidly, with strong forecast coverage across multi-month horizons for intermittent demand.</li>
-        <li>Iterated ensembles of temporal transformers and gradient-boosted models, delivering meaningful accuracy gains over the initial baseline.</li>
-        <li>Owned the full lifecycle — cloud ETL, experiment tracking, automated batch inference, and BI delivery — alongside a document-AI prototype for privacy-sensitive workflows using vision-language models.</li>
+        <li>Shipped the MVP to production in 3.5 months: a multi-horizon Transformer ensemble on AWS SageMaker with 86% empirical coverage of 80% prediction intervals over a 3-month horizon.</li>
+        <li>Phase 2 (Q2) against the Q1 vanilla-Transformer baseline: the improved Transformer cut MASE by 6.5% and a Temporal Fusion Transformer variant by 11%; LSTM and LightGBM were also benchmarked.</li>
+        <li>Owned the full lifecycle (Snowflake-to-S3 ETL, MLflow tracking, automated batch inference, Power BI delivery), alongside an on-premise Document AI proof of concept: LayoutLMv3 fine-tuned on 1,800 pages and benchmarked against Qwen-VL and Florence-2 across 50,000+ documents.</li>
       </ul>
       <div class="feat-links">
         <a href="research.html">Research page →</a>
@@ -349,7 +479,7 @@ svg .heat2{fill:var(--teal);opacity:.14}
 
   // Shown if the GitHub API is unreachable or rate-limited
   var FALLBACK = [
-    { name: 'DeepLearning-ConcreteDataset', description: 'Training dataset for crack detection — Keras Mask R-CNN on concrete cracks with pixel-wise annotations.', language: 'Python', stargazers_count: 31, forks_count: 11, html_url: 'https://github.com/rakehsaleem/DeepLearning-ConcreteDataset', topics: [] },
+    { name: 'DeepLearning-ConcreteDataset', description: 'Training dataset for crack detection: Keras Mask R-CNN on concrete cracks with pixel-wise annotations.', language: 'Python', stargazers_count: 31, forks_count: 11, html_url: 'https://github.com/rakehsaleem/DeepLearning-ConcreteDataset', topics: [] },
     { name: 'Crack-Detection-TF-1.x.x', description: 'Mask and instance-based crack detection for Python 3, Keras and TensorFlow 1.x.', language: 'Jupyter Notebook', stargazers_count: 6, forks_count: 7, html_url: 'https://github.com/rakehsaleem/Crack-Detection-TF-1.x.x', topics: [] }
   ];
 

@@ -6,6 +6,7 @@ must have transparent backgrounds.
 
   slug                    status / where to get the official file
   ----                    ----------------------------------------
+  kaba                    DONE (transparent PNG supplied by Rakeh)
   ga-telesis              needed — https://www.gatelesis.com (media/press)
   penn-state              needed — https://brand.psu.edu (downloads; SVG available)
   eth-zurich              DONE (cleaned PNG included; SVG also on ethz.ch corporate design)

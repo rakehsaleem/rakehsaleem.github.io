@@ -1,10 +1,10 @@
-/* Rakeh Saleem — shared site scripts
+/* Rakeh Saleem, shared site scripts
    1. Theme toggle (light/dark, remembered)
    2. Mobile menu
    3. Interactive dot-grid background:
       a fixed canvas of faint dots; dots near the cursor
       shade toward teal and swell slightly, with a soft
-      eased falloff — a quiet nod to gaze heatmaps. */
+      eased falloff, a quiet nod to gaze heatmaps. */
 
 (function () {
   var root = document.documentElement;
@@ -39,7 +39,7 @@
   /* ---------- dot-grid background with cursor glow ----------
      A static grid of faint dots; dots within a soft radius of the
      cursor warm toward the accent and swell slightly, with an eased
-     trailing motion. Deliberately quiet — texture, not spectacle. */
+     trailing motion. Deliberately quiet, texture, not spectacle. */
   var canvas = document.getElementById('dotgrid');
   if (!canvas) return;
 
@@ -156,6 +156,7 @@
   // slug -> assets/logos/<slug>.png (official logo you download);
   // domain -> automatic fallback logo pulled from the org's own web identity
   var ORGS = [
+    { name: 'Kaba Construction',   slug: 'kaba',               domain: '' },
     { name: 'GA Telesis',          slug: 'ga-telesis',         domain: 'gatelesis.com' },
     { name: 'Penn State University', slug: 'penn-state',       domain: 'psu.edu' },
     { name: 'ETH Zürich',          slug: 'eth-zurich',         domain: 'ethz.ch' },
@@ -176,9 +177,10 @@
     //  zero 404s; drop in a .svg later and it still gets picked up)
     var sources = [
       'assets/logos/' + org.slug + '.png',
-      'assets/logos/' + org.slug + '.svg',
-      'https://www.google.com/s2/favicons?domain=' + org.domain + '&sz=128'
+      'assets/logos/' + org.slug + '.svg'
     ];
+    // no domain -> skip the favicon service (it returns a generic globe, not an error)
+    if (org.domain) sources.push('https://www.google.com/s2/favicons?domain=' + org.domain + '&sz=128');
     var i = 0;
     img.onerror = function () {
       i += 1;
